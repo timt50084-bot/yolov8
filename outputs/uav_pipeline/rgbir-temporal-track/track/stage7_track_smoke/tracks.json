@@ -1,0 +1,30 @@
+{
+  "source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\train",
+  "tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+  "model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+  "weights": "D:\\project\\ultralytics-main\\runs\\stage5_smoke\\stage5_temporal_small_compare\\weights\\best.pt",
+  "use_temporal_detector": true,
+  "frames": [
+    {
+      "frame_id": 0,
+      "frame_name": "00001.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 1,
+      "frame_name": "00002.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 2,
+      "frame_name": "00003.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    }
+  ]
+}

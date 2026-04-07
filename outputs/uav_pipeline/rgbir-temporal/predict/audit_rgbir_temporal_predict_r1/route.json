@@ -1,0 +1,37 @@
+{
+  "subtask": "predict",
+  "mode": "rgbir-temporal",
+  "mode_spec": {
+    "name": "rgbir-temporal",
+    "description": "Stage 5 RGB-IR path with explicit lightweight two-frame temporal detection enabled.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_temporal_obb.py",
+    "supports_temporal_predict": true,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": true,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "ultralytics_api",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\predict",
+  "run_name": "audit_rgbir_temporal_predict_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\predict\\audit_rgbir_temporal_predict_r1",
+  "payload": {
+    "action": "predict",
+    "model_source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\audit_rgbir_temporal_train_r12\\weights\\best.pt",
+    "kwargs": {
+      "source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\val\\00001.jpg",
+      "imgsz": 256,
+      "device": "0",
+      "conf": 0.25,
+      "iou": 0.45,
+      "max_det": 300,
+      "save": true,
+      "project": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\predict",
+      "name": "audit_rgbir_temporal_predict_r1",
+      "exist_ok": true
+    }
+  }
+}

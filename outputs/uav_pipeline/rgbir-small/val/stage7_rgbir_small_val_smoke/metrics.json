@@ -1,0 +1,13 @@
+{
+  "metrics/precision(B)": 0.0,
+  "metrics/recall(B)": 0.0,
+  "metrics/mAP50(B)": 0.0,
+  "metrics/mAP50-95(B)": 0.0,
+  "fitness": 0.0,
+  "metrics/precision_small(B)": 0.0,
+  "metrics/recall_small(B)": 0.0,
+  "metrics/mAP50_small(B)": 0.0,
+  "metrics/mAP50-95_small(B)": 0.0,
+  "metrics/images_small(B)": 4.0,
+  "metrics/instances_small(B)": 103.0
+}

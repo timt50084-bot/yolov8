@@ -1,0 +1,46 @@
+{
+  "subtask": "temporal_predict",
+  "mode": "rgbir-temporal",
+  "mode_spec": {
+    "name": "rgbir-temporal",
+    "description": "Stage 5 RGB-IR path with explicit lightweight two-frame temporal detection enabled.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_temporal_obb.py",
+    "supports_temporal_predict": true,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": true,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\temporal_predict",
+  "run_name": "audit_temporal_predict_actual_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\temporal_predict\\audit_temporal_predict_actual_r1",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\predict_uav_temporal_obb.py",
+      "--source",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\val",
+      "--model",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+      "--imgsz",
+      "256",
+      "--device",
+      "0",
+      "--sequence",
+      "--weights",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\audit_rgbir_temporal_train_r12\\weights\\best.pt",
+      "--data",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",
+      "--max-frames",
+      "3",
+      "--use-temporal"
+    ],
+    "resolved_features": {
+      "use_temporal": true
+    }
+  }
+}

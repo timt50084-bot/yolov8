@@ -1,0 +1,30 @@
+{
+  "names": [
+    "car",
+    "truck",
+    "bus",
+    "van",
+    "Freight Car"
+  ],
+  "canonical_to_id": {
+    "car": 0,
+    "truck": 1,
+    "bus": 2,
+    "van": 3,
+    "Freight Car": 4
+  },
+  "aliases": {
+    "bus": "bus",
+    "car": "car",
+    "freightcar": "Freight Car",
+    "truck": "truck",
+    "van": "van"
+  },
+  "raw_to_canonical": {
+    "0": "car",
+    "1": "truck",
+    "2": "bus",
+    "3": "van",
+    "4": "Freight Car"
+  }
+}

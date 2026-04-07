@@ -1,0 +1,2690 @@
+[
+  {
+    "id": "00001",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00001.jpg",
+    "ir_image": "images/ir/val/00001.jpg",
+    "label_obb": "labels/obb/val/00001.txt",
+    "label_rgb_compat": "labels/rgb/val/00001.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00001.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00001.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00001.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00001.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 39,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00004",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00004.jpg",
+    "ir_image": "images/ir/val/00004.jpg",
+    "label_obb": "labels/obb/val/00004.txt",
+    "label_rgb_compat": "labels/rgb/val/00004.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00004.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00004.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00004.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00004.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 17,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00051",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00051.jpg",
+    "ir_image": "images/ir/val/00051.jpg",
+    "label_obb": "labels/obb/val/00051.txt",
+    "label_rgb_compat": "labels/rgb/val/00051.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00051.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00051.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00051.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00051.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00079",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00079.jpg",
+    "ir_image": "images/ir/val/00079.jpg",
+    "label_obb": "labels/obb/val/00079.txt",
+    "label_rgb_compat": "labels/rgb/val/00079.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00079.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00079.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00079.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00079.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 2,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00091",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00091.jpg",
+    "ir_image": "images/ir/val/00091.jpg",
+    "label_obb": "labels/obb/val/00091.txt",
+    "label_rgb_compat": "labels/rgb/val/00091.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00091.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00091.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00091.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00091.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00095",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00095.jpg",
+    "ir_image": "images/ir/val/00095.jpg",
+    "label_obb": "labels/obb/val/00095.txt",
+    "label_rgb_compat": "labels/rgb/val/00095.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00095.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00095.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00095.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00095.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 32,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00144",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00144.jpg",
+    "ir_image": "images/ir/val/00144.jpg",
+    "label_obb": "labels/obb/val/00144.txt",
+    "label_rgb_compat": "labels/rgb/val/00144.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00144.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00144.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00144.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00144.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 4,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00150",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00150.jpg",
+    "ir_image": "images/ir/val/00150.jpg",
+    "label_obb": "labels/obb/val/00150.txt",
+    "label_rgb_compat": "labels/rgb/val/00150.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00150.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00150.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00150.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00150.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00174",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00174.jpg",
+    "ir_image": "images/ir/val/00174.jpg",
+    "label_obb": "labels/obb/val/00174.txt",
+    "label_rgb_compat": "labels/rgb/val/00174.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00174.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00174.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00174.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00174.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 17,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00192",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00192.jpg",
+    "ir_image": "images/ir/val/00192.jpg",
+    "label_obb": "labels/obb/val/00192.txt",
+    "label_rgb_compat": "labels/rgb/val/00192.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00192.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00192.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00192.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00192.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 15,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00223",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00223.jpg",
+    "ir_image": "images/ir/val/00223.jpg",
+    "label_obb": "labels/obb/val/00223.txt",
+    "label_rgb_compat": "labels/rgb/val/00223.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00223.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00223.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00223.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00223.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 12,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00237",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00237.jpg",
+    "ir_image": "images/ir/val/00237.jpg",
+    "label_obb": "labels/obb/val/00237.txt",
+    "label_rgb_compat": "labels/rgb/val/00237.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00237.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00237.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00237.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00237.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 18,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00256",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00256.jpg",
+    "ir_image": "images/ir/val/00256.jpg",
+    "label_obb": "labels/obb/val/00256.txt",
+    "label_rgb_compat": "labels/rgb/val/00256.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00256.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00256.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00256.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00256.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 13,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00261",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00261.jpg",
+    "ir_image": "images/ir/val/00261.jpg",
+    "label_obb": "labels/obb/val/00261.txt",
+    "label_rgb_compat": "labels/rgb/val/00261.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00261.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00261.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00261.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00261.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 16,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00302",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00302.jpg",
+    "ir_image": "images/ir/val/00302.jpg",
+    "label_obb": "labels/obb/val/00302.txt",
+    "label_rgb_compat": "labels/rgb/val/00302.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00302.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00302.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00302.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00302.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00348",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00348.jpg",
+    "ir_image": "images/ir/val/00348.jpg",
+    "label_obb": "labels/obb/val/00348.txt",
+    "label_rgb_compat": "labels/rgb/val/00348.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00348.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00348.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00348.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00348.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00357",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00357.jpg",
+    "ir_image": "images/ir/val/00357.jpg",
+    "label_obb": "labels/obb/val/00357.txt",
+    "label_rgb_compat": "labels/rgb/val/00357.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00357.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00357.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00357.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00357.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 6,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00390",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00390.jpg",
+    "ir_image": "images/ir/val/00390.jpg",
+    "label_obb": "labels/obb/val/00390.txt",
+    "label_rgb_compat": "labels/rgb/val/00390.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00390.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00390.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00390.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00390.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 33,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00393",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00393.jpg",
+    "ir_image": "images/ir/val/00393.jpg",
+    "label_obb": "labels/obb/val/00393.txt",
+    "label_rgb_compat": "labels/rgb/val/00393.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00393.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00393.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00393.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00393.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 1,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00404",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00404.jpg",
+    "ir_image": "images/ir/val/00404.jpg",
+    "label_obb": "labels/obb/val/00404.txt",
+    "label_rgb_compat": "labels/rgb/val/00404.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00404.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00404.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00404.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00404.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00408",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00408.jpg",
+    "ir_image": "images/ir/val/00408.jpg",
+    "label_obb": "labels/obb/val/00408.txt",
+    "label_rgb_compat": "labels/rgb/val/00408.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00408.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00408.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00408.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00408.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 0,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00431",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00431.jpg",
+    "ir_image": "images/ir/val/00431.jpg",
+    "label_obb": "labels/obb/val/00431.txt",
+    "label_rgb_compat": "labels/rgb/val/00431.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00431.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00431.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00431.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00431.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 1,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00438",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00438.jpg",
+    "ir_image": "images/ir/val/00438.jpg",
+    "label_obb": "labels/obb/val/00438.txt",
+    "label_rgb_compat": "labels/rgb/val/00438.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00438.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00438.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00438.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00438.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 1,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00461",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00461.jpg",
+    "ir_image": "images/ir/val/00461.jpg",
+    "label_obb": "labels/obb/val/00461.txt",
+    "label_rgb_compat": "labels/rgb/val/00461.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00461.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00461.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00461.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00461.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 24,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00482",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00482.jpg",
+    "ir_image": "images/ir/val/00482.jpg",
+    "label_obb": "labels/obb/val/00482.txt",
+    "label_rgb_compat": "labels/rgb/val/00482.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00482.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00482.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00482.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00482.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 20,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00502",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00502.jpg",
+    "ir_image": "images/ir/val/00502.jpg",
+    "label_obb": "labels/obb/val/00502.txt",
+    "label_rgb_compat": "labels/rgb/val/00502.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00502.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00502.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00502.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00502.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00522",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00522.jpg",
+    "ir_image": "images/ir/val/00522.jpg",
+    "label_obb": "labels/obb/val/00522.txt",
+    "label_rgb_compat": "labels/rgb/val/00522.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00522.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00522.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00522.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00522.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00544",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00544.jpg",
+    "ir_image": "images/ir/val/00544.jpg",
+    "label_obb": "labels/obb/val/00544.txt",
+    "label_rgb_compat": "labels/rgb/val/00544.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00544.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00544.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00544.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00544.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 2,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00582",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00582.jpg",
+    "ir_image": "images/ir/val/00582.jpg",
+    "label_obb": "labels/obb/val/00582.txt",
+    "label_rgb_compat": "labels/rgb/val/00582.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00582.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00582.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00582.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00582.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 7,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00588",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00588.jpg",
+    "ir_image": "images/ir/val/00588.jpg",
+    "label_obb": "labels/obb/val/00588.txt",
+    "label_rgb_compat": "labels/rgb/val/00588.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00588.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00588.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00588.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00588.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00606",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00606.jpg",
+    "ir_image": "images/ir/val/00606.jpg",
+    "label_obb": "labels/obb/val/00606.txt",
+    "label_rgb_compat": "labels/rgb/val/00606.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00606.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00606.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00606.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00606.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 2,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00616",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00616.jpg",
+    "ir_image": "images/ir/val/00616.jpg",
+    "label_obb": "labels/obb/val/00616.txt",
+    "label_rgb_compat": "labels/rgb/val/00616.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00616.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00616.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00616.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00616.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 4,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00617",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00617.jpg",
+    "ir_image": "images/ir/val/00617.jpg",
+    "label_obb": "labels/obb/val/00617.txt",
+    "label_rgb_compat": "labels/rgb/val/00617.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00617.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00617.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00617.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00617.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00623",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00623.jpg",
+    "ir_image": "images/ir/val/00623.jpg",
+    "label_obb": "labels/obb/val/00623.txt",
+    "label_rgb_compat": "labels/rgb/val/00623.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00623.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00623.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00623.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00623.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00634",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00634.jpg",
+    "ir_image": "images/ir/val/00634.jpg",
+    "label_obb": "labels/obb/val/00634.txt",
+    "label_rgb_compat": "labels/rgb/val/00634.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00634.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00634.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00634.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00634.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00636",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00636.jpg",
+    "ir_image": "images/ir/val/00636.jpg",
+    "label_obb": "labels/obb/val/00636.txt",
+    "label_rgb_compat": "labels/rgb/val/00636.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00636.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00636.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00636.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00636.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 2,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00643",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00643.jpg",
+    "ir_image": "images/ir/val/00643.jpg",
+    "label_obb": "labels/obb/val/00643.txt",
+    "label_rgb_compat": "labels/rgb/val/00643.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00643.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00643.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00643.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00643.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 11,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00660",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00660.jpg",
+    "ir_image": "images/ir/val/00660.jpg",
+    "label_obb": "labels/obb/val/00660.txt",
+    "label_rgb_compat": "labels/rgb/val/00660.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00660.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00660.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00660.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00660.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 10,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00669",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00669.jpg",
+    "ir_image": "images/ir/val/00669.jpg",
+    "label_obb": "labels/obb/val/00669.txt",
+    "label_rgb_compat": "labels/rgb/val/00669.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00669.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00669.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00669.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00669.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 18,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00677",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00677.jpg",
+    "ir_image": "images/ir/val/00677.jpg",
+    "label_obb": "labels/obb/val/00677.txt",
+    "label_rgb_compat": "labels/rgb/val/00677.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00677.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00677.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00677.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00677.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 10,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00687",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00687.jpg",
+    "ir_image": "images/ir/val/00687.jpg",
+    "label_obb": "labels/obb/val/00687.txt",
+    "label_rgb_compat": "labels/rgb/val/00687.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00687.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00687.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00687.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00687.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 51,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00708",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00708.jpg",
+    "ir_image": "images/ir/val/00708.jpg",
+    "label_obb": "labels/obb/val/00708.txt",
+    "label_rgb_compat": "labels/rgb/val/00708.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00708.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00708.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00708.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00708.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 14,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00746",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00746.jpg",
+    "ir_image": "images/ir/val/00746.jpg",
+    "label_obb": "labels/obb/val/00746.txt",
+    "label_rgb_compat": "labels/rgb/val/00746.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00746.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00746.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00746.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00746.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 12,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00777",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00777.jpg",
+    "ir_image": "images/ir/val/00777.jpg",
+    "label_obb": "labels/obb/val/00777.txt",
+    "label_rgb_compat": "labels/rgb/val/00777.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00777.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00777.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00777.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00777.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00789",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00789.jpg",
+    "ir_image": "images/ir/val/00789.jpg",
+    "label_obb": "labels/obb/val/00789.txt",
+    "label_rgb_compat": "labels/rgb/val/00789.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00789.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00789.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00789.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00789.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 15,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00825",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00825.jpg",
+    "ir_image": "images/ir/val/00825.jpg",
+    "label_obb": "labels/obb/val/00825.txt",
+    "label_rgb_compat": "labels/rgb/val/00825.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00825.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00825.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00825.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00825.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 24,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00832",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00832.jpg",
+    "ir_image": "images/ir/val/00832.jpg",
+    "label_obb": "labels/obb/val/00832.txt",
+    "label_rgb_compat": "labels/rgb/val/00832.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00832.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00832.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00832.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00832.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00837",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00837.jpg",
+    "ir_image": "images/ir/val/00837.jpg",
+    "label_obb": "labels/obb/val/00837.txt",
+    "label_rgb_compat": "labels/rgb/val/00837.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00837.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00837.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00837.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00837.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 3,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00849",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00849.jpg",
+    "ir_image": "images/ir/val/00849.jpg",
+    "label_obb": "labels/obb/val/00849.txt",
+    "label_rgb_compat": "labels/rgb/val/00849.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00849.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00849.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00849.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00849.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 76,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00862",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00862.jpg",
+    "ir_image": "images/ir/val/00862.jpg",
+    "label_obb": "labels/obb/val/00862.txt",
+    "label_rgb_compat": "labels/rgb/val/00862.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00862.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00862.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00862.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00862.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00881",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00881.jpg",
+    "ir_image": "images/ir/val/00881.jpg",
+    "label_obb": "labels/obb/val/00881.txt",
+    "label_rgb_compat": "labels/rgb/val/00881.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00881.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00881.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00881.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00881.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 23,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00884",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00884.jpg",
+    "ir_image": "images/ir/val/00884.jpg",
+    "label_obb": "labels/obb/val/00884.txt",
+    "label_rgb_compat": "labels/rgb/val/00884.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00884.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00884.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00884.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00884.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 16,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00890",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00890.jpg",
+    "ir_image": "images/ir/val/00890.jpg",
+    "label_obb": "labels/obb/val/00890.txt",
+    "label_rgb_compat": "labels/rgb/val/00890.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00890.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00890.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00890.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00890.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 11,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00894",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00894.jpg",
+    "ir_image": "images/ir/val/00894.jpg",
+    "label_obb": "labels/obb/val/00894.txt",
+    "label_rgb_compat": "labels/rgb/val/00894.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00894.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00894.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00894.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00894.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 21,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00905",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00905.jpg",
+    "ir_image": "images/ir/val/00905.jpg",
+    "label_obb": "labels/obb/val/00905.txt",
+    "label_rgb_compat": "labels/rgb/val/00905.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00905.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00905.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00905.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00905.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 16,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00906",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00906.jpg",
+    "ir_image": "images/ir/val/00906.jpg",
+    "label_obb": "labels/obb/val/00906.txt",
+    "label_rgb_compat": "labels/rgb/val/00906.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00906.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00906.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00906.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00906.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 18,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00933",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00933.jpg",
+    "ir_image": "images/ir/val/00933.jpg",
+    "label_obb": "labels/obb/val/00933.txt",
+    "label_rgb_compat": "labels/rgb/val/00933.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00933.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00933.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00933.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00933.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 2,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00953",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00953.jpg",
+    "ir_image": "images/ir/val/00953.jpg",
+    "label_obb": "labels/obb/val/00953.txt",
+    "label_rgb_compat": "labels/rgb/val/00953.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00953.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00953.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00953.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00953.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 22,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00970",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00970.jpg",
+    "ir_image": "images/ir/val/00970.jpg",
+    "label_obb": "labels/obb/val/00970.txt",
+    "label_rgb_compat": "labels/rgb/val/00970.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00970.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00970.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00970.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00970.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 17,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00974",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00974.jpg",
+    "ir_image": "images/ir/val/00974.jpg",
+    "label_obb": "labels/obb/val/00974.txt",
+    "label_rgb_compat": "labels/rgb/val/00974.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\00974.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\00974.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00974.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\00974.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 57,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01039",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01039.jpg",
+    "ir_image": "images/ir/val/01039.jpg",
+    "label_obb": "labels/obb/val/01039.txt",
+    "label_rgb_compat": "labels/rgb/val/01039.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01039.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01039.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01039.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01039.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 19,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01047",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01047.jpg",
+    "ir_image": "images/ir/val/01047.jpg",
+    "label_obb": "labels/obb/val/01047.txt",
+    "label_rgb_compat": "labels/rgb/val/01047.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01047.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01047.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01047.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01047.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 16,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01048",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01048.jpg",
+    "ir_image": "images/ir/val/01048.jpg",
+    "label_obb": "labels/obb/val/01048.txt",
+    "label_rgb_compat": "labels/rgb/val/01048.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01048.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01048.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01048.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01048.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 48,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01056",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01056.jpg",
+    "ir_image": "images/ir/val/01056.jpg",
+    "label_obb": "labels/obb/val/01056.txt",
+    "label_rgb_compat": "labels/rgb/val/01056.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01056.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01056.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01056.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01056.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 50,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01065",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01065.jpg",
+    "ir_image": "images/ir/val/01065.jpg",
+    "label_obb": "labels/obb/val/01065.txt",
+    "label_rgb_compat": "labels/rgb/val/01065.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01065.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01065.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01065.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01065.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 22,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01103",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01103.jpg",
+    "ir_image": "images/ir/val/01103.jpg",
+    "label_obb": "labels/obb/val/01103.txt",
+    "label_rgb_compat": "labels/rgb/val/01103.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01103.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01103.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01103.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01103.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 1,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01123",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01123.jpg",
+    "ir_image": "images/ir/val/01123.jpg",
+    "label_obb": "labels/obb/val/01123.txt",
+    "label_rgb_compat": "labels/rgb/val/01123.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01123.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01123.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01123.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01123.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01136",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01136.jpg",
+    "ir_image": "images/ir/val/01136.jpg",
+    "label_obb": "labels/obb/val/01136.txt",
+    "label_rgb_compat": "labels/rgb/val/01136.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01136.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01136.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01136.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01136.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 9,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01166",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01166.jpg",
+    "ir_image": "images/ir/val/01166.jpg",
+    "label_obb": "labels/obb/val/01166.txt",
+    "label_rgb_compat": "labels/rgb/val/01166.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01166.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01166.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01166.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01166.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 20,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01179",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01179.jpg",
+    "ir_image": "images/ir/val/01179.jpg",
+    "label_obb": "labels/obb/val/01179.txt",
+    "label_rgb_compat": "labels/rgb/val/01179.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01179.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01179.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01179.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01179.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 23,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01181",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01181.jpg",
+    "ir_image": "images/ir/val/01181.jpg",
+    "label_obb": "labels/obb/val/01181.txt",
+    "label_rgb_compat": "labels/rgb/val/01181.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01181.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01181.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01181.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01181.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 28,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01188",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01188.jpg",
+    "ir_image": "images/ir/val/01188.jpg",
+    "label_obb": "labels/obb/val/01188.txt",
+    "label_rgb_compat": "labels/rgb/val/01188.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01188.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01188.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01188.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01188.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 18,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01190",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01190.jpg",
+    "ir_image": "images/ir/val/01190.jpg",
+    "label_obb": "labels/obb/val/01190.txt",
+    "label_rgb_compat": "labels/rgb/val/01190.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01190.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01190.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01190.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01190.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 11,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01222",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01222.jpg",
+    "ir_image": "images/ir/val/01222.jpg",
+    "label_obb": "labels/obb/val/01222.txt",
+    "label_rgb_compat": "labels/rgb/val/01222.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01222.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01222.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01222.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01222.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 41,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01242",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01242.jpg",
+    "ir_image": "images/ir/val/01242.jpg",
+    "label_obb": "labels/obb/val/01242.txt",
+    "label_rgb_compat": "labels/rgb/val/01242.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01242.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01242.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01242.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01242.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 6,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01243",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01243.jpg",
+    "ir_image": "images/ir/val/01243.jpg",
+    "label_obb": "labels/obb/val/01243.txt",
+    "label_rgb_compat": "labels/rgb/val/01243.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01243.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01243.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01243.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01243.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 46,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01252",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01252.jpg",
+    "ir_image": "images/ir/val/01252.jpg",
+    "label_obb": "labels/obb/val/01252.txt",
+    "label_rgb_compat": "labels/rgb/val/01252.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01252.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01252.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01252.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01252.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 38,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01261",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01261.jpg",
+    "ir_image": "images/ir/val/01261.jpg",
+    "label_obb": "labels/obb/val/01261.txt",
+    "label_rgb_compat": "labels/rgb/val/01261.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01261.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01261.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01261.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01261.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 19,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01269",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01269.jpg",
+    "ir_image": "images/ir/val/01269.jpg",
+    "label_obb": "labels/obb/val/01269.txt",
+    "label_rgb_compat": "labels/rgb/val/01269.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01269.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01269.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01269.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01269.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 12,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01277",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01277.jpg",
+    "ir_image": "images/ir/val/01277.jpg",
+    "label_obb": "labels/obb/val/01277.txt",
+    "label_rgb_compat": "labels/rgb/val/01277.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01277.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01277.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01277.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01277.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 5,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01290",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01290.jpg",
+    "ir_image": "images/ir/val/01290.jpg",
+    "label_obb": "labels/obb/val/01290.txt",
+    "label_rgb_compat": "labels/rgb/val/01290.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01290.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01290.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01290.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01290.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 40,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01297",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01297.jpg",
+    "ir_image": "images/ir/val/01297.jpg",
+    "label_obb": "labels/obb/val/01297.txt",
+    "label_rgb_compat": "labels/rgb/val/01297.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01297.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01297.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01297.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01297.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 23,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01341",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01341.jpg",
+    "ir_image": "images/ir/val/01341.jpg",
+    "label_obb": "labels/obb/val/01341.txt",
+    "label_rgb_compat": "labels/rgb/val/01341.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01341.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01341.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01341.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01341.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 23,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01350",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01350.jpg",
+    "ir_image": "images/ir/val/01350.jpg",
+    "label_obb": "labels/obb/val/01350.txt",
+    "label_rgb_compat": "labels/rgb/val/01350.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01350.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01350.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01350.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01350.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 18,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01359",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01359.jpg",
+    "ir_image": "images/ir/val/01359.jpg",
+    "label_obb": "labels/obb/val/01359.txt",
+    "label_rgb_compat": "labels/rgb/val/01359.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01359.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01359.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01359.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01359.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 39,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01360",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01360.jpg",
+    "ir_image": "images/ir/val/01360.jpg",
+    "label_obb": "labels/obb/val/01360.txt",
+    "label_rgb_compat": "labels/rgb/val/01360.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01360.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01360.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01360.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01360.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 24,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01361",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01361.jpg",
+    "ir_image": "images/ir/val/01361.jpg",
+    "label_obb": "labels/obb/val/01361.txt",
+    "label_rgb_compat": "labels/rgb/val/01361.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01361.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01361.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01361.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01361.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 15,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01362",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01362.jpg",
+    "ir_image": "images/ir/val/01362.jpg",
+    "label_obb": "labels/obb/val/01362.txt",
+    "label_rgb_compat": "labels/rgb/val/01362.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01362.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01362.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01362.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01362.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 34,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01366",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01366.jpg",
+    "ir_image": "images/ir/val/01366.jpg",
+    "label_obb": "labels/obb/val/01366.txt",
+    "label_rgb_compat": "labels/rgb/val/01366.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01366.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01366.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01366.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01366.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 22,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01374",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01374.jpg",
+    "ir_image": "images/ir/val/01374.jpg",
+    "label_obb": "labels/obb/val/01374.txt",
+    "label_rgb_compat": "labels/rgb/val/01374.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01374.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01374.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01374.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01374.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 43,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01378",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01378.jpg",
+    "ir_image": "images/ir/val/01378.jpg",
+    "label_obb": "labels/obb/val/01378.txt",
+    "label_rgb_compat": "labels/rgb/val/01378.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01378.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01378.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01378.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01378.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 9,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01384",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01384.jpg",
+    "ir_image": "images/ir/val/01384.jpg",
+    "label_obb": "labels/obb/val/01384.txt",
+    "label_rgb_compat": "labels/rgb/val/01384.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01384.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01384.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01384.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01384.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 135,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01388",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01388.jpg",
+    "ir_image": "images/ir/val/01388.jpg",
+    "label_obb": "labels/obb/val/01388.txt",
+    "label_rgb_compat": "labels/rgb/val/01388.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01388.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01388.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01388.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01388.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 32,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01407",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01407.jpg",
+    "ir_image": "images/ir/val/01407.jpg",
+    "label_obb": "labels/obb/val/01407.txt",
+    "label_rgb_compat": "labels/rgb/val/01407.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01407.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01407.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01407.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01407.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01428",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01428.jpg",
+    "ir_image": "images/ir/val/01428.jpg",
+    "label_obb": "labels/obb/val/01428.txt",
+    "label_rgb_compat": "labels/rgb/val/01428.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01428.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01428.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01428.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01428.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 27,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "01452",
+    "split": "val",
+    "rgb_image": "images/rgb/val/01452.jpg",
+    "ir_image": "images/ir/val/01452.jpg",
+    "label_obb": "labels/obb/val/01452.txt",
+    "label_rgb_compat": "labels/rgb/val/01452.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\img\\01452.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\images\\imgr\\01452.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01452.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw\\val\\labels\\merged\\01452.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 9,
+    "fusion_strategy": "shared_label"
+  }
+]

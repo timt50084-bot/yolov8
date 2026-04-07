@@ -1,0 +1,75 @@
+{
+  "summary": {
+    "dataset_root": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared",
+    "splits": {
+      "train": {
+        "samples": 384,
+        "empty_labels": 5,
+        "dataset_scan_ok": 1
+      },
+      "val": {
+        "samples": 96,
+        "empty_labels": 1,
+        "dataset_scan_ok": 1
+      }
+    },
+    "class_names": [
+      "car",
+      "truck",
+      "bus",
+      "van",
+      "Freight Car"
+    ],
+    "issue_counts": {
+      "empty_label": 6
+    },
+    "issue_total": 6,
+    "data_yaml": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared\\data\\uav_rgb_obb.yaml",
+    "pair_index_counts": {
+      "train": 384,
+      "val": 96
+    },
+    "temporal_index_counts": {
+      "train": 384,
+      "val": 96
+    }
+  },
+  "issues": [
+    {
+      "split": "train",
+      "id": "01776",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    },
+    {
+      "split": "train",
+      "id": "04533",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    },
+    {
+      "split": "train",
+      "id": "04573",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    },
+    {
+      "split": "train",
+      "id": "06941",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    },
+    {
+      "split": "train",
+      "id": "10102",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    },
+    {
+      "split": "val",
+      "id": "00408",
+      "type": "empty_label",
+      "detail": "Label file is empty."
+    }
+  ]
+}

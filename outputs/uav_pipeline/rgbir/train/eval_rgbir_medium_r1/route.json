@@ -1,0 +1,56 @@
+{
+  "subtask": "train",
+  "mode": "rgbir",
+  "mode_spec": {
+    "name": "rgbir",
+    "description": "Stage 3 training-time RGB-IR assist with RGB-only validation and deployment.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_obb.py",
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\train",
+  "run_name": "eval_rgbir_medium_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\train\\eval_rgbir_medium_r1",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_obb.py",
+      "--data",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared\\data\\uav_rgb_obb.yaml",
+      "--model",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-obb.yaml",
+      "--epochs",
+      "3",
+      "--batch",
+      "4",
+      "--imgsz",
+      "512",
+      "--device",
+      "0",
+      "--workers",
+      "0",
+      "--project",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\train",
+      "--name",
+      "eval_rgbir_medium_r1",
+      "--close-mosaic",
+      "0",
+      "--pretrained",
+      "D:\\project\\ultralytics-main\\yolov8n.pt",
+      "--val",
+      "--use-rgbir-train-assist"
+    ],
+    "resolved_features": {
+      "use_rgbir": true,
+      "use_small": false,
+      "use_temporal": false
+    }
+  }
+}

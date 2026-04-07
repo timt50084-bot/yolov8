@@ -1,0 +1,44 @@
+{
+  "input_root": "D:\\project\\ultralytics-main\\outputs\\audit_medium_subset_raw",
+  "output_root": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared",
+  "split_mode": "auto",
+  "data_yaml": "data/uav_rgb_obb.yaml",
+  "splits": {
+    "train": {
+      "discovered_pairs": 384,
+      "fusion_matched": 0,
+      "fusion_rgb_only": 6942,
+      "fusion_ir_only": 0,
+      "fusion_class_conflict": 0,
+      "processed_pairs": 384,
+      "processed_objects": 6942,
+      "empty_labels": 5
+    },
+    "val": {
+      "discovered_pairs": 96,
+      "fusion_matched": 0,
+      "fusion_rgb_only": 1753,
+      "fusion_ir_only": 0,
+      "fusion_class_conflict": 0,
+      "processed_pairs": 96,
+      "processed_objects": 1753,
+      "empty_labels": 1
+    }
+  },
+  "class_names": [
+    "car",
+    "truck",
+    "bus",
+    "van",
+    "Freight Car"
+  ],
+  "anomaly_counts": {
+    "rgb_crop_event": 11,
+    "ir_crop_event": 11
+  },
+  "anomaly_total": 22,
+  "reports": {
+    "class_mapping": "reports/class_mapping.json",
+    "anomalies": "reports/anomalies.json"
+  }
+}

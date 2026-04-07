@@ -1,0 +1,39 @@
+{
+  "subtask": "train",
+  "mode": "baseline",
+  "mode_spec": {
+    "name": "baseline",
+    "description": "Native Ultralytics OBB path with no RGB-IR, small-object, temporal, or custom tracking additions.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-obb.yaml",
+    "train_script": null,
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": false,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\bytetrack.yaml"
+  },
+  "route_type": "ultralytics_api",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train",
+  "run_name": "stage7_baseline_train_smoke",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train\\stage7_baseline_train_smoke",
+  "payload": {
+    "action": "train",
+    "model_source": "D:\\project\\ultralytics-main\\runs\\stage0_smoke\\baseline_obb_train_poly_smoke\\weights\\best.pt",
+    "kwargs": {
+      "data": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",
+      "epochs": 1,
+      "batch": 2,
+      "imgsz": 256,
+      "device": "cpu",
+      "workers": 0,
+      "project": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train",
+      "name": "stage7_baseline_train_smoke",
+      "exist_ok": false,
+      "close_mosaic": 10,
+      "plots": false,
+      "val": true
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "subtask": "track",
+  "mode": "rgbir-temporal-track",
+  "mode_spec": {
+    "name": "rgbir-temporal-track",
+    "description": "Stage 6 pipeline mode: Stage 5 detector route plus explicit UAV OBB tracking-by-detection.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_temporal_obb.py",
+    "supports_temporal_predict": true,
+    "supports_stage6_track": true,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": true,
+    "use_tracking": true,
+    "default_tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml"
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track",
+  "run_name": "eval_track_temporal_on_512_medium_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\eval_track_temporal_on_512_medium_r1",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\track_uav_obb.py",
+      "--source",
+      "D:\\DataSet\\DroneVehicle_Processed\\val\\images\\img",
+      "--model",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+      "--tracker",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+      "--imgsz",
+      "512",
+      "--device",
+      "0",
+      "--conf",
+      "0.1",
+      "--iou",
+      "0.45",
+      "--max-det",
+      "100",
+      "--save-json",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\eval_track_temporal_on_512_medium_r1\\tracks.json",
+      "--weights",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\eval_rgbir_temporal_medium_r12\\weights\\best.pt",
+      "--max-frames",
+      "20",
+      "--use-temporal-detector"
+    ],
+    "save_json": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\eval_track_temporal_on_512_medium_r1\\tracks.json",
+    "resolved_features": {
+      "use_temporal_detector": true
+    }
+  }
+}

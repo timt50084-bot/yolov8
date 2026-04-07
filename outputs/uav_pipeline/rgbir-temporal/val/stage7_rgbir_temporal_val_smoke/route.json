@@ -1,0 +1,39 @@
+{
+  "subtask": "val",
+  "mode": "rgbir-temporal",
+  "mode_spec": {
+    "name": "rgbir-temporal",
+    "description": "Stage 5 RGB-IR path with explicit lightweight two-frame temporal detection enabled.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_temporal_obb.py",
+    "supports_temporal_predict": true,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": true,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "ultralytics_api",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\val",
+  "run_name": "stage7_rgbir_temporal_val_smoke",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\val\\stage7_rgbir_temporal_val_smoke",
+  "payload": {
+    "action": "val",
+    "model_source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\stage7_rgbir_temporal_train_smoke2\\weights\\best.pt",
+    "kwargs": {
+      "data": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",
+      "batch": 2,
+      "imgsz": 256,
+      "device": "cpu",
+      "workers": 0,
+      "conf": 0.001,
+      "iou": 0.6,
+      "max_det": 300,
+      "plots": false,
+      "project": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\val",
+      "name": "stage7_rgbir_temporal_val_smoke",
+      "exist_ok": true
+    }
+  }
+}

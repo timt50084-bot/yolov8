@@ -1,0 +1,59 @@
+# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
+
+# Stage 3 RGB-IR train-assist OBB configuration.
+# The graph remains the native RGB OBB graph; RGB-IR cooperation is injected only by the explicit Stage 3 model class.
+# Deployment and inference stay RGB-only.
+
+# Parameters
+nc: 80 # number of classes
+use_rgbir_train_assist: true # explicit Stage 3 train-time RGB-IR cooperation gate
+use_temporal: false # reserved for future temporal stages
+temporal_mode: "off" # reserved values: off|neighbor|memory
+fusion_type: "gated_add" # supported: gated_add|weighted_sum|align_only|none
+ir_branch_width: 0.25 # lightweight IR adapter width multiplier
+ir_feature_stages: [6, 9] # RGB layer indices that receive train-time IR assistance
+rgbir_aux_loss_weight: 0.05 # small auxiliary alignment loss weight
+rgbir_residual_scale: 0.10 # conservative residual fusion scale
+small_object_mode: "off" # reserved values: off|p2|refine|task_specific
+ir_train_only: true # hard constraint: IR support must stay train-only
+train_assist_eval_bypass: true # val/predict/export stay RGB-only
+scales:
+  # [depth, width, max_channels]
+  n: [0.33, 0.25, 1024]
+  s: [0.33, 0.50, 1024]
+  m: [0.67, 0.75, 768]
+  l: [1.00, 1.00, 512]
+  x: [1.00, 1.25, 512]
+
+# Backbone stays identical to the native OBB baseline. Stage 3 does not alter the deployable RGB graph.
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [-1, 3, C2f, [128, true]]
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [-1, 6, C2f, [256, true]]
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [-1, 6, C2f, [512, true]]
+  - [-1, 1, Conv, [1024, 3, 2]]
+  - [-1, 3, C2f, [1024, true]]
+  - [-1, 1, SPPF, [1024, 5]]
+
+# Head stays identical to the native OBB baseline.
+head:
+  - [-1, 1, nn.Upsample, [null, 2, "nearest"]]
+  - [[-1, 6], 1, Concat, [1]]
+  - [-1, 3, C2f, [512]]
+
+  - [-1, 1, nn.Upsample, [null, 2, "nearest"]]
+  - [[-1, 4], 1, Concat, [1]]
+  - [-1, 3, C2f, [256]]
+
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 12], 1, Concat, [1]]
+  - [-1, 3, C2f, [512]]
+
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 9], 1, Concat, [1]]
+  - [-1, 3, C2f, [1024]]
+
+  - [[15, 18, 21], 1, OBB, [nc, 1]]

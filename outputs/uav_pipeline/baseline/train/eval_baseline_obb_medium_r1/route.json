@@ -1,0 +1,40 @@
+{
+  "subtask": "train",
+  "mode": "baseline",
+  "mode_spec": {
+    "name": "baseline",
+    "description": "Native Ultralytics OBB path with no RGB-IR, small-object, temporal, or custom tracking additions.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-obb.yaml",
+    "train_script": null,
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": false,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\bytetrack.yaml"
+  },
+  "route_type": "ultralytics_api",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train",
+  "run_name": "eval_baseline_obb_medium_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train\\eval_baseline_obb_medium_r1",
+  "payload": {
+    "action": "train",
+    "model_source": "D:\\project\\ultralytics-main\\yolov8n.pt",
+    "kwargs": {
+      "data": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared\\data\\uav_rgb_obb.yaml",
+      "epochs": 3,
+      "batch": 4,
+      "imgsz": 512,
+      "device": "0",
+      "workers": 0,
+      "project": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\baseline\\train",
+      "name": "eval_baseline_obb_medium_r1",
+      "exist_ok": true,
+      "close_mosaic": 0,
+      "plots": false,
+      "val": true,
+      "pretrained": "D:\\project\\ultralytics-main\\yolov8n.pt"
+    }
+  }
+}

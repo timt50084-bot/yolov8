@@ -1,0 +1,134 @@
+[
+  {
+    "split": "train",
+    "id": "05094",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "05094",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "05411",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "05411",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "06914",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "06914",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "10102",
+    "type": "rgb_crop_event",
+    "detail": "dropped:Freight Car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "10102",
+    "type": "ir_crop_event",
+    "detail": "dropped:Freight Car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "12237",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "12237",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17503",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17503",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "rgb_crop_event",
+    "detail": "dropped:car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "train",
+    "id": "17571",
+    "type": "ir_crop_event",
+    "detail": "dropped:car:ir:degenerate_after_crop"
+  },
+  {
+    "split": "val",
+    "id": "01190",
+    "type": "rgb_crop_event",
+    "detail": "dropped:truck:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "val",
+    "id": "01190",
+    "type": "ir_crop_event",
+    "detail": "dropped:truck:ir:degenerate_after_crop"
+  },
+  {
+    "split": "val",
+    "id": "01222",
+    "type": "rgb_crop_event",
+    "detail": "dropped:Freight Car:rgb:degenerate_after_crop"
+  },
+  {
+    "split": "val",
+    "id": "01222",
+    "type": "ir_crop_event",
+    "detail": "dropped:Freight Car:ir:degenerate_after_crop"
+  }
+]

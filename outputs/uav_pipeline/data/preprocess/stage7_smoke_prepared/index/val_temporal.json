@@ -1,0 +1,42 @@
+[
+  {
+    "id": "00001",
+    "split": "val",
+    "current_pair": "00001",
+    "previous_pair": null,
+    "rgb_image": "images/rgb/val/00001.jpg",
+    "ir_image": "images/ir/val/00001.jpg",
+    "label_rgb_compat": "labels/rgb/val/00001.txt",
+    "label_obb": "labels/obb/val/00001.txt"
+  },
+  {
+    "id": "00002",
+    "split": "val",
+    "current_pair": "00002",
+    "previous_pair": "00001",
+    "rgb_image": "images/rgb/val/00002.jpg",
+    "ir_image": "images/ir/val/00002.jpg",
+    "label_rgb_compat": "labels/rgb/val/00002.txt",
+    "label_obb": "labels/obb/val/00002.txt"
+  },
+  {
+    "id": "00003",
+    "split": "val",
+    "current_pair": "00003",
+    "previous_pair": "00002",
+    "rgb_image": "images/rgb/val/00003.jpg",
+    "ir_image": "images/ir/val/00003.jpg",
+    "label_rgb_compat": "labels/rgb/val/00003.txt",
+    "label_obb": "labels/obb/val/00003.txt"
+  },
+  {
+    "id": "00004",
+    "split": "val",
+    "current_pair": "00004",
+    "previous_pair": "00003",
+    "rgb_image": "images/rgb/val/00004.jpg",
+    "ir_image": "images/ir/val/00004.jpg",
+    "label_rgb_compat": "labels/rgb/val/00004.txt",
+    "label_obb": "labels/obb/val/00004.txt"
+  }
+]

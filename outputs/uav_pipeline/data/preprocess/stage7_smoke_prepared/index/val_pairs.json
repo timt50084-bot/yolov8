@@ -1,0 +1,114 @@
+[
+  {
+    "id": "00001",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00001.jpg",
+    "ir_image": "images/ir/val/00001.jpg",
+    "label_obb": "labels/obb/val/00001.txt",
+    "label_rgb_compat": "labels/rgb/val/00001.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\img\\00001.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\imgr\\00001.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00001.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00001.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 39,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00002",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00002.jpg",
+    "ir_image": "images/ir/val/00002.jpg",
+    "label_obb": "labels/obb/val/00002.txt",
+    "label_rgb_compat": "labels/rgb/val/00002.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\img\\00002.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\imgr\\00002.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00002.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00002.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 28,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00003",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00003.jpg",
+    "ir_image": "images/ir/val/00003.jpg",
+    "label_obb": "labels/obb/val/00003.txt",
+    "label_rgb_compat": "labels/rgb/val/00003.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\img\\00003.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\imgr\\00003.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00003.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00003.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 23,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00004",
+    "split": "val",
+    "rgb_image": "images/rgb/val/00004.jpg",
+    "ir_image": "images/ir/val/00004.jpg",
+    "label_obb": "labels/obb/val/00004.txt",
+    "label_rgb_compat": "labels/rgb/val/00004.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\img\\00004.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\images\\imgr\\00004.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00004.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\val\\labels\\merged\\00004.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 17,
+    "fusion_strategy": "shared_label"
+  }
+]

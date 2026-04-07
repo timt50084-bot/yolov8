@@ -1,0 +1,34 @@
+{
+  "summary": {
+    "dataset_root": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared",
+    "splits": {
+      "train": {
+        "samples": 6,
+        "dataset_scan_ok": 1
+      },
+      "val": {
+        "samples": 4,
+        "dataset_scan_ok": 1
+      }
+    },
+    "class_names": [
+      "car",
+      "truck",
+      "bus",
+      "van",
+      "Freight Car"
+    ],
+    "issue_counts": {},
+    "issue_total": 0,
+    "data_yaml": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",
+    "pair_index_counts": {
+      "train": 6,
+      "val": 4
+    },
+    "temporal_index_counts": {
+      "train": 6,
+      "val": 4
+    }
+  },
+  "issues": []
+}

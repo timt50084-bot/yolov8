@@ -1,0 +1,149 @@
+{
+  "source": "D:\\DataSet\\DroneVehicle_Processed\\val\\images\\img",
+  "tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+  "model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+  "weights": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\eval_rgbir_temporal_medium_r12\\weights\\best.pt",
+  "use_temporal_detector": false,
+  "frames": [
+    {
+      "frame_id": 0,
+      "frame_name": "00001.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 1,
+      "frame_name": "00002.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 2,
+      "frame_name": "00003.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 3,
+      "frame_name": "00004.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 4,
+      "frame_name": "00005.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 5,
+      "frame_name": "00006.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 6,
+      "frame_name": "00007.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 7,
+      "frame_name": "00008.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 8,
+      "frame_name": "00009.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 9,
+      "frame_name": "00010.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 10,
+      "frame_name": "00011.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 11,
+      "frame_name": "00012.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 12,
+      "frame_name": "00013.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 13,
+      "frame_name": "00014.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 14,
+      "frame_name": "00015.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 15,
+      "frame_name": "00016.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 16,
+      "frame_name": "00017.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 17,
+      "frame_name": "00018.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 18,
+      "frame_name": "00019.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    },
+    {
+      "frame_id": 19,
+      "frame_name": "00020.jpg",
+      "num_detections": 0,
+      "num_tracks": 0,
+      "tracks": []
+    }
+  ]
+}

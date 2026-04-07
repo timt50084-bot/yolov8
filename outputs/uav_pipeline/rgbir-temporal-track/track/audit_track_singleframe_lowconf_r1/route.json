@@ -1,0 +1,56 @@
+{
+  "subtask": "track",
+  "mode": "rgbir-temporal-track",
+  "mode_spec": {
+    "name": "rgbir-temporal-track",
+    "description": "Stage 6 pipeline mode: Stage 5 detector route plus explicit UAV OBB tracking-by-detection.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_temporal_obb.py",
+    "supports_temporal_predict": true,
+    "supports_stage6_track": true,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": true,
+    "use_tracking": true,
+    "default_tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml"
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track",
+  "run_name": "audit_track_singleframe_lowconf_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\audit_track_singleframe_lowconf_r1",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\track_uav_obb.py",
+      "--source",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\train",
+      "--model",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+      "--tracker",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+      "--imgsz",
+      "256",
+      "--device",
+      "cuda:0",
+      "--conf",
+      "0.001",
+      "--iou",
+      "0.45",
+      "--max-det",
+      "100",
+      "--save-json",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\audit_track_singleframe_lowconf_r1\\tracks.json",
+      "--weights",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\audit_rgbir_temporal_train_r12\\weights\\best.pt",
+      "--data",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",
+      "--max-frames",
+      "4",
+      "--disable-temporal-detector"
+    ],
+    "save_json": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal-track\\track\\audit_track_singleframe_lowconf_r1\\tracks.json",
+    "resolved_features": {
+      "use_temporal_detector": false
+    }
+  }
+}

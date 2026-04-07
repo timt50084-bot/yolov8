@@ -1,0 +1,62 @@
+[
+  {
+    "id": "00001",
+    "split": "train",
+    "current_pair": "00001",
+    "previous_pair": null,
+    "rgb_image": "images/rgb/train/00001.jpg",
+    "ir_image": "images/ir/train/00001.jpg",
+    "label_rgb_compat": "labels/rgb/train/00001.txt",
+    "label_obb": "labels/obb/train/00001.txt"
+  },
+  {
+    "id": "00002",
+    "split": "train",
+    "current_pair": "00002",
+    "previous_pair": "00001",
+    "rgb_image": "images/rgb/train/00002.jpg",
+    "ir_image": "images/ir/train/00002.jpg",
+    "label_rgb_compat": "labels/rgb/train/00002.txt",
+    "label_obb": "labels/obb/train/00002.txt"
+  },
+  {
+    "id": "00003",
+    "split": "train",
+    "current_pair": "00003",
+    "previous_pair": "00002",
+    "rgb_image": "images/rgb/train/00003.jpg",
+    "ir_image": "images/ir/train/00003.jpg",
+    "label_rgb_compat": "labels/rgb/train/00003.txt",
+    "label_obb": "labels/obb/train/00003.txt"
+  },
+  {
+    "id": "00004",
+    "split": "train",
+    "current_pair": "00004",
+    "previous_pair": "00003",
+    "rgb_image": "images/rgb/train/00004.jpg",
+    "ir_image": "images/ir/train/00004.jpg",
+    "label_rgb_compat": "labels/rgb/train/00004.txt",
+    "label_obb": "labels/obb/train/00004.txt"
+  },
+  {
+    "id": "00005",
+    "split": "train",
+    "current_pair": "00005",
+    "previous_pair": "00004",
+    "rgb_image": "images/rgb/train/00005.jpg",
+    "ir_image": "images/ir/train/00005.jpg",
+    "label_rgb_compat": "labels/rgb/train/00005.txt",
+    "label_obb": "labels/obb/train/00005.txt"
+  },
+  {
+    "id": "00006",
+    "split": "train",
+    "current_pair": "00006",
+    "previous_pair": "00005",
+    "rgb_image": "images/rgb/train/00006.jpg",
+    "ir_image": "images/ir/train/00006.jpg",
+    "label_rgb_compat": "labels/rgb/train/00006.txt",
+    "label_obb": "labels/obb/train/00006.txt"
+  }
+]

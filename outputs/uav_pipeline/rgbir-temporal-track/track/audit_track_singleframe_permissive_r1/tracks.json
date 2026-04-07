@@ -1,0 +1,109 @@
+{
+  "source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\train",
+  "tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+  "model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+  "weights": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-temporal\\train\\audit_rgbir_temporal_train_r12\\weights\\best.pt",
+  "use_temporal_detector": false,
+  "frames": [
+    {
+      "frame_id": 0,
+      "frame_name": "00001.jpg",
+      "num_detections": 1,
+      "num_tracks": 1,
+      "tracks": [
+        {
+          "frame_id": 0,
+          "track_id": 1,
+          "class_id": 2,
+          "score": 0.0024981163442134857,
+          "obb": [
+            40.12454605102539,
+            57.59574890136719,
+            1200.1470947265625,
+            1199.930419921875,
+            0.6230025887489319
+          ],
+          "state": "tentative",
+          "age": 1,
+          "hits": 1,
+          "time_since_update": 0
+        }
+      ]
+    },
+    {
+      "frame_id": 1,
+      "frame_name": "00002.jpg",
+      "num_detections": 1,
+      "num_tracks": 1,
+      "tracks": [
+        {
+          "frame_id": 1,
+          "track_id": 1,
+          "class_id": 2,
+          "score": 0.0024981177411973476,
+          "obb": [
+            40.12455749511719,
+            57.5956916809082,
+            1200.14697265625,
+            1199.9302978515625,
+            0.6230025887489319
+          ],
+          "state": "tracked",
+          "age": 2,
+          "hits": 2,
+          "time_since_update": 0
+        }
+      ]
+    },
+    {
+      "frame_id": 2,
+      "frame_name": "00003.jpg",
+      "num_detections": 1,
+      "num_tracks": 1,
+      "tracks": [
+        {
+          "frame_id": 2,
+          "track_id": 1,
+          "class_id": 2,
+          "score": 0.0024981163442134857,
+          "obb": [
+            40.124507904052734,
+            57.595703125,
+            1200.14697265625,
+            1199.9302978515625,
+            0.6230025887489319
+          ],
+          "state": "tracked",
+          "age": 3,
+          "hits": 3,
+          "time_since_update": 0
+        }
+      ]
+    },
+    {
+      "frame_id": 3,
+      "frame_name": "00004.jpg",
+      "num_detections": 1,
+      "num_tracks": 1,
+      "tracks": [
+        {
+          "frame_id": 3,
+          "track_id": 1,
+          "class_id": 2,
+          "score": 0.0024981151800602674,
+          "obb": [
+            40.12455749511719,
+            57.5956916809082,
+            1200.14697265625,
+            1199.9302978515625,
+            0.6230025887489319
+          ],
+          "state": "tracked",
+          "age": 4,
+          "hits": 4,
+          "time_since_update": 0
+        }
+      ]
+    }
+  ]
+}

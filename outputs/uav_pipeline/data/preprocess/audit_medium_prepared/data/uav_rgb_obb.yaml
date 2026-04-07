@@ -1,0 +1,20 @@
+path: D:\project\ultralytics-main\outputs\uav_pipeline\data\preprocess\audit_medium_prepared
+train: images/rgb/train
+val: images/rgb/val
+names:
+- car
+- truck
+- bus
+- van
+- Freight Car
+nc: 5
+channels: 3
+ir_train: images/ir/train
+ir_val: images/ir/val
+labels_train_compat: labels/rgb/train
+labels_val_compat: labels/rgb/val
+labels_obb_canonical: labels/obb
+pair_index_train: index/train_pairs.json
+pair_index_val: index/val_pairs.json
+temporal_index_train: index/train_temporal.json
+temporal_index_val: index/val_temporal.json

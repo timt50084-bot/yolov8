@@ -1,0 +1,58 @@
+{
+  "subtask": "val",
+  "mode": "rgbir-small",
+  "mode_spec": {
+    "name": "rgbir-small",
+    "description": "Stage 4 RGB-IR path with explicit small-object sampling, loss weighting, and small metrics.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-obb-small.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_obb_small.py",
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": true,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-small\\val",
+  "run_name": "audit_rgbir_small_val_conf025_r1",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-small\\val\\audit_rgbir_small_val_conf025_r1",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\val_uav_rgbir_obb.py",
+      "--mode",
+      "rgbir-small",
+      "--data",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared\\data\\uav_rgb_obb.yaml",
+      "--weights",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-small\\train\\eval_rgbir_small_medium_r12\\weights\\best.pt",
+      "--model",
+      "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-obb-small.yaml",
+      "--batch",
+      "4",
+      "--imgsz",
+      "512",
+      "--device",
+      "0",
+      "--workers",
+      "0",
+      "--conf",
+      "0.25",
+      "--iou",
+      "0.6",
+      "--max-det",
+      "300",
+      "--project",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir-small\\val",
+      "--name",
+      "audit_rgbir_small_val_conf025_r1",
+      "--enable-small-object-metrics"
+    ],
+    "resolved_features": {
+      "use_small_metrics": true,
+      "use_temporal_val": false
+    }
+  }
+}

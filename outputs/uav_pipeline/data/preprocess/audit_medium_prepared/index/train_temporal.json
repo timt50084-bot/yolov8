@@ -1,0 +1,3842 @@
+[
+  {
+    "id": "00019",
+    "split": "train",
+    "current_pair": "00019",
+    "previous_pair": null,
+    "rgb_image": "images/rgb/train/00019.jpg",
+    "ir_image": "images/ir/train/00019.jpg",
+    "label_rgb_compat": "labels/rgb/train/00019.txt",
+    "label_obb": "labels/obb/train/00019.txt"
+  },
+  {
+    "id": "00071",
+    "split": "train",
+    "current_pair": "00071",
+    "previous_pair": "00019",
+    "rgb_image": "images/rgb/train/00071.jpg",
+    "ir_image": "images/ir/train/00071.jpg",
+    "label_rgb_compat": "labels/rgb/train/00071.txt",
+    "label_obb": "labels/obb/train/00071.txt"
+  },
+  {
+    "id": "00107",
+    "split": "train",
+    "current_pair": "00107",
+    "previous_pair": "00071",
+    "rgb_image": "images/rgb/train/00107.jpg",
+    "ir_image": "images/ir/train/00107.jpg",
+    "label_rgb_compat": "labels/rgb/train/00107.txt",
+    "label_obb": "labels/obb/train/00107.txt"
+  },
+  {
+    "id": "00117",
+    "split": "train",
+    "current_pair": "00117",
+    "previous_pair": "00107",
+    "rgb_image": "images/rgb/train/00117.jpg",
+    "ir_image": "images/ir/train/00117.jpg",
+    "label_rgb_compat": "labels/rgb/train/00117.txt",
+    "label_obb": "labels/obb/train/00117.txt"
+  },
+  {
+    "id": "00213",
+    "split": "train",
+    "current_pair": "00213",
+    "previous_pair": "00117",
+    "rgb_image": "images/rgb/train/00213.jpg",
+    "ir_image": "images/ir/train/00213.jpg",
+    "label_rgb_compat": "labels/rgb/train/00213.txt",
+    "label_obb": "labels/obb/train/00213.txt"
+  },
+  {
+    "id": "00236",
+    "split": "train",
+    "current_pair": "00236",
+    "previous_pair": "00213",
+    "rgb_image": "images/rgb/train/00236.jpg",
+    "ir_image": "images/ir/train/00236.jpg",
+    "label_rgb_compat": "labels/rgb/train/00236.txt",
+    "label_obb": "labels/obb/train/00236.txt"
+  },
+  {
+    "id": "00257",
+    "split": "train",
+    "current_pair": "00257",
+    "previous_pair": "00236",
+    "rgb_image": "images/rgb/train/00257.jpg",
+    "ir_image": "images/ir/train/00257.jpg",
+    "label_rgb_compat": "labels/rgb/train/00257.txt",
+    "label_obb": "labels/obb/train/00257.txt"
+  },
+  {
+    "id": "00306",
+    "split": "train",
+    "current_pair": "00306",
+    "previous_pair": "00257",
+    "rgb_image": "images/rgb/train/00306.jpg",
+    "ir_image": "images/ir/train/00306.jpg",
+    "label_rgb_compat": "labels/rgb/train/00306.txt",
+    "label_obb": "labels/obb/train/00306.txt"
+  },
+  {
+    "id": "00317",
+    "split": "train",
+    "current_pair": "00317",
+    "previous_pair": "00306",
+    "rgb_image": "images/rgb/train/00317.jpg",
+    "ir_image": "images/ir/train/00317.jpg",
+    "label_rgb_compat": "labels/rgb/train/00317.txt",
+    "label_obb": "labels/obb/train/00317.txt"
+  },
+  {
+    "id": "00377",
+    "split": "train",
+    "current_pair": "00377",
+    "previous_pair": "00317",
+    "rgb_image": "images/rgb/train/00377.jpg",
+    "ir_image": "images/ir/train/00377.jpg",
+    "label_rgb_compat": "labels/rgb/train/00377.txt",
+    "label_obb": "labels/obb/train/00377.txt"
+  },
+  {
+    "id": "00484",
+    "split": "train",
+    "current_pair": "00484",
+    "previous_pair": "00377",
+    "rgb_image": "images/rgb/train/00484.jpg",
+    "ir_image": "images/ir/train/00484.jpg",
+    "label_rgb_compat": "labels/rgb/train/00484.txt",
+    "label_obb": "labels/obb/train/00484.txt"
+  },
+  {
+    "id": "00639",
+    "split": "train",
+    "current_pair": "00639",
+    "previous_pair": "00484",
+    "rgb_image": "images/rgb/train/00639.jpg",
+    "ir_image": "images/ir/train/00639.jpg",
+    "label_rgb_compat": "labels/rgb/train/00639.txt",
+    "label_obb": "labels/obb/train/00639.txt"
+  },
+  {
+    "id": "00690",
+    "split": "train",
+    "current_pair": "00690",
+    "previous_pair": "00639",
+    "rgb_image": "images/rgb/train/00690.jpg",
+    "ir_image": "images/ir/train/00690.jpg",
+    "label_rgb_compat": "labels/rgb/train/00690.txt",
+    "label_obb": "labels/obb/train/00690.txt"
+  },
+  {
+    "id": "00776",
+    "split": "train",
+    "current_pair": "00776",
+    "previous_pair": "00690",
+    "rgb_image": "images/rgb/train/00776.jpg",
+    "ir_image": "images/ir/train/00776.jpg",
+    "label_rgb_compat": "labels/rgb/train/00776.txt",
+    "label_obb": "labels/obb/train/00776.txt"
+  },
+  {
+    "id": "00813",
+    "split": "train",
+    "current_pair": "00813",
+    "previous_pair": "00776",
+    "rgb_image": "images/rgb/train/00813.jpg",
+    "ir_image": "images/ir/train/00813.jpg",
+    "label_rgb_compat": "labels/rgb/train/00813.txt",
+    "label_obb": "labels/obb/train/00813.txt"
+  },
+  {
+    "id": "00820",
+    "split": "train",
+    "current_pair": "00820",
+    "previous_pair": "00813",
+    "rgb_image": "images/rgb/train/00820.jpg",
+    "ir_image": "images/ir/train/00820.jpg",
+    "label_rgb_compat": "labels/rgb/train/00820.txt",
+    "label_obb": "labels/obb/train/00820.txt"
+  },
+  {
+    "id": "00870",
+    "split": "train",
+    "current_pair": "00870",
+    "previous_pair": "00820",
+    "rgb_image": "images/rgb/train/00870.jpg",
+    "ir_image": "images/ir/train/00870.jpg",
+    "label_rgb_compat": "labels/rgb/train/00870.txt",
+    "label_obb": "labels/obb/train/00870.txt"
+  },
+  {
+    "id": "00905",
+    "split": "train",
+    "current_pair": "00905",
+    "previous_pair": "00870",
+    "rgb_image": "images/rgb/train/00905.jpg",
+    "ir_image": "images/ir/train/00905.jpg",
+    "label_rgb_compat": "labels/rgb/train/00905.txt",
+    "label_obb": "labels/obb/train/00905.txt"
+  },
+  {
+    "id": "00977",
+    "split": "train",
+    "current_pair": "00977",
+    "previous_pair": "00905",
+    "rgb_image": "images/rgb/train/00977.jpg",
+    "ir_image": "images/ir/train/00977.jpg",
+    "label_rgb_compat": "labels/rgb/train/00977.txt",
+    "label_obb": "labels/obb/train/00977.txt"
+  },
+  {
+    "id": "01030",
+    "split": "train",
+    "current_pair": "01030",
+    "previous_pair": "00977",
+    "rgb_image": "images/rgb/train/01030.jpg",
+    "ir_image": "images/ir/train/01030.jpg",
+    "label_rgb_compat": "labels/rgb/train/01030.txt",
+    "label_obb": "labels/obb/train/01030.txt"
+  },
+  {
+    "id": "01042",
+    "split": "train",
+    "current_pair": "01042",
+    "previous_pair": "01030",
+    "rgb_image": "images/rgb/train/01042.jpg",
+    "ir_image": "images/ir/train/01042.jpg",
+    "label_rgb_compat": "labels/rgb/train/01042.txt",
+    "label_obb": "labels/obb/train/01042.txt"
+  },
+  {
+    "id": "01052",
+    "split": "train",
+    "current_pair": "01052",
+    "previous_pair": "01042",
+    "rgb_image": "images/rgb/train/01052.jpg",
+    "ir_image": "images/ir/train/01052.jpg",
+    "label_rgb_compat": "labels/rgb/train/01052.txt",
+    "label_obb": "labels/obb/train/01052.txt"
+  },
+  {
+    "id": "01181",
+    "split": "train",
+    "current_pair": "01181",
+    "previous_pair": "01052",
+    "rgb_image": "images/rgb/train/01181.jpg",
+    "ir_image": "images/ir/train/01181.jpg",
+    "label_rgb_compat": "labels/rgb/train/01181.txt",
+    "label_obb": "labels/obb/train/01181.txt"
+  },
+  {
+    "id": "01269",
+    "split": "train",
+    "current_pair": "01269",
+    "previous_pair": "01181",
+    "rgb_image": "images/rgb/train/01269.jpg",
+    "ir_image": "images/ir/train/01269.jpg",
+    "label_rgb_compat": "labels/rgb/train/01269.txt",
+    "label_obb": "labels/obb/train/01269.txt"
+  },
+  {
+    "id": "01303",
+    "split": "train",
+    "current_pair": "01303",
+    "previous_pair": "01269",
+    "rgb_image": "images/rgb/train/01303.jpg",
+    "ir_image": "images/ir/train/01303.jpg",
+    "label_rgb_compat": "labels/rgb/train/01303.txt",
+    "label_obb": "labels/obb/train/01303.txt"
+  },
+  {
+    "id": "01308",
+    "split": "train",
+    "current_pair": "01308",
+    "previous_pair": "01303",
+    "rgb_image": "images/rgb/train/01308.jpg",
+    "ir_image": "images/ir/train/01308.jpg",
+    "label_rgb_compat": "labels/rgb/train/01308.txt",
+    "label_obb": "labels/obb/train/01308.txt"
+  },
+  {
+    "id": "01371",
+    "split": "train",
+    "current_pair": "01371",
+    "previous_pair": "01308",
+    "rgb_image": "images/rgb/train/01371.jpg",
+    "ir_image": "images/ir/train/01371.jpg",
+    "label_rgb_compat": "labels/rgb/train/01371.txt",
+    "label_obb": "labels/obb/train/01371.txt"
+  },
+  {
+    "id": "01424",
+    "split": "train",
+    "current_pair": "01424",
+    "previous_pair": "01371",
+    "rgb_image": "images/rgb/train/01424.jpg",
+    "ir_image": "images/ir/train/01424.jpg",
+    "label_rgb_compat": "labels/rgb/train/01424.txt",
+    "label_obb": "labels/obb/train/01424.txt"
+  },
+  {
+    "id": "01445",
+    "split": "train",
+    "current_pair": "01445",
+    "previous_pair": "01424",
+    "rgb_image": "images/rgb/train/01445.jpg",
+    "ir_image": "images/ir/train/01445.jpg",
+    "label_rgb_compat": "labels/rgb/train/01445.txt",
+    "label_obb": "labels/obb/train/01445.txt"
+  },
+  {
+    "id": "01502",
+    "split": "train",
+    "current_pair": "01502",
+    "previous_pair": "01445",
+    "rgb_image": "images/rgb/train/01502.jpg",
+    "ir_image": "images/ir/train/01502.jpg",
+    "label_rgb_compat": "labels/rgb/train/01502.txt",
+    "label_obb": "labels/obb/train/01502.txt"
+  },
+  {
+    "id": "01544",
+    "split": "train",
+    "current_pair": "01544",
+    "previous_pair": "01502",
+    "rgb_image": "images/rgb/train/01544.jpg",
+    "ir_image": "images/ir/train/01544.jpg",
+    "label_rgb_compat": "labels/rgb/train/01544.txt",
+    "label_obb": "labels/obb/train/01544.txt"
+  },
+  {
+    "id": "01644",
+    "split": "train",
+    "current_pair": "01644",
+    "previous_pair": "01544",
+    "rgb_image": "images/rgb/train/01644.jpg",
+    "ir_image": "images/ir/train/01644.jpg",
+    "label_rgb_compat": "labels/rgb/train/01644.txt",
+    "label_obb": "labels/obb/train/01644.txt"
+  },
+  {
+    "id": "01658",
+    "split": "train",
+    "current_pair": "01658",
+    "previous_pair": "01644",
+    "rgb_image": "images/rgb/train/01658.jpg",
+    "ir_image": "images/ir/train/01658.jpg",
+    "label_rgb_compat": "labels/rgb/train/01658.txt",
+    "label_obb": "labels/obb/train/01658.txt"
+  },
+  {
+    "id": "01665",
+    "split": "train",
+    "current_pair": "01665",
+    "previous_pair": "01658",
+    "rgb_image": "images/rgb/train/01665.jpg",
+    "ir_image": "images/ir/train/01665.jpg",
+    "label_rgb_compat": "labels/rgb/train/01665.txt",
+    "label_obb": "labels/obb/train/01665.txt"
+  },
+  {
+    "id": "01776",
+    "split": "train",
+    "current_pair": "01776",
+    "previous_pair": "01665",
+    "rgb_image": "images/rgb/train/01776.jpg",
+    "ir_image": "images/ir/train/01776.jpg",
+    "label_rgb_compat": "labels/rgb/train/01776.txt",
+    "label_obb": "labels/obb/train/01776.txt"
+  },
+  {
+    "id": "01833",
+    "split": "train",
+    "current_pair": "01833",
+    "previous_pair": "01776",
+    "rgb_image": "images/rgb/train/01833.jpg",
+    "ir_image": "images/ir/train/01833.jpg",
+    "label_rgb_compat": "labels/rgb/train/01833.txt",
+    "label_obb": "labels/obb/train/01833.txt"
+  },
+  {
+    "id": "01864",
+    "split": "train",
+    "current_pair": "01864",
+    "previous_pair": "01833",
+    "rgb_image": "images/rgb/train/01864.jpg",
+    "ir_image": "images/ir/train/01864.jpg",
+    "label_rgb_compat": "labels/rgb/train/01864.txt",
+    "label_obb": "labels/obb/train/01864.txt"
+  },
+  {
+    "id": "01874",
+    "split": "train",
+    "current_pair": "01874",
+    "previous_pair": "01864",
+    "rgb_image": "images/rgb/train/01874.jpg",
+    "ir_image": "images/ir/train/01874.jpg",
+    "label_rgb_compat": "labels/rgb/train/01874.txt",
+    "label_obb": "labels/obb/train/01874.txt"
+  },
+  {
+    "id": "01899",
+    "split": "train",
+    "current_pair": "01899",
+    "previous_pair": "01874",
+    "rgb_image": "images/rgb/train/01899.jpg",
+    "ir_image": "images/ir/train/01899.jpg",
+    "label_rgb_compat": "labels/rgb/train/01899.txt",
+    "label_obb": "labels/obb/train/01899.txt"
+  },
+  {
+    "id": "01917",
+    "split": "train",
+    "current_pair": "01917",
+    "previous_pair": "01899",
+    "rgb_image": "images/rgb/train/01917.jpg",
+    "ir_image": "images/ir/train/01917.jpg",
+    "label_rgb_compat": "labels/rgb/train/01917.txt",
+    "label_obb": "labels/obb/train/01917.txt"
+  },
+  {
+    "id": "01922",
+    "split": "train",
+    "current_pair": "01922",
+    "previous_pair": "01917",
+    "rgb_image": "images/rgb/train/01922.jpg",
+    "ir_image": "images/ir/train/01922.jpg",
+    "label_rgb_compat": "labels/rgb/train/01922.txt",
+    "label_obb": "labels/obb/train/01922.txt"
+  },
+  {
+    "id": "01930",
+    "split": "train",
+    "current_pair": "01930",
+    "previous_pair": "01922",
+    "rgb_image": "images/rgb/train/01930.jpg",
+    "ir_image": "images/ir/train/01930.jpg",
+    "label_rgb_compat": "labels/rgb/train/01930.txt",
+    "label_obb": "labels/obb/train/01930.txt"
+  },
+  {
+    "id": "01987",
+    "split": "train",
+    "current_pair": "01987",
+    "previous_pair": "01930",
+    "rgb_image": "images/rgb/train/01987.jpg",
+    "ir_image": "images/ir/train/01987.jpg",
+    "label_rgb_compat": "labels/rgb/train/01987.txt",
+    "label_obb": "labels/obb/train/01987.txt"
+  },
+  {
+    "id": "01998",
+    "split": "train",
+    "current_pair": "01998",
+    "previous_pair": "01987",
+    "rgb_image": "images/rgb/train/01998.jpg",
+    "ir_image": "images/ir/train/01998.jpg",
+    "label_rgb_compat": "labels/rgb/train/01998.txt",
+    "label_obb": "labels/obb/train/01998.txt"
+  },
+  {
+    "id": "02082",
+    "split": "train",
+    "current_pair": "02082",
+    "previous_pair": "01998",
+    "rgb_image": "images/rgb/train/02082.jpg",
+    "ir_image": "images/ir/train/02082.jpg",
+    "label_rgb_compat": "labels/rgb/train/02082.txt",
+    "label_obb": "labels/obb/train/02082.txt"
+  },
+  {
+    "id": "02099",
+    "split": "train",
+    "current_pair": "02099",
+    "previous_pair": "02082",
+    "rgb_image": "images/rgb/train/02099.jpg",
+    "ir_image": "images/ir/train/02099.jpg",
+    "label_rgb_compat": "labels/rgb/train/02099.txt",
+    "label_obb": "labels/obb/train/02099.txt"
+  },
+  {
+    "id": "02169",
+    "split": "train",
+    "current_pair": "02169",
+    "previous_pair": "02099",
+    "rgb_image": "images/rgb/train/02169.jpg",
+    "ir_image": "images/ir/train/02169.jpg",
+    "label_rgb_compat": "labels/rgb/train/02169.txt",
+    "label_obb": "labels/obb/train/02169.txt"
+  },
+  {
+    "id": "02209",
+    "split": "train",
+    "current_pair": "02209",
+    "previous_pair": "02169",
+    "rgb_image": "images/rgb/train/02209.jpg",
+    "ir_image": "images/ir/train/02209.jpg",
+    "label_rgb_compat": "labels/rgb/train/02209.txt",
+    "label_obb": "labels/obb/train/02209.txt"
+  },
+  {
+    "id": "02227",
+    "split": "train",
+    "current_pair": "02227",
+    "previous_pair": "02209",
+    "rgb_image": "images/rgb/train/02227.jpg",
+    "ir_image": "images/ir/train/02227.jpg",
+    "label_rgb_compat": "labels/rgb/train/02227.txt",
+    "label_obb": "labels/obb/train/02227.txt"
+  },
+  {
+    "id": "02246",
+    "split": "train",
+    "current_pair": "02246",
+    "previous_pair": "02227",
+    "rgb_image": "images/rgb/train/02246.jpg",
+    "ir_image": "images/ir/train/02246.jpg",
+    "label_rgb_compat": "labels/rgb/train/02246.txt",
+    "label_obb": "labels/obb/train/02246.txt"
+  },
+  {
+    "id": "02255",
+    "split": "train",
+    "current_pair": "02255",
+    "previous_pair": "02246",
+    "rgb_image": "images/rgb/train/02255.jpg",
+    "ir_image": "images/ir/train/02255.jpg",
+    "label_rgb_compat": "labels/rgb/train/02255.txt",
+    "label_obb": "labels/obb/train/02255.txt"
+  },
+  {
+    "id": "02268",
+    "split": "train",
+    "current_pair": "02268",
+    "previous_pair": "02255",
+    "rgb_image": "images/rgb/train/02268.jpg",
+    "ir_image": "images/ir/train/02268.jpg",
+    "label_rgb_compat": "labels/rgb/train/02268.txt",
+    "label_obb": "labels/obb/train/02268.txt"
+  },
+  {
+    "id": "02275",
+    "split": "train",
+    "current_pair": "02275",
+    "previous_pair": "02268",
+    "rgb_image": "images/rgb/train/02275.jpg",
+    "ir_image": "images/ir/train/02275.jpg",
+    "label_rgb_compat": "labels/rgb/train/02275.txt",
+    "label_obb": "labels/obb/train/02275.txt"
+  },
+  {
+    "id": "02280",
+    "split": "train",
+    "current_pair": "02280",
+    "previous_pair": "02275",
+    "rgb_image": "images/rgb/train/02280.jpg",
+    "ir_image": "images/ir/train/02280.jpg",
+    "label_rgb_compat": "labels/rgb/train/02280.txt",
+    "label_obb": "labels/obb/train/02280.txt"
+  },
+  {
+    "id": "02322",
+    "split": "train",
+    "current_pair": "02322",
+    "previous_pair": "02280",
+    "rgb_image": "images/rgb/train/02322.jpg",
+    "ir_image": "images/ir/train/02322.jpg",
+    "label_rgb_compat": "labels/rgb/train/02322.txt",
+    "label_obb": "labels/obb/train/02322.txt"
+  },
+  {
+    "id": "02327",
+    "split": "train",
+    "current_pair": "02327",
+    "previous_pair": "02322",
+    "rgb_image": "images/rgb/train/02327.jpg",
+    "ir_image": "images/ir/train/02327.jpg",
+    "label_rgb_compat": "labels/rgb/train/02327.txt",
+    "label_obb": "labels/obb/train/02327.txt"
+  },
+  {
+    "id": "02340",
+    "split": "train",
+    "current_pair": "02340",
+    "previous_pair": "02327",
+    "rgb_image": "images/rgb/train/02340.jpg",
+    "ir_image": "images/ir/train/02340.jpg",
+    "label_rgb_compat": "labels/rgb/train/02340.txt",
+    "label_obb": "labels/obb/train/02340.txt"
+  },
+  {
+    "id": "02378",
+    "split": "train",
+    "current_pair": "02378",
+    "previous_pair": "02340",
+    "rgb_image": "images/rgb/train/02378.jpg",
+    "ir_image": "images/ir/train/02378.jpg",
+    "label_rgb_compat": "labels/rgb/train/02378.txt",
+    "label_obb": "labels/obb/train/02378.txt"
+  },
+  {
+    "id": "02401",
+    "split": "train",
+    "current_pair": "02401",
+    "previous_pair": "02378",
+    "rgb_image": "images/rgb/train/02401.jpg",
+    "ir_image": "images/ir/train/02401.jpg",
+    "label_rgb_compat": "labels/rgb/train/02401.txt",
+    "label_obb": "labels/obb/train/02401.txt"
+  },
+  {
+    "id": "02466",
+    "split": "train",
+    "current_pair": "02466",
+    "previous_pair": "02401",
+    "rgb_image": "images/rgb/train/02466.jpg",
+    "ir_image": "images/ir/train/02466.jpg",
+    "label_rgb_compat": "labels/rgb/train/02466.txt",
+    "label_obb": "labels/obb/train/02466.txt"
+  },
+  {
+    "id": "02471",
+    "split": "train",
+    "current_pair": "02471",
+    "previous_pair": "02466",
+    "rgb_image": "images/rgb/train/02471.jpg",
+    "ir_image": "images/ir/train/02471.jpg",
+    "label_rgb_compat": "labels/rgb/train/02471.txt",
+    "label_obb": "labels/obb/train/02471.txt"
+  },
+  {
+    "id": "02581",
+    "split": "train",
+    "current_pair": "02581",
+    "previous_pair": "02471",
+    "rgb_image": "images/rgb/train/02581.jpg",
+    "ir_image": "images/ir/train/02581.jpg",
+    "label_rgb_compat": "labels/rgb/train/02581.txt",
+    "label_obb": "labels/obb/train/02581.txt"
+  },
+  {
+    "id": "02583",
+    "split": "train",
+    "current_pair": "02583",
+    "previous_pair": "02581",
+    "rgb_image": "images/rgb/train/02583.jpg",
+    "ir_image": "images/ir/train/02583.jpg",
+    "label_rgb_compat": "labels/rgb/train/02583.txt",
+    "label_obb": "labels/obb/train/02583.txt"
+  },
+  {
+    "id": "02615",
+    "split": "train",
+    "current_pair": "02615",
+    "previous_pair": "02583",
+    "rgb_image": "images/rgb/train/02615.jpg",
+    "ir_image": "images/ir/train/02615.jpg",
+    "label_rgb_compat": "labels/rgb/train/02615.txt",
+    "label_obb": "labels/obb/train/02615.txt"
+  },
+  {
+    "id": "02626",
+    "split": "train",
+    "current_pair": "02626",
+    "previous_pair": "02615",
+    "rgb_image": "images/rgb/train/02626.jpg",
+    "ir_image": "images/ir/train/02626.jpg",
+    "label_rgb_compat": "labels/rgb/train/02626.txt",
+    "label_obb": "labels/obb/train/02626.txt"
+  },
+  {
+    "id": "02687",
+    "split": "train",
+    "current_pair": "02687",
+    "previous_pair": "02626",
+    "rgb_image": "images/rgb/train/02687.jpg",
+    "ir_image": "images/ir/train/02687.jpg",
+    "label_rgb_compat": "labels/rgb/train/02687.txt",
+    "label_obb": "labels/obb/train/02687.txt"
+  },
+  {
+    "id": "02807",
+    "split": "train",
+    "current_pair": "02807",
+    "previous_pair": "02687",
+    "rgb_image": "images/rgb/train/02807.jpg",
+    "ir_image": "images/ir/train/02807.jpg",
+    "label_rgb_compat": "labels/rgb/train/02807.txt",
+    "label_obb": "labels/obb/train/02807.txt"
+  },
+  {
+    "id": "02849",
+    "split": "train",
+    "current_pair": "02849",
+    "previous_pair": "02807",
+    "rgb_image": "images/rgb/train/02849.jpg",
+    "ir_image": "images/ir/train/02849.jpg",
+    "label_rgb_compat": "labels/rgb/train/02849.txt",
+    "label_obb": "labels/obb/train/02849.txt"
+  },
+  {
+    "id": "02979",
+    "split": "train",
+    "current_pair": "02979",
+    "previous_pair": "02849",
+    "rgb_image": "images/rgb/train/02979.jpg",
+    "ir_image": "images/ir/train/02979.jpg",
+    "label_rgb_compat": "labels/rgb/train/02979.txt",
+    "label_obb": "labels/obb/train/02979.txt"
+  },
+  {
+    "id": "03025",
+    "split": "train",
+    "current_pair": "03025",
+    "previous_pair": "02979",
+    "rgb_image": "images/rgb/train/03025.jpg",
+    "ir_image": "images/ir/train/03025.jpg",
+    "label_rgb_compat": "labels/rgb/train/03025.txt",
+    "label_obb": "labels/obb/train/03025.txt"
+  },
+  {
+    "id": "03040",
+    "split": "train",
+    "current_pair": "03040",
+    "previous_pair": "03025",
+    "rgb_image": "images/rgb/train/03040.jpg",
+    "ir_image": "images/ir/train/03040.jpg",
+    "label_rgb_compat": "labels/rgb/train/03040.txt",
+    "label_obb": "labels/obb/train/03040.txt"
+  },
+  {
+    "id": "03057",
+    "split": "train",
+    "current_pair": "03057",
+    "previous_pair": "03040",
+    "rgb_image": "images/rgb/train/03057.jpg",
+    "ir_image": "images/ir/train/03057.jpg",
+    "label_rgb_compat": "labels/rgb/train/03057.txt",
+    "label_obb": "labels/obb/train/03057.txt"
+  },
+  {
+    "id": "03071",
+    "split": "train",
+    "current_pair": "03071",
+    "previous_pair": "03057",
+    "rgb_image": "images/rgb/train/03071.jpg",
+    "ir_image": "images/ir/train/03071.jpg",
+    "label_rgb_compat": "labels/rgb/train/03071.txt",
+    "label_obb": "labels/obb/train/03071.txt"
+  },
+  {
+    "id": "03091",
+    "split": "train",
+    "current_pair": "03091",
+    "previous_pair": "03071",
+    "rgb_image": "images/rgb/train/03091.jpg",
+    "ir_image": "images/ir/train/03091.jpg",
+    "label_rgb_compat": "labels/rgb/train/03091.txt",
+    "label_obb": "labels/obb/train/03091.txt"
+  },
+  {
+    "id": "03170",
+    "split": "train",
+    "current_pair": "03170",
+    "previous_pair": "03091",
+    "rgb_image": "images/rgb/train/03170.jpg",
+    "ir_image": "images/ir/train/03170.jpg",
+    "label_rgb_compat": "labels/rgb/train/03170.txt",
+    "label_obb": "labels/obb/train/03170.txt"
+  },
+  {
+    "id": "03177",
+    "split": "train",
+    "current_pair": "03177",
+    "previous_pair": "03170",
+    "rgb_image": "images/rgb/train/03177.jpg",
+    "ir_image": "images/ir/train/03177.jpg",
+    "label_rgb_compat": "labels/rgb/train/03177.txt",
+    "label_obb": "labels/obb/train/03177.txt"
+  },
+  {
+    "id": "03209",
+    "split": "train",
+    "current_pair": "03209",
+    "previous_pair": "03177",
+    "rgb_image": "images/rgb/train/03209.jpg",
+    "ir_image": "images/ir/train/03209.jpg",
+    "label_rgb_compat": "labels/rgb/train/03209.txt",
+    "label_obb": "labels/obb/train/03209.txt"
+  },
+  {
+    "id": "03225",
+    "split": "train",
+    "current_pair": "03225",
+    "previous_pair": "03209",
+    "rgb_image": "images/rgb/train/03225.jpg",
+    "ir_image": "images/ir/train/03225.jpg",
+    "label_rgb_compat": "labels/rgb/train/03225.txt",
+    "label_obb": "labels/obb/train/03225.txt"
+  },
+  {
+    "id": "03277",
+    "split": "train",
+    "current_pair": "03277",
+    "previous_pair": "03225",
+    "rgb_image": "images/rgb/train/03277.jpg",
+    "ir_image": "images/ir/train/03277.jpg",
+    "label_rgb_compat": "labels/rgb/train/03277.txt",
+    "label_obb": "labels/obb/train/03277.txt"
+  },
+  {
+    "id": "03310",
+    "split": "train",
+    "current_pair": "03310",
+    "previous_pair": "03277",
+    "rgb_image": "images/rgb/train/03310.jpg",
+    "ir_image": "images/ir/train/03310.jpg",
+    "label_rgb_compat": "labels/rgb/train/03310.txt",
+    "label_obb": "labels/obb/train/03310.txt"
+  },
+  {
+    "id": "03350",
+    "split": "train",
+    "current_pair": "03350",
+    "previous_pair": "03310",
+    "rgb_image": "images/rgb/train/03350.jpg",
+    "ir_image": "images/ir/train/03350.jpg",
+    "label_rgb_compat": "labels/rgb/train/03350.txt",
+    "label_obb": "labels/obb/train/03350.txt"
+  },
+  {
+    "id": "03359",
+    "split": "train",
+    "current_pair": "03359",
+    "previous_pair": "03350",
+    "rgb_image": "images/rgb/train/03359.jpg",
+    "ir_image": "images/ir/train/03359.jpg",
+    "label_rgb_compat": "labels/rgb/train/03359.txt",
+    "label_obb": "labels/obb/train/03359.txt"
+  },
+  {
+    "id": "03369",
+    "split": "train",
+    "current_pair": "03369",
+    "previous_pair": "03359",
+    "rgb_image": "images/rgb/train/03369.jpg",
+    "ir_image": "images/ir/train/03369.jpg",
+    "label_rgb_compat": "labels/rgb/train/03369.txt",
+    "label_obb": "labels/obb/train/03369.txt"
+  },
+  {
+    "id": "03395",
+    "split": "train",
+    "current_pair": "03395",
+    "previous_pair": "03369",
+    "rgb_image": "images/rgb/train/03395.jpg",
+    "ir_image": "images/ir/train/03395.jpg",
+    "label_rgb_compat": "labels/rgb/train/03395.txt",
+    "label_obb": "labels/obb/train/03395.txt"
+  },
+  {
+    "id": "03487",
+    "split": "train",
+    "current_pair": "03487",
+    "previous_pair": "03395",
+    "rgb_image": "images/rgb/train/03487.jpg",
+    "ir_image": "images/ir/train/03487.jpg",
+    "label_rgb_compat": "labels/rgb/train/03487.txt",
+    "label_obb": "labels/obb/train/03487.txt"
+  },
+  {
+    "id": "03508",
+    "split": "train",
+    "current_pair": "03508",
+    "previous_pair": "03487",
+    "rgb_image": "images/rgb/train/03508.jpg",
+    "ir_image": "images/ir/train/03508.jpg",
+    "label_rgb_compat": "labels/rgb/train/03508.txt",
+    "label_obb": "labels/obb/train/03508.txt"
+  },
+  {
+    "id": "03543",
+    "split": "train",
+    "current_pair": "03543",
+    "previous_pair": "03508",
+    "rgb_image": "images/rgb/train/03543.jpg",
+    "ir_image": "images/ir/train/03543.jpg",
+    "label_rgb_compat": "labels/rgb/train/03543.txt",
+    "label_obb": "labels/obb/train/03543.txt"
+  },
+  {
+    "id": "03581",
+    "split": "train",
+    "current_pair": "03581",
+    "previous_pair": "03543",
+    "rgb_image": "images/rgb/train/03581.jpg",
+    "ir_image": "images/ir/train/03581.jpg",
+    "label_rgb_compat": "labels/rgb/train/03581.txt",
+    "label_obb": "labels/obb/train/03581.txt"
+  },
+  {
+    "id": "03593",
+    "split": "train",
+    "current_pair": "03593",
+    "previous_pair": "03581",
+    "rgb_image": "images/rgb/train/03593.jpg",
+    "ir_image": "images/ir/train/03593.jpg",
+    "label_rgb_compat": "labels/rgb/train/03593.txt",
+    "label_obb": "labels/obb/train/03593.txt"
+  },
+  {
+    "id": "03649",
+    "split": "train",
+    "current_pair": "03649",
+    "previous_pair": "03593",
+    "rgb_image": "images/rgb/train/03649.jpg",
+    "ir_image": "images/ir/train/03649.jpg",
+    "label_rgb_compat": "labels/rgb/train/03649.txt",
+    "label_obb": "labels/obb/train/03649.txt"
+  },
+  {
+    "id": "03656",
+    "split": "train",
+    "current_pair": "03656",
+    "previous_pair": "03649",
+    "rgb_image": "images/rgb/train/03656.jpg",
+    "ir_image": "images/ir/train/03656.jpg",
+    "label_rgb_compat": "labels/rgb/train/03656.txt",
+    "label_obb": "labels/obb/train/03656.txt"
+  },
+  {
+    "id": "03666",
+    "split": "train",
+    "current_pair": "03666",
+    "previous_pair": "03656",
+    "rgb_image": "images/rgb/train/03666.jpg",
+    "ir_image": "images/ir/train/03666.jpg",
+    "label_rgb_compat": "labels/rgb/train/03666.txt",
+    "label_obb": "labels/obb/train/03666.txt"
+  },
+  {
+    "id": "03754",
+    "split": "train",
+    "current_pair": "03754",
+    "previous_pair": "03666",
+    "rgb_image": "images/rgb/train/03754.jpg",
+    "ir_image": "images/ir/train/03754.jpg",
+    "label_rgb_compat": "labels/rgb/train/03754.txt",
+    "label_obb": "labels/obb/train/03754.txt"
+  },
+  {
+    "id": "03780",
+    "split": "train",
+    "current_pair": "03780",
+    "previous_pair": "03754",
+    "rgb_image": "images/rgb/train/03780.jpg",
+    "ir_image": "images/ir/train/03780.jpg",
+    "label_rgb_compat": "labels/rgb/train/03780.txt",
+    "label_obb": "labels/obb/train/03780.txt"
+  },
+  {
+    "id": "03783",
+    "split": "train",
+    "current_pair": "03783",
+    "previous_pair": "03780",
+    "rgb_image": "images/rgb/train/03783.jpg",
+    "ir_image": "images/ir/train/03783.jpg",
+    "label_rgb_compat": "labels/rgb/train/03783.txt",
+    "label_obb": "labels/obb/train/03783.txt"
+  },
+  {
+    "id": "03929",
+    "split": "train",
+    "current_pair": "03929",
+    "previous_pair": "03783",
+    "rgb_image": "images/rgb/train/03929.jpg",
+    "ir_image": "images/ir/train/03929.jpg",
+    "label_rgb_compat": "labels/rgb/train/03929.txt",
+    "label_obb": "labels/obb/train/03929.txt"
+  },
+  {
+    "id": "03966",
+    "split": "train",
+    "current_pair": "03966",
+    "previous_pair": "03929",
+    "rgb_image": "images/rgb/train/03966.jpg",
+    "ir_image": "images/ir/train/03966.jpg",
+    "label_rgb_compat": "labels/rgb/train/03966.txt",
+    "label_obb": "labels/obb/train/03966.txt"
+  },
+  {
+    "id": "04091",
+    "split": "train",
+    "current_pair": "04091",
+    "previous_pair": "03966",
+    "rgb_image": "images/rgb/train/04091.jpg",
+    "ir_image": "images/ir/train/04091.jpg",
+    "label_rgb_compat": "labels/rgb/train/04091.txt",
+    "label_obb": "labels/obb/train/04091.txt"
+  },
+  {
+    "id": "04121",
+    "split": "train",
+    "current_pair": "04121",
+    "previous_pair": "04091",
+    "rgb_image": "images/rgb/train/04121.jpg",
+    "ir_image": "images/ir/train/04121.jpg",
+    "label_rgb_compat": "labels/rgb/train/04121.txt",
+    "label_obb": "labels/obb/train/04121.txt"
+  },
+  {
+    "id": "04177",
+    "split": "train",
+    "current_pair": "04177",
+    "previous_pair": "04121",
+    "rgb_image": "images/rgb/train/04177.jpg",
+    "ir_image": "images/ir/train/04177.jpg",
+    "label_rgb_compat": "labels/rgb/train/04177.txt",
+    "label_obb": "labels/obb/train/04177.txt"
+  },
+  {
+    "id": "04208",
+    "split": "train",
+    "current_pair": "04208",
+    "previous_pair": "04177",
+    "rgb_image": "images/rgb/train/04208.jpg",
+    "ir_image": "images/ir/train/04208.jpg",
+    "label_rgb_compat": "labels/rgb/train/04208.txt",
+    "label_obb": "labels/obb/train/04208.txt"
+  },
+  {
+    "id": "04287",
+    "split": "train",
+    "current_pair": "04287",
+    "previous_pair": "04208",
+    "rgb_image": "images/rgb/train/04287.jpg",
+    "ir_image": "images/ir/train/04287.jpg",
+    "label_rgb_compat": "labels/rgb/train/04287.txt",
+    "label_obb": "labels/obb/train/04287.txt"
+  },
+  {
+    "id": "04289",
+    "split": "train",
+    "current_pair": "04289",
+    "previous_pair": "04287",
+    "rgb_image": "images/rgb/train/04289.jpg",
+    "ir_image": "images/ir/train/04289.jpg",
+    "label_rgb_compat": "labels/rgb/train/04289.txt",
+    "label_obb": "labels/obb/train/04289.txt"
+  },
+  {
+    "id": "04336",
+    "split": "train",
+    "current_pair": "04336",
+    "previous_pair": "04289",
+    "rgb_image": "images/rgb/train/04336.jpg",
+    "ir_image": "images/ir/train/04336.jpg",
+    "label_rgb_compat": "labels/rgb/train/04336.txt",
+    "label_obb": "labels/obb/train/04336.txt"
+  },
+  {
+    "id": "04341",
+    "split": "train",
+    "current_pair": "04341",
+    "previous_pair": "04336",
+    "rgb_image": "images/rgb/train/04341.jpg",
+    "ir_image": "images/ir/train/04341.jpg",
+    "label_rgb_compat": "labels/rgb/train/04341.txt",
+    "label_obb": "labels/obb/train/04341.txt"
+  },
+  {
+    "id": "04401",
+    "split": "train",
+    "current_pair": "04401",
+    "previous_pair": "04341",
+    "rgb_image": "images/rgb/train/04401.jpg",
+    "ir_image": "images/ir/train/04401.jpg",
+    "label_rgb_compat": "labels/rgb/train/04401.txt",
+    "label_obb": "labels/obb/train/04401.txt"
+  },
+  {
+    "id": "04533",
+    "split": "train",
+    "current_pair": "04533",
+    "previous_pair": "04401",
+    "rgb_image": "images/rgb/train/04533.jpg",
+    "ir_image": "images/ir/train/04533.jpg",
+    "label_rgb_compat": "labels/rgb/train/04533.txt",
+    "label_obb": "labels/obb/train/04533.txt"
+  },
+  {
+    "id": "04573",
+    "split": "train",
+    "current_pair": "04573",
+    "previous_pair": "04533",
+    "rgb_image": "images/rgb/train/04573.jpg",
+    "ir_image": "images/ir/train/04573.jpg",
+    "label_rgb_compat": "labels/rgb/train/04573.txt",
+    "label_obb": "labels/obb/train/04573.txt"
+  },
+  {
+    "id": "04576",
+    "split": "train",
+    "current_pair": "04576",
+    "previous_pair": "04573",
+    "rgb_image": "images/rgb/train/04576.jpg",
+    "ir_image": "images/ir/train/04576.jpg",
+    "label_rgb_compat": "labels/rgb/train/04576.txt",
+    "label_obb": "labels/obb/train/04576.txt"
+  },
+  {
+    "id": "04594",
+    "split": "train",
+    "current_pair": "04594",
+    "previous_pair": "04576",
+    "rgb_image": "images/rgb/train/04594.jpg",
+    "ir_image": "images/ir/train/04594.jpg",
+    "label_rgb_compat": "labels/rgb/train/04594.txt",
+    "label_obb": "labels/obb/train/04594.txt"
+  },
+  {
+    "id": "04682",
+    "split": "train",
+    "current_pair": "04682",
+    "previous_pair": "04594",
+    "rgb_image": "images/rgb/train/04682.jpg",
+    "ir_image": "images/ir/train/04682.jpg",
+    "label_rgb_compat": "labels/rgb/train/04682.txt",
+    "label_obb": "labels/obb/train/04682.txt"
+  },
+  {
+    "id": "04853",
+    "split": "train",
+    "current_pair": "04853",
+    "previous_pair": "04682",
+    "rgb_image": "images/rgb/train/04853.jpg",
+    "ir_image": "images/ir/train/04853.jpg",
+    "label_rgb_compat": "labels/rgb/train/04853.txt",
+    "label_obb": "labels/obb/train/04853.txt"
+  },
+  {
+    "id": "04885",
+    "split": "train",
+    "current_pair": "04885",
+    "previous_pair": "04853",
+    "rgb_image": "images/rgb/train/04885.jpg",
+    "ir_image": "images/ir/train/04885.jpg",
+    "label_rgb_compat": "labels/rgb/train/04885.txt",
+    "label_obb": "labels/obb/train/04885.txt"
+  },
+  {
+    "id": "05009",
+    "split": "train",
+    "current_pair": "05009",
+    "previous_pair": "04885",
+    "rgb_image": "images/rgb/train/05009.jpg",
+    "ir_image": "images/ir/train/05009.jpg",
+    "label_rgb_compat": "labels/rgb/train/05009.txt",
+    "label_obb": "labels/obb/train/05009.txt"
+  },
+  {
+    "id": "05065",
+    "split": "train",
+    "current_pair": "05065",
+    "previous_pair": "05009",
+    "rgb_image": "images/rgb/train/05065.jpg",
+    "ir_image": "images/ir/train/05065.jpg",
+    "label_rgb_compat": "labels/rgb/train/05065.txt",
+    "label_obb": "labels/obb/train/05065.txt"
+  },
+  {
+    "id": "05073",
+    "split": "train",
+    "current_pair": "05073",
+    "previous_pair": "05065",
+    "rgb_image": "images/rgb/train/05073.jpg",
+    "ir_image": "images/ir/train/05073.jpg",
+    "label_rgb_compat": "labels/rgb/train/05073.txt",
+    "label_obb": "labels/obb/train/05073.txt"
+  },
+  {
+    "id": "05094",
+    "split": "train",
+    "current_pair": "05094",
+    "previous_pair": "05073",
+    "rgb_image": "images/rgb/train/05094.jpg",
+    "ir_image": "images/ir/train/05094.jpg",
+    "label_rgb_compat": "labels/rgb/train/05094.txt",
+    "label_obb": "labels/obb/train/05094.txt"
+  },
+  {
+    "id": "05095",
+    "split": "train",
+    "current_pair": "05095",
+    "previous_pair": "05094",
+    "rgb_image": "images/rgb/train/05095.jpg",
+    "ir_image": "images/ir/train/05095.jpg",
+    "label_rgb_compat": "labels/rgb/train/05095.txt",
+    "label_obb": "labels/obb/train/05095.txt"
+  },
+  {
+    "id": "05159",
+    "split": "train",
+    "current_pair": "05159",
+    "previous_pair": "05095",
+    "rgb_image": "images/rgb/train/05159.jpg",
+    "ir_image": "images/ir/train/05159.jpg",
+    "label_rgb_compat": "labels/rgb/train/05159.txt",
+    "label_obb": "labels/obb/train/05159.txt"
+  },
+  {
+    "id": "05170",
+    "split": "train",
+    "current_pair": "05170",
+    "previous_pair": "05159",
+    "rgb_image": "images/rgb/train/05170.jpg",
+    "ir_image": "images/ir/train/05170.jpg",
+    "label_rgb_compat": "labels/rgb/train/05170.txt",
+    "label_obb": "labels/obb/train/05170.txt"
+  },
+  {
+    "id": "05183",
+    "split": "train",
+    "current_pair": "05183",
+    "previous_pair": "05170",
+    "rgb_image": "images/rgb/train/05183.jpg",
+    "ir_image": "images/ir/train/05183.jpg",
+    "label_rgb_compat": "labels/rgb/train/05183.txt",
+    "label_obb": "labels/obb/train/05183.txt"
+  },
+  {
+    "id": "05217",
+    "split": "train",
+    "current_pair": "05217",
+    "previous_pair": "05183",
+    "rgb_image": "images/rgb/train/05217.jpg",
+    "ir_image": "images/ir/train/05217.jpg",
+    "label_rgb_compat": "labels/rgb/train/05217.txt",
+    "label_obb": "labels/obb/train/05217.txt"
+  },
+  {
+    "id": "05232",
+    "split": "train",
+    "current_pair": "05232",
+    "previous_pair": "05217",
+    "rgb_image": "images/rgb/train/05232.jpg",
+    "ir_image": "images/ir/train/05232.jpg",
+    "label_rgb_compat": "labels/rgb/train/05232.txt",
+    "label_obb": "labels/obb/train/05232.txt"
+  },
+  {
+    "id": "05243",
+    "split": "train",
+    "current_pair": "05243",
+    "previous_pair": "05232",
+    "rgb_image": "images/rgb/train/05243.jpg",
+    "ir_image": "images/ir/train/05243.jpg",
+    "label_rgb_compat": "labels/rgb/train/05243.txt",
+    "label_obb": "labels/obb/train/05243.txt"
+  },
+  {
+    "id": "05294",
+    "split": "train",
+    "current_pair": "05294",
+    "previous_pair": "05243",
+    "rgb_image": "images/rgb/train/05294.jpg",
+    "ir_image": "images/ir/train/05294.jpg",
+    "label_rgb_compat": "labels/rgb/train/05294.txt",
+    "label_obb": "labels/obb/train/05294.txt"
+  },
+  {
+    "id": "05295",
+    "split": "train",
+    "current_pair": "05295",
+    "previous_pair": "05294",
+    "rgb_image": "images/rgb/train/05295.jpg",
+    "ir_image": "images/ir/train/05295.jpg",
+    "label_rgb_compat": "labels/rgb/train/05295.txt",
+    "label_obb": "labels/obb/train/05295.txt"
+  },
+  {
+    "id": "05325",
+    "split": "train",
+    "current_pair": "05325",
+    "previous_pair": "05295",
+    "rgb_image": "images/rgb/train/05325.jpg",
+    "ir_image": "images/ir/train/05325.jpg",
+    "label_rgb_compat": "labels/rgb/train/05325.txt",
+    "label_obb": "labels/obb/train/05325.txt"
+  },
+  {
+    "id": "05330",
+    "split": "train",
+    "current_pair": "05330",
+    "previous_pair": "05325",
+    "rgb_image": "images/rgb/train/05330.jpg",
+    "ir_image": "images/ir/train/05330.jpg",
+    "label_rgb_compat": "labels/rgb/train/05330.txt",
+    "label_obb": "labels/obb/train/05330.txt"
+  },
+  {
+    "id": "05355",
+    "split": "train",
+    "current_pair": "05355",
+    "previous_pair": "05330",
+    "rgb_image": "images/rgb/train/05355.jpg",
+    "ir_image": "images/ir/train/05355.jpg",
+    "label_rgb_compat": "labels/rgb/train/05355.txt",
+    "label_obb": "labels/obb/train/05355.txt"
+  },
+  {
+    "id": "05395",
+    "split": "train",
+    "current_pair": "05395",
+    "previous_pair": "05355",
+    "rgb_image": "images/rgb/train/05395.jpg",
+    "ir_image": "images/ir/train/05395.jpg",
+    "label_rgb_compat": "labels/rgb/train/05395.txt",
+    "label_obb": "labels/obb/train/05395.txt"
+  },
+  {
+    "id": "05411",
+    "split": "train",
+    "current_pair": "05411",
+    "previous_pair": "05395",
+    "rgb_image": "images/rgb/train/05411.jpg",
+    "ir_image": "images/ir/train/05411.jpg",
+    "label_rgb_compat": "labels/rgb/train/05411.txt",
+    "label_obb": "labels/obb/train/05411.txt"
+  },
+  {
+    "id": "05450",
+    "split": "train",
+    "current_pair": "05450",
+    "previous_pair": "05411",
+    "rgb_image": "images/rgb/train/05450.jpg",
+    "ir_image": "images/ir/train/05450.jpg",
+    "label_rgb_compat": "labels/rgb/train/05450.txt",
+    "label_obb": "labels/obb/train/05450.txt"
+  },
+  {
+    "id": "05608",
+    "split": "train",
+    "current_pair": "05608",
+    "previous_pair": "05450",
+    "rgb_image": "images/rgb/train/05608.jpg",
+    "ir_image": "images/ir/train/05608.jpg",
+    "label_rgb_compat": "labels/rgb/train/05608.txt",
+    "label_obb": "labels/obb/train/05608.txt"
+  },
+  {
+    "id": "05802",
+    "split": "train",
+    "current_pair": "05802",
+    "previous_pair": "05608",
+    "rgb_image": "images/rgb/train/05802.jpg",
+    "ir_image": "images/ir/train/05802.jpg",
+    "label_rgb_compat": "labels/rgb/train/05802.txt",
+    "label_obb": "labels/obb/train/05802.txt"
+  },
+  {
+    "id": "05852",
+    "split": "train",
+    "current_pair": "05852",
+    "previous_pair": "05802",
+    "rgb_image": "images/rgb/train/05852.jpg",
+    "ir_image": "images/ir/train/05852.jpg",
+    "label_rgb_compat": "labels/rgb/train/05852.txt",
+    "label_obb": "labels/obb/train/05852.txt"
+  },
+  {
+    "id": "05855",
+    "split": "train",
+    "current_pair": "05855",
+    "previous_pair": "05852",
+    "rgb_image": "images/rgb/train/05855.jpg",
+    "ir_image": "images/ir/train/05855.jpg",
+    "label_rgb_compat": "labels/rgb/train/05855.txt",
+    "label_obb": "labels/obb/train/05855.txt"
+  },
+  {
+    "id": "05878",
+    "split": "train",
+    "current_pair": "05878",
+    "previous_pair": "05855",
+    "rgb_image": "images/rgb/train/05878.jpg",
+    "ir_image": "images/ir/train/05878.jpg",
+    "label_rgb_compat": "labels/rgb/train/05878.txt",
+    "label_obb": "labels/obb/train/05878.txt"
+  },
+  {
+    "id": "06013",
+    "split": "train",
+    "current_pair": "06013",
+    "previous_pair": "05878",
+    "rgb_image": "images/rgb/train/06013.jpg",
+    "ir_image": "images/ir/train/06013.jpg",
+    "label_rgb_compat": "labels/rgb/train/06013.txt",
+    "label_obb": "labels/obb/train/06013.txt"
+  },
+  {
+    "id": "06090",
+    "split": "train",
+    "current_pair": "06090",
+    "previous_pair": "06013",
+    "rgb_image": "images/rgb/train/06090.jpg",
+    "ir_image": "images/ir/train/06090.jpg",
+    "label_rgb_compat": "labels/rgb/train/06090.txt",
+    "label_obb": "labels/obb/train/06090.txt"
+  },
+  {
+    "id": "06223",
+    "split": "train",
+    "current_pair": "06223",
+    "previous_pair": "06090",
+    "rgb_image": "images/rgb/train/06223.jpg",
+    "ir_image": "images/ir/train/06223.jpg",
+    "label_rgb_compat": "labels/rgb/train/06223.txt",
+    "label_obb": "labels/obb/train/06223.txt"
+  },
+  {
+    "id": "06233",
+    "split": "train",
+    "current_pair": "06233",
+    "previous_pair": "06223",
+    "rgb_image": "images/rgb/train/06233.jpg",
+    "ir_image": "images/ir/train/06233.jpg",
+    "label_rgb_compat": "labels/rgb/train/06233.txt",
+    "label_obb": "labels/obb/train/06233.txt"
+  },
+  {
+    "id": "06240",
+    "split": "train",
+    "current_pair": "06240",
+    "previous_pair": "06233",
+    "rgb_image": "images/rgb/train/06240.jpg",
+    "ir_image": "images/ir/train/06240.jpg",
+    "label_rgb_compat": "labels/rgb/train/06240.txt",
+    "label_obb": "labels/obb/train/06240.txt"
+  },
+  {
+    "id": "06279",
+    "split": "train",
+    "current_pair": "06279",
+    "previous_pair": "06240",
+    "rgb_image": "images/rgb/train/06279.jpg",
+    "ir_image": "images/ir/train/06279.jpg",
+    "label_rgb_compat": "labels/rgb/train/06279.txt",
+    "label_obb": "labels/obb/train/06279.txt"
+  },
+  {
+    "id": "06301",
+    "split": "train",
+    "current_pair": "06301",
+    "previous_pair": "06279",
+    "rgb_image": "images/rgb/train/06301.jpg",
+    "ir_image": "images/ir/train/06301.jpg",
+    "label_rgb_compat": "labels/rgb/train/06301.txt",
+    "label_obb": "labels/obb/train/06301.txt"
+  },
+  {
+    "id": "06329",
+    "split": "train",
+    "current_pair": "06329",
+    "previous_pair": "06301",
+    "rgb_image": "images/rgb/train/06329.jpg",
+    "ir_image": "images/ir/train/06329.jpg",
+    "label_rgb_compat": "labels/rgb/train/06329.txt",
+    "label_obb": "labels/obb/train/06329.txt"
+  },
+  {
+    "id": "06516",
+    "split": "train",
+    "current_pair": "06516",
+    "previous_pair": "06329",
+    "rgb_image": "images/rgb/train/06516.jpg",
+    "ir_image": "images/ir/train/06516.jpg",
+    "label_rgb_compat": "labels/rgb/train/06516.txt",
+    "label_obb": "labels/obb/train/06516.txt"
+  },
+  {
+    "id": "06518",
+    "split": "train",
+    "current_pair": "06518",
+    "previous_pair": "06516",
+    "rgb_image": "images/rgb/train/06518.jpg",
+    "ir_image": "images/ir/train/06518.jpg",
+    "label_rgb_compat": "labels/rgb/train/06518.txt",
+    "label_obb": "labels/obb/train/06518.txt"
+  },
+  {
+    "id": "06540",
+    "split": "train",
+    "current_pair": "06540",
+    "previous_pair": "06518",
+    "rgb_image": "images/rgb/train/06540.jpg",
+    "ir_image": "images/ir/train/06540.jpg",
+    "label_rgb_compat": "labels/rgb/train/06540.txt",
+    "label_obb": "labels/obb/train/06540.txt"
+  },
+  {
+    "id": "06592",
+    "split": "train",
+    "current_pair": "06592",
+    "previous_pair": "06540",
+    "rgb_image": "images/rgb/train/06592.jpg",
+    "ir_image": "images/ir/train/06592.jpg",
+    "label_rgb_compat": "labels/rgb/train/06592.txt",
+    "label_obb": "labels/obb/train/06592.txt"
+  },
+  {
+    "id": "06672",
+    "split": "train",
+    "current_pair": "06672",
+    "previous_pair": "06592",
+    "rgb_image": "images/rgb/train/06672.jpg",
+    "ir_image": "images/ir/train/06672.jpg",
+    "label_rgb_compat": "labels/rgb/train/06672.txt",
+    "label_obb": "labels/obb/train/06672.txt"
+  },
+  {
+    "id": "06694",
+    "split": "train",
+    "current_pair": "06694",
+    "previous_pair": "06672",
+    "rgb_image": "images/rgb/train/06694.jpg",
+    "ir_image": "images/ir/train/06694.jpg",
+    "label_rgb_compat": "labels/rgb/train/06694.txt",
+    "label_obb": "labels/obb/train/06694.txt"
+  },
+  {
+    "id": "06866",
+    "split": "train",
+    "current_pair": "06866",
+    "previous_pair": "06694",
+    "rgb_image": "images/rgb/train/06866.jpg",
+    "ir_image": "images/ir/train/06866.jpg",
+    "label_rgb_compat": "labels/rgb/train/06866.txt",
+    "label_obb": "labels/obb/train/06866.txt"
+  },
+  {
+    "id": "06884",
+    "split": "train",
+    "current_pair": "06884",
+    "previous_pair": "06866",
+    "rgb_image": "images/rgb/train/06884.jpg",
+    "ir_image": "images/ir/train/06884.jpg",
+    "label_rgb_compat": "labels/rgb/train/06884.txt",
+    "label_obb": "labels/obb/train/06884.txt"
+  },
+  {
+    "id": "06902",
+    "split": "train",
+    "current_pair": "06902",
+    "previous_pair": "06884",
+    "rgb_image": "images/rgb/train/06902.jpg",
+    "ir_image": "images/ir/train/06902.jpg",
+    "label_rgb_compat": "labels/rgb/train/06902.txt",
+    "label_obb": "labels/obb/train/06902.txt"
+  },
+  {
+    "id": "06914",
+    "split": "train",
+    "current_pair": "06914",
+    "previous_pair": "06902",
+    "rgb_image": "images/rgb/train/06914.jpg",
+    "ir_image": "images/ir/train/06914.jpg",
+    "label_rgb_compat": "labels/rgb/train/06914.txt",
+    "label_obb": "labels/obb/train/06914.txt"
+  },
+  {
+    "id": "06941",
+    "split": "train",
+    "current_pair": "06941",
+    "previous_pair": "06914",
+    "rgb_image": "images/rgb/train/06941.jpg",
+    "ir_image": "images/ir/train/06941.jpg",
+    "label_rgb_compat": "labels/rgb/train/06941.txt",
+    "label_obb": "labels/obb/train/06941.txt"
+  },
+  {
+    "id": "06968",
+    "split": "train",
+    "current_pair": "06968",
+    "previous_pair": "06941",
+    "rgb_image": "images/rgb/train/06968.jpg",
+    "ir_image": "images/ir/train/06968.jpg",
+    "label_rgb_compat": "labels/rgb/train/06968.txt",
+    "label_obb": "labels/obb/train/06968.txt"
+  },
+  {
+    "id": "06985",
+    "split": "train",
+    "current_pair": "06985",
+    "previous_pair": "06968",
+    "rgb_image": "images/rgb/train/06985.jpg",
+    "ir_image": "images/ir/train/06985.jpg",
+    "label_rgb_compat": "labels/rgb/train/06985.txt",
+    "label_obb": "labels/obb/train/06985.txt"
+  },
+  {
+    "id": "07005",
+    "split": "train",
+    "current_pair": "07005",
+    "previous_pair": "06985",
+    "rgb_image": "images/rgb/train/07005.jpg",
+    "ir_image": "images/ir/train/07005.jpg",
+    "label_rgb_compat": "labels/rgb/train/07005.txt",
+    "label_obb": "labels/obb/train/07005.txt"
+  },
+  {
+    "id": "07021",
+    "split": "train",
+    "current_pair": "07021",
+    "previous_pair": "07005",
+    "rgb_image": "images/rgb/train/07021.jpg",
+    "ir_image": "images/ir/train/07021.jpg",
+    "label_rgb_compat": "labels/rgb/train/07021.txt",
+    "label_obb": "labels/obb/train/07021.txt"
+  },
+  {
+    "id": "07056",
+    "split": "train",
+    "current_pair": "07056",
+    "previous_pair": "07021",
+    "rgb_image": "images/rgb/train/07056.jpg",
+    "ir_image": "images/ir/train/07056.jpg",
+    "label_rgb_compat": "labels/rgb/train/07056.txt",
+    "label_obb": "labels/obb/train/07056.txt"
+  },
+  {
+    "id": "07134",
+    "split": "train",
+    "current_pair": "07134",
+    "previous_pair": "07056",
+    "rgb_image": "images/rgb/train/07134.jpg",
+    "ir_image": "images/ir/train/07134.jpg",
+    "label_rgb_compat": "labels/rgb/train/07134.txt",
+    "label_obb": "labels/obb/train/07134.txt"
+  },
+  {
+    "id": "07165",
+    "split": "train",
+    "current_pair": "07165",
+    "previous_pair": "07134",
+    "rgb_image": "images/rgb/train/07165.jpg",
+    "ir_image": "images/ir/train/07165.jpg",
+    "label_rgb_compat": "labels/rgb/train/07165.txt",
+    "label_obb": "labels/obb/train/07165.txt"
+  },
+  {
+    "id": "07187",
+    "split": "train",
+    "current_pair": "07187",
+    "previous_pair": "07165",
+    "rgb_image": "images/rgb/train/07187.jpg",
+    "ir_image": "images/ir/train/07187.jpg",
+    "label_rgb_compat": "labels/rgb/train/07187.txt",
+    "label_obb": "labels/obb/train/07187.txt"
+  },
+  {
+    "id": "07197",
+    "split": "train",
+    "current_pair": "07197",
+    "previous_pair": "07187",
+    "rgb_image": "images/rgb/train/07197.jpg",
+    "ir_image": "images/ir/train/07197.jpg",
+    "label_rgb_compat": "labels/rgb/train/07197.txt",
+    "label_obb": "labels/obb/train/07197.txt"
+  },
+  {
+    "id": "07217",
+    "split": "train",
+    "current_pair": "07217",
+    "previous_pair": "07197",
+    "rgb_image": "images/rgb/train/07217.jpg",
+    "ir_image": "images/ir/train/07217.jpg",
+    "label_rgb_compat": "labels/rgb/train/07217.txt",
+    "label_obb": "labels/obb/train/07217.txt"
+  },
+  {
+    "id": "07224",
+    "split": "train",
+    "current_pair": "07224",
+    "previous_pair": "07217",
+    "rgb_image": "images/rgb/train/07224.jpg",
+    "ir_image": "images/ir/train/07224.jpg",
+    "label_rgb_compat": "labels/rgb/train/07224.txt",
+    "label_obb": "labels/obb/train/07224.txt"
+  },
+  {
+    "id": "07289",
+    "split": "train",
+    "current_pair": "07289",
+    "previous_pair": "07224",
+    "rgb_image": "images/rgb/train/07289.jpg",
+    "ir_image": "images/ir/train/07289.jpg",
+    "label_rgb_compat": "labels/rgb/train/07289.txt",
+    "label_obb": "labels/obb/train/07289.txt"
+  },
+  {
+    "id": "07305",
+    "split": "train",
+    "current_pair": "07305",
+    "previous_pair": "07289",
+    "rgb_image": "images/rgb/train/07305.jpg",
+    "ir_image": "images/ir/train/07305.jpg",
+    "label_rgb_compat": "labels/rgb/train/07305.txt",
+    "label_obb": "labels/obb/train/07305.txt"
+  },
+  {
+    "id": "07315",
+    "split": "train",
+    "current_pair": "07315",
+    "previous_pair": "07305",
+    "rgb_image": "images/rgb/train/07315.jpg",
+    "ir_image": "images/ir/train/07315.jpg",
+    "label_rgb_compat": "labels/rgb/train/07315.txt",
+    "label_obb": "labels/obb/train/07315.txt"
+  },
+  {
+    "id": "07363",
+    "split": "train",
+    "current_pair": "07363",
+    "previous_pair": "07315",
+    "rgb_image": "images/rgb/train/07363.jpg",
+    "ir_image": "images/ir/train/07363.jpg",
+    "label_rgb_compat": "labels/rgb/train/07363.txt",
+    "label_obb": "labels/obb/train/07363.txt"
+  },
+  {
+    "id": "07458",
+    "split": "train",
+    "current_pair": "07458",
+    "previous_pair": "07363",
+    "rgb_image": "images/rgb/train/07458.jpg",
+    "ir_image": "images/ir/train/07458.jpg",
+    "label_rgb_compat": "labels/rgb/train/07458.txt",
+    "label_obb": "labels/obb/train/07458.txt"
+  },
+  {
+    "id": "07468",
+    "split": "train",
+    "current_pair": "07468",
+    "previous_pair": "07458",
+    "rgb_image": "images/rgb/train/07468.jpg",
+    "ir_image": "images/ir/train/07468.jpg",
+    "label_rgb_compat": "labels/rgb/train/07468.txt",
+    "label_obb": "labels/obb/train/07468.txt"
+  },
+  {
+    "id": "07502",
+    "split": "train",
+    "current_pair": "07502",
+    "previous_pair": "07468",
+    "rgb_image": "images/rgb/train/07502.jpg",
+    "ir_image": "images/ir/train/07502.jpg",
+    "label_rgb_compat": "labels/rgb/train/07502.txt",
+    "label_obb": "labels/obb/train/07502.txt"
+  },
+  {
+    "id": "07506",
+    "split": "train",
+    "current_pair": "07506",
+    "previous_pair": "07502",
+    "rgb_image": "images/rgb/train/07506.jpg",
+    "ir_image": "images/ir/train/07506.jpg",
+    "label_rgb_compat": "labels/rgb/train/07506.txt",
+    "label_obb": "labels/obb/train/07506.txt"
+  },
+  {
+    "id": "07541",
+    "split": "train",
+    "current_pair": "07541",
+    "previous_pair": "07506",
+    "rgb_image": "images/rgb/train/07541.jpg",
+    "ir_image": "images/ir/train/07541.jpg",
+    "label_rgb_compat": "labels/rgb/train/07541.txt",
+    "label_obb": "labels/obb/train/07541.txt"
+  },
+  {
+    "id": "07624",
+    "split": "train",
+    "current_pair": "07624",
+    "previous_pair": "07541",
+    "rgb_image": "images/rgb/train/07624.jpg",
+    "ir_image": "images/ir/train/07624.jpg",
+    "label_rgb_compat": "labels/rgb/train/07624.txt",
+    "label_obb": "labels/obb/train/07624.txt"
+  },
+  {
+    "id": "07629",
+    "split": "train",
+    "current_pair": "07629",
+    "previous_pair": "07624",
+    "rgb_image": "images/rgb/train/07629.jpg",
+    "ir_image": "images/ir/train/07629.jpg",
+    "label_rgb_compat": "labels/rgb/train/07629.txt",
+    "label_obb": "labels/obb/train/07629.txt"
+  },
+  {
+    "id": "07708",
+    "split": "train",
+    "current_pair": "07708",
+    "previous_pair": "07629",
+    "rgb_image": "images/rgb/train/07708.jpg",
+    "ir_image": "images/ir/train/07708.jpg",
+    "label_rgb_compat": "labels/rgb/train/07708.txt",
+    "label_obb": "labels/obb/train/07708.txt"
+  },
+  {
+    "id": "07746",
+    "split": "train",
+    "current_pair": "07746",
+    "previous_pair": "07708",
+    "rgb_image": "images/rgb/train/07746.jpg",
+    "ir_image": "images/ir/train/07746.jpg",
+    "label_rgb_compat": "labels/rgb/train/07746.txt",
+    "label_obb": "labels/obb/train/07746.txt"
+  },
+  {
+    "id": "07758",
+    "split": "train",
+    "current_pair": "07758",
+    "previous_pair": "07746",
+    "rgb_image": "images/rgb/train/07758.jpg",
+    "ir_image": "images/ir/train/07758.jpg",
+    "label_rgb_compat": "labels/rgb/train/07758.txt",
+    "label_obb": "labels/obb/train/07758.txt"
+  },
+  {
+    "id": "07799",
+    "split": "train",
+    "current_pair": "07799",
+    "previous_pair": "07758",
+    "rgb_image": "images/rgb/train/07799.jpg",
+    "ir_image": "images/ir/train/07799.jpg",
+    "label_rgb_compat": "labels/rgb/train/07799.txt",
+    "label_obb": "labels/obb/train/07799.txt"
+  },
+  {
+    "id": "07822",
+    "split": "train",
+    "current_pair": "07822",
+    "previous_pair": "07799",
+    "rgb_image": "images/rgb/train/07822.jpg",
+    "ir_image": "images/ir/train/07822.jpg",
+    "label_rgb_compat": "labels/rgb/train/07822.txt",
+    "label_obb": "labels/obb/train/07822.txt"
+  },
+  {
+    "id": "07847",
+    "split": "train",
+    "current_pair": "07847",
+    "previous_pair": "07822",
+    "rgb_image": "images/rgb/train/07847.jpg",
+    "ir_image": "images/ir/train/07847.jpg",
+    "label_rgb_compat": "labels/rgb/train/07847.txt",
+    "label_obb": "labels/obb/train/07847.txt"
+  },
+  {
+    "id": "07893",
+    "split": "train",
+    "current_pair": "07893",
+    "previous_pair": "07847",
+    "rgb_image": "images/rgb/train/07893.jpg",
+    "ir_image": "images/ir/train/07893.jpg",
+    "label_rgb_compat": "labels/rgb/train/07893.txt",
+    "label_obb": "labels/obb/train/07893.txt"
+  },
+  {
+    "id": "07963",
+    "split": "train",
+    "current_pair": "07963",
+    "previous_pair": "07893",
+    "rgb_image": "images/rgb/train/07963.jpg",
+    "ir_image": "images/ir/train/07963.jpg",
+    "label_rgb_compat": "labels/rgb/train/07963.txt",
+    "label_obb": "labels/obb/train/07963.txt"
+  },
+  {
+    "id": "08005",
+    "split": "train",
+    "current_pair": "08005",
+    "previous_pair": "07963",
+    "rgb_image": "images/rgb/train/08005.jpg",
+    "ir_image": "images/ir/train/08005.jpg",
+    "label_rgb_compat": "labels/rgb/train/08005.txt",
+    "label_obb": "labels/obb/train/08005.txt"
+  },
+  {
+    "id": "08022",
+    "split": "train",
+    "current_pair": "08022",
+    "previous_pair": "08005",
+    "rgb_image": "images/rgb/train/08022.jpg",
+    "ir_image": "images/ir/train/08022.jpg",
+    "label_rgb_compat": "labels/rgb/train/08022.txt",
+    "label_obb": "labels/obb/train/08022.txt"
+  },
+  {
+    "id": "08025",
+    "split": "train",
+    "current_pair": "08025",
+    "previous_pair": "08022",
+    "rgb_image": "images/rgb/train/08025.jpg",
+    "ir_image": "images/ir/train/08025.jpg",
+    "label_rgb_compat": "labels/rgb/train/08025.txt",
+    "label_obb": "labels/obb/train/08025.txt"
+  },
+  {
+    "id": "08068",
+    "split": "train",
+    "current_pair": "08068",
+    "previous_pair": "08025",
+    "rgb_image": "images/rgb/train/08068.jpg",
+    "ir_image": "images/ir/train/08068.jpg",
+    "label_rgb_compat": "labels/rgb/train/08068.txt",
+    "label_obb": "labels/obb/train/08068.txt"
+  },
+  {
+    "id": "08082",
+    "split": "train",
+    "current_pair": "08082",
+    "previous_pair": "08068",
+    "rgb_image": "images/rgb/train/08082.jpg",
+    "ir_image": "images/ir/train/08082.jpg",
+    "label_rgb_compat": "labels/rgb/train/08082.txt",
+    "label_obb": "labels/obb/train/08082.txt"
+  },
+  {
+    "id": "08124",
+    "split": "train",
+    "current_pair": "08124",
+    "previous_pair": "08082",
+    "rgb_image": "images/rgb/train/08124.jpg",
+    "ir_image": "images/ir/train/08124.jpg",
+    "label_rgb_compat": "labels/rgb/train/08124.txt",
+    "label_obb": "labels/obb/train/08124.txt"
+  },
+  {
+    "id": "08132",
+    "split": "train",
+    "current_pair": "08132",
+    "previous_pair": "08124",
+    "rgb_image": "images/rgb/train/08132.jpg",
+    "ir_image": "images/ir/train/08132.jpg",
+    "label_rgb_compat": "labels/rgb/train/08132.txt",
+    "label_obb": "labels/obb/train/08132.txt"
+  },
+  {
+    "id": "08148",
+    "split": "train",
+    "current_pair": "08148",
+    "previous_pair": "08132",
+    "rgb_image": "images/rgb/train/08148.jpg",
+    "ir_image": "images/ir/train/08148.jpg",
+    "label_rgb_compat": "labels/rgb/train/08148.txt",
+    "label_obb": "labels/obb/train/08148.txt"
+  },
+  {
+    "id": "08177",
+    "split": "train",
+    "current_pair": "08177",
+    "previous_pair": "08148",
+    "rgb_image": "images/rgb/train/08177.jpg",
+    "ir_image": "images/ir/train/08177.jpg",
+    "label_rgb_compat": "labels/rgb/train/08177.txt",
+    "label_obb": "labels/obb/train/08177.txt"
+  },
+  {
+    "id": "08186",
+    "split": "train",
+    "current_pair": "08186",
+    "previous_pair": "08177",
+    "rgb_image": "images/rgb/train/08186.jpg",
+    "ir_image": "images/ir/train/08186.jpg",
+    "label_rgb_compat": "labels/rgb/train/08186.txt",
+    "label_obb": "labels/obb/train/08186.txt"
+  },
+  {
+    "id": "08229",
+    "split": "train",
+    "current_pair": "08229",
+    "previous_pair": "08186",
+    "rgb_image": "images/rgb/train/08229.jpg",
+    "ir_image": "images/ir/train/08229.jpg",
+    "label_rgb_compat": "labels/rgb/train/08229.txt",
+    "label_obb": "labels/obb/train/08229.txt"
+  },
+  {
+    "id": "08239",
+    "split": "train",
+    "current_pair": "08239",
+    "previous_pair": "08229",
+    "rgb_image": "images/rgb/train/08239.jpg",
+    "ir_image": "images/ir/train/08239.jpg",
+    "label_rgb_compat": "labels/rgb/train/08239.txt",
+    "label_obb": "labels/obb/train/08239.txt"
+  },
+  {
+    "id": "08545",
+    "split": "train",
+    "current_pair": "08545",
+    "previous_pair": "08239",
+    "rgb_image": "images/rgb/train/08545.jpg",
+    "ir_image": "images/ir/train/08545.jpg",
+    "label_rgb_compat": "labels/rgb/train/08545.txt",
+    "label_obb": "labels/obb/train/08545.txt"
+  },
+  {
+    "id": "08560",
+    "split": "train",
+    "current_pair": "08560",
+    "previous_pair": "08545",
+    "rgb_image": "images/rgb/train/08560.jpg",
+    "ir_image": "images/ir/train/08560.jpg",
+    "label_rgb_compat": "labels/rgb/train/08560.txt",
+    "label_obb": "labels/obb/train/08560.txt"
+  },
+  {
+    "id": "08584",
+    "split": "train",
+    "current_pair": "08584",
+    "previous_pair": "08560",
+    "rgb_image": "images/rgb/train/08584.jpg",
+    "ir_image": "images/ir/train/08584.jpg",
+    "label_rgb_compat": "labels/rgb/train/08584.txt",
+    "label_obb": "labels/obb/train/08584.txt"
+  },
+  {
+    "id": "08610",
+    "split": "train",
+    "current_pair": "08610",
+    "previous_pair": "08584",
+    "rgb_image": "images/rgb/train/08610.jpg",
+    "ir_image": "images/ir/train/08610.jpg",
+    "label_rgb_compat": "labels/rgb/train/08610.txt",
+    "label_obb": "labels/obb/train/08610.txt"
+  },
+  {
+    "id": "08631",
+    "split": "train",
+    "current_pair": "08631",
+    "previous_pair": "08610",
+    "rgb_image": "images/rgb/train/08631.jpg",
+    "ir_image": "images/ir/train/08631.jpg",
+    "label_rgb_compat": "labels/rgb/train/08631.txt",
+    "label_obb": "labels/obb/train/08631.txt"
+  },
+  {
+    "id": "08651",
+    "split": "train",
+    "current_pair": "08651",
+    "previous_pair": "08631",
+    "rgb_image": "images/rgb/train/08651.jpg",
+    "ir_image": "images/ir/train/08651.jpg",
+    "label_rgb_compat": "labels/rgb/train/08651.txt",
+    "label_obb": "labels/obb/train/08651.txt"
+  },
+  {
+    "id": "08667",
+    "split": "train",
+    "current_pair": "08667",
+    "previous_pair": "08651",
+    "rgb_image": "images/rgb/train/08667.jpg",
+    "ir_image": "images/ir/train/08667.jpg",
+    "label_rgb_compat": "labels/rgb/train/08667.txt",
+    "label_obb": "labels/obb/train/08667.txt"
+  },
+  {
+    "id": "08668",
+    "split": "train",
+    "current_pair": "08668",
+    "previous_pair": "08667",
+    "rgb_image": "images/rgb/train/08668.jpg",
+    "ir_image": "images/ir/train/08668.jpg",
+    "label_rgb_compat": "labels/rgb/train/08668.txt",
+    "label_obb": "labels/obb/train/08668.txt"
+  },
+  {
+    "id": "08680",
+    "split": "train",
+    "current_pair": "08680",
+    "previous_pair": "08668",
+    "rgb_image": "images/rgb/train/08680.jpg",
+    "ir_image": "images/ir/train/08680.jpg",
+    "label_rgb_compat": "labels/rgb/train/08680.txt",
+    "label_obb": "labels/obb/train/08680.txt"
+  },
+  {
+    "id": "08686",
+    "split": "train",
+    "current_pair": "08686",
+    "previous_pair": "08680",
+    "rgb_image": "images/rgb/train/08686.jpg",
+    "ir_image": "images/ir/train/08686.jpg",
+    "label_rgb_compat": "labels/rgb/train/08686.txt",
+    "label_obb": "labels/obb/train/08686.txt"
+  },
+  {
+    "id": "08691",
+    "split": "train",
+    "current_pair": "08691",
+    "previous_pair": "08686",
+    "rgb_image": "images/rgb/train/08691.jpg",
+    "ir_image": "images/ir/train/08691.jpg",
+    "label_rgb_compat": "labels/rgb/train/08691.txt",
+    "label_obb": "labels/obb/train/08691.txt"
+  },
+  {
+    "id": "08704",
+    "split": "train",
+    "current_pair": "08704",
+    "previous_pair": "08691",
+    "rgb_image": "images/rgb/train/08704.jpg",
+    "ir_image": "images/ir/train/08704.jpg",
+    "label_rgb_compat": "labels/rgb/train/08704.txt",
+    "label_obb": "labels/obb/train/08704.txt"
+  },
+  {
+    "id": "08743",
+    "split": "train",
+    "current_pair": "08743",
+    "previous_pair": "08704",
+    "rgb_image": "images/rgb/train/08743.jpg",
+    "ir_image": "images/ir/train/08743.jpg",
+    "label_rgb_compat": "labels/rgb/train/08743.txt",
+    "label_obb": "labels/obb/train/08743.txt"
+  },
+  {
+    "id": "08744",
+    "split": "train",
+    "current_pair": "08744",
+    "previous_pair": "08743",
+    "rgb_image": "images/rgb/train/08744.jpg",
+    "ir_image": "images/ir/train/08744.jpg",
+    "label_rgb_compat": "labels/rgb/train/08744.txt",
+    "label_obb": "labels/obb/train/08744.txt"
+  },
+  {
+    "id": "08749",
+    "split": "train",
+    "current_pair": "08749",
+    "previous_pair": "08744",
+    "rgb_image": "images/rgb/train/08749.jpg",
+    "ir_image": "images/ir/train/08749.jpg",
+    "label_rgb_compat": "labels/rgb/train/08749.txt",
+    "label_obb": "labels/obb/train/08749.txt"
+  },
+  {
+    "id": "08774",
+    "split": "train",
+    "current_pair": "08774",
+    "previous_pair": "08749",
+    "rgb_image": "images/rgb/train/08774.jpg",
+    "ir_image": "images/ir/train/08774.jpg",
+    "label_rgb_compat": "labels/rgb/train/08774.txt",
+    "label_obb": "labels/obb/train/08774.txt"
+  },
+  {
+    "id": "08846",
+    "split": "train",
+    "current_pair": "08846",
+    "previous_pair": "08774",
+    "rgb_image": "images/rgb/train/08846.jpg",
+    "ir_image": "images/ir/train/08846.jpg",
+    "label_rgb_compat": "labels/rgb/train/08846.txt",
+    "label_obb": "labels/obb/train/08846.txt"
+  },
+  {
+    "id": "08925",
+    "split": "train",
+    "current_pair": "08925",
+    "previous_pair": "08846",
+    "rgb_image": "images/rgb/train/08925.jpg",
+    "ir_image": "images/ir/train/08925.jpg",
+    "label_rgb_compat": "labels/rgb/train/08925.txt",
+    "label_obb": "labels/obb/train/08925.txt"
+  },
+  {
+    "id": "09013",
+    "split": "train",
+    "current_pair": "09013",
+    "previous_pair": "08925",
+    "rgb_image": "images/rgb/train/09013.jpg",
+    "ir_image": "images/ir/train/09013.jpg",
+    "label_rgb_compat": "labels/rgb/train/09013.txt",
+    "label_obb": "labels/obb/train/09013.txt"
+  },
+  {
+    "id": "09067",
+    "split": "train",
+    "current_pair": "09067",
+    "previous_pair": "09013",
+    "rgb_image": "images/rgb/train/09067.jpg",
+    "ir_image": "images/ir/train/09067.jpg",
+    "label_rgb_compat": "labels/rgb/train/09067.txt",
+    "label_obb": "labels/obb/train/09067.txt"
+  },
+  {
+    "id": "09106",
+    "split": "train",
+    "current_pair": "09106",
+    "previous_pair": "09067",
+    "rgb_image": "images/rgb/train/09106.jpg",
+    "ir_image": "images/ir/train/09106.jpg",
+    "label_rgb_compat": "labels/rgb/train/09106.txt",
+    "label_obb": "labels/obb/train/09106.txt"
+  },
+  {
+    "id": "09109",
+    "split": "train",
+    "current_pair": "09109",
+    "previous_pair": "09106",
+    "rgb_image": "images/rgb/train/09109.jpg",
+    "ir_image": "images/ir/train/09109.jpg",
+    "label_rgb_compat": "labels/rgb/train/09109.txt",
+    "label_obb": "labels/obb/train/09109.txt"
+  },
+  {
+    "id": "09116",
+    "split": "train",
+    "current_pair": "09116",
+    "previous_pair": "09109",
+    "rgb_image": "images/rgb/train/09116.jpg",
+    "ir_image": "images/ir/train/09116.jpg",
+    "label_rgb_compat": "labels/rgb/train/09116.txt",
+    "label_obb": "labels/obb/train/09116.txt"
+  },
+  {
+    "id": "09126",
+    "split": "train",
+    "current_pair": "09126",
+    "previous_pair": "09116",
+    "rgb_image": "images/rgb/train/09126.jpg",
+    "ir_image": "images/ir/train/09126.jpg",
+    "label_rgb_compat": "labels/rgb/train/09126.txt",
+    "label_obb": "labels/obb/train/09126.txt"
+  },
+  {
+    "id": "09128",
+    "split": "train",
+    "current_pair": "09128",
+    "previous_pair": "09126",
+    "rgb_image": "images/rgb/train/09128.jpg",
+    "ir_image": "images/ir/train/09128.jpg",
+    "label_rgb_compat": "labels/rgb/train/09128.txt",
+    "label_obb": "labels/obb/train/09128.txt"
+  },
+  {
+    "id": "09130",
+    "split": "train",
+    "current_pair": "09130",
+    "previous_pair": "09128",
+    "rgb_image": "images/rgb/train/09130.jpg",
+    "ir_image": "images/ir/train/09130.jpg",
+    "label_rgb_compat": "labels/rgb/train/09130.txt",
+    "label_obb": "labels/obb/train/09130.txt"
+  },
+  {
+    "id": "09147",
+    "split": "train",
+    "current_pair": "09147",
+    "previous_pair": "09130",
+    "rgb_image": "images/rgb/train/09147.jpg",
+    "ir_image": "images/ir/train/09147.jpg",
+    "label_rgb_compat": "labels/rgb/train/09147.txt",
+    "label_obb": "labels/obb/train/09147.txt"
+  },
+  {
+    "id": "09233",
+    "split": "train",
+    "current_pair": "09233",
+    "previous_pair": "09147",
+    "rgb_image": "images/rgb/train/09233.jpg",
+    "ir_image": "images/ir/train/09233.jpg",
+    "label_rgb_compat": "labels/rgb/train/09233.txt",
+    "label_obb": "labels/obb/train/09233.txt"
+  },
+  {
+    "id": "09339",
+    "split": "train",
+    "current_pair": "09339",
+    "previous_pair": "09233",
+    "rgb_image": "images/rgb/train/09339.jpg",
+    "ir_image": "images/ir/train/09339.jpg",
+    "label_rgb_compat": "labels/rgb/train/09339.txt",
+    "label_obb": "labels/obb/train/09339.txt"
+  },
+  {
+    "id": "09348",
+    "split": "train",
+    "current_pair": "09348",
+    "previous_pair": "09339",
+    "rgb_image": "images/rgb/train/09348.jpg",
+    "ir_image": "images/ir/train/09348.jpg",
+    "label_rgb_compat": "labels/rgb/train/09348.txt",
+    "label_obb": "labels/obb/train/09348.txt"
+  },
+  {
+    "id": "09483",
+    "split": "train",
+    "current_pair": "09483",
+    "previous_pair": "09348",
+    "rgb_image": "images/rgb/train/09483.jpg",
+    "ir_image": "images/ir/train/09483.jpg",
+    "label_rgb_compat": "labels/rgb/train/09483.txt",
+    "label_obb": "labels/obb/train/09483.txt"
+  },
+  {
+    "id": "09607",
+    "split": "train",
+    "current_pair": "09607",
+    "previous_pair": "09483",
+    "rgb_image": "images/rgb/train/09607.jpg",
+    "ir_image": "images/ir/train/09607.jpg",
+    "label_rgb_compat": "labels/rgb/train/09607.txt",
+    "label_obb": "labels/obb/train/09607.txt"
+  },
+  {
+    "id": "09618",
+    "split": "train",
+    "current_pair": "09618",
+    "previous_pair": "09607",
+    "rgb_image": "images/rgb/train/09618.jpg",
+    "ir_image": "images/ir/train/09618.jpg",
+    "label_rgb_compat": "labels/rgb/train/09618.txt",
+    "label_obb": "labels/obb/train/09618.txt"
+  },
+  {
+    "id": "09723",
+    "split": "train",
+    "current_pair": "09723",
+    "previous_pair": "09618",
+    "rgb_image": "images/rgb/train/09723.jpg",
+    "ir_image": "images/ir/train/09723.jpg",
+    "label_rgb_compat": "labels/rgb/train/09723.txt",
+    "label_obb": "labels/obb/train/09723.txt"
+  },
+  {
+    "id": "09780",
+    "split": "train",
+    "current_pair": "09780",
+    "previous_pair": "09723",
+    "rgb_image": "images/rgb/train/09780.jpg",
+    "ir_image": "images/ir/train/09780.jpg",
+    "label_rgb_compat": "labels/rgb/train/09780.txt",
+    "label_obb": "labels/obb/train/09780.txt"
+  },
+  {
+    "id": "09811",
+    "split": "train",
+    "current_pair": "09811",
+    "previous_pair": "09780",
+    "rgb_image": "images/rgb/train/09811.jpg",
+    "ir_image": "images/ir/train/09811.jpg",
+    "label_rgb_compat": "labels/rgb/train/09811.txt",
+    "label_obb": "labels/obb/train/09811.txt"
+  },
+  {
+    "id": "09831",
+    "split": "train",
+    "current_pair": "09831",
+    "previous_pair": "09811",
+    "rgb_image": "images/rgb/train/09831.jpg",
+    "ir_image": "images/ir/train/09831.jpg",
+    "label_rgb_compat": "labels/rgb/train/09831.txt",
+    "label_obb": "labels/obb/train/09831.txt"
+  },
+  {
+    "id": "09913",
+    "split": "train",
+    "current_pair": "09913",
+    "previous_pair": "09831",
+    "rgb_image": "images/rgb/train/09913.jpg",
+    "ir_image": "images/ir/train/09913.jpg",
+    "label_rgb_compat": "labels/rgb/train/09913.txt",
+    "label_obb": "labels/obb/train/09913.txt"
+  },
+  {
+    "id": "10001",
+    "split": "train",
+    "current_pair": "10001",
+    "previous_pair": "09913",
+    "rgb_image": "images/rgb/train/10001.jpg",
+    "ir_image": "images/ir/train/10001.jpg",
+    "label_rgb_compat": "labels/rgb/train/10001.txt",
+    "label_obb": "labels/obb/train/10001.txt"
+  },
+  {
+    "id": "10077",
+    "split": "train",
+    "current_pair": "10077",
+    "previous_pair": "10001",
+    "rgb_image": "images/rgb/train/10077.jpg",
+    "ir_image": "images/ir/train/10077.jpg",
+    "label_rgb_compat": "labels/rgb/train/10077.txt",
+    "label_obb": "labels/obb/train/10077.txt"
+  },
+  {
+    "id": "10102",
+    "split": "train",
+    "current_pair": "10102",
+    "previous_pair": "10077",
+    "rgb_image": "images/rgb/train/10102.jpg",
+    "ir_image": "images/ir/train/10102.jpg",
+    "label_rgb_compat": "labels/rgb/train/10102.txt",
+    "label_obb": "labels/obb/train/10102.txt"
+  },
+  {
+    "id": "10215",
+    "split": "train",
+    "current_pair": "10215",
+    "previous_pair": "10102",
+    "rgb_image": "images/rgb/train/10215.jpg",
+    "ir_image": "images/ir/train/10215.jpg",
+    "label_rgb_compat": "labels/rgb/train/10215.txt",
+    "label_obb": "labels/obb/train/10215.txt"
+  },
+  {
+    "id": "10277",
+    "split": "train",
+    "current_pair": "10277",
+    "previous_pair": "10215",
+    "rgb_image": "images/rgb/train/10277.jpg",
+    "ir_image": "images/ir/train/10277.jpg",
+    "label_rgb_compat": "labels/rgb/train/10277.txt",
+    "label_obb": "labels/obb/train/10277.txt"
+  },
+  {
+    "id": "10296",
+    "split": "train",
+    "current_pair": "10296",
+    "previous_pair": "10277",
+    "rgb_image": "images/rgb/train/10296.jpg",
+    "ir_image": "images/ir/train/10296.jpg",
+    "label_rgb_compat": "labels/rgb/train/10296.txt",
+    "label_obb": "labels/obb/train/10296.txt"
+  },
+  {
+    "id": "10312",
+    "split": "train",
+    "current_pair": "10312",
+    "previous_pair": "10296",
+    "rgb_image": "images/rgb/train/10312.jpg",
+    "ir_image": "images/ir/train/10312.jpg",
+    "label_rgb_compat": "labels/rgb/train/10312.txt",
+    "label_obb": "labels/obb/train/10312.txt"
+  },
+  {
+    "id": "10337",
+    "split": "train",
+    "current_pair": "10337",
+    "previous_pair": "10312",
+    "rgb_image": "images/rgb/train/10337.jpg",
+    "ir_image": "images/ir/train/10337.jpg",
+    "label_rgb_compat": "labels/rgb/train/10337.txt",
+    "label_obb": "labels/obb/train/10337.txt"
+  },
+  {
+    "id": "10361",
+    "split": "train",
+    "current_pair": "10361",
+    "previous_pair": "10337",
+    "rgb_image": "images/rgb/train/10361.jpg",
+    "ir_image": "images/ir/train/10361.jpg",
+    "label_rgb_compat": "labels/rgb/train/10361.txt",
+    "label_obb": "labels/obb/train/10361.txt"
+  },
+  {
+    "id": "10367",
+    "split": "train",
+    "current_pair": "10367",
+    "previous_pair": "10361",
+    "rgb_image": "images/rgb/train/10367.jpg",
+    "ir_image": "images/ir/train/10367.jpg",
+    "label_rgb_compat": "labels/rgb/train/10367.txt",
+    "label_obb": "labels/obb/train/10367.txt"
+  },
+  {
+    "id": "10622",
+    "split": "train",
+    "current_pair": "10622",
+    "previous_pair": "10367",
+    "rgb_image": "images/rgb/train/10622.jpg",
+    "ir_image": "images/ir/train/10622.jpg",
+    "label_rgb_compat": "labels/rgb/train/10622.txt",
+    "label_obb": "labels/obb/train/10622.txt"
+  },
+  {
+    "id": "10627",
+    "split": "train",
+    "current_pair": "10627",
+    "previous_pair": "10622",
+    "rgb_image": "images/rgb/train/10627.jpg",
+    "ir_image": "images/ir/train/10627.jpg",
+    "label_rgb_compat": "labels/rgb/train/10627.txt",
+    "label_obb": "labels/obb/train/10627.txt"
+  },
+  {
+    "id": "10757",
+    "split": "train",
+    "current_pair": "10757",
+    "previous_pair": "10627",
+    "rgb_image": "images/rgb/train/10757.jpg",
+    "ir_image": "images/ir/train/10757.jpg",
+    "label_rgb_compat": "labels/rgb/train/10757.txt",
+    "label_obb": "labels/obb/train/10757.txt"
+  },
+  {
+    "id": "10828",
+    "split": "train",
+    "current_pair": "10828",
+    "previous_pair": "10757",
+    "rgb_image": "images/rgb/train/10828.jpg",
+    "ir_image": "images/ir/train/10828.jpg",
+    "label_rgb_compat": "labels/rgb/train/10828.txt",
+    "label_obb": "labels/obb/train/10828.txt"
+  },
+  {
+    "id": "10852",
+    "split": "train",
+    "current_pair": "10852",
+    "previous_pair": "10828",
+    "rgb_image": "images/rgb/train/10852.jpg",
+    "ir_image": "images/ir/train/10852.jpg",
+    "label_rgb_compat": "labels/rgb/train/10852.txt",
+    "label_obb": "labels/obb/train/10852.txt"
+  },
+  {
+    "id": "10886",
+    "split": "train",
+    "current_pair": "10886",
+    "previous_pair": "10852",
+    "rgb_image": "images/rgb/train/10886.jpg",
+    "ir_image": "images/ir/train/10886.jpg",
+    "label_rgb_compat": "labels/rgb/train/10886.txt",
+    "label_obb": "labels/obb/train/10886.txt"
+  },
+  {
+    "id": "10930",
+    "split": "train",
+    "current_pair": "10930",
+    "previous_pair": "10886",
+    "rgb_image": "images/rgb/train/10930.jpg",
+    "ir_image": "images/ir/train/10930.jpg",
+    "label_rgb_compat": "labels/rgb/train/10930.txt",
+    "label_obb": "labels/obb/train/10930.txt"
+  },
+  {
+    "id": "11030",
+    "split": "train",
+    "current_pair": "11030",
+    "previous_pair": "10930",
+    "rgb_image": "images/rgb/train/11030.jpg",
+    "ir_image": "images/ir/train/11030.jpg",
+    "label_rgb_compat": "labels/rgb/train/11030.txt",
+    "label_obb": "labels/obb/train/11030.txt"
+  },
+  {
+    "id": "11079",
+    "split": "train",
+    "current_pair": "11079",
+    "previous_pair": "11030",
+    "rgb_image": "images/rgb/train/11079.jpg",
+    "ir_image": "images/ir/train/11079.jpg",
+    "label_rgb_compat": "labels/rgb/train/11079.txt",
+    "label_obb": "labels/obb/train/11079.txt"
+  },
+  {
+    "id": "11119",
+    "split": "train",
+    "current_pair": "11119",
+    "previous_pair": "11079",
+    "rgb_image": "images/rgb/train/11119.jpg",
+    "ir_image": "images/ir/train/11119.jpg",
+    "label_rgb_compat": "labels/rgb/train/11119.txt",
+    "label_obb": "labels/obb/train/11119.txt"
+  },
+  {
+    "id": "11147",
+    "split": "train",
+    "current_pair": "11147",
+    "previous_pair": "11119",
+    "rgb_image": "images/rgb/train/11147.jpg",
+    "ir_image": "images/ir/train/11147.jpg",
+    "label_rgb_compat": "labels/rgb/train/11147.txt",
+    "label_obb": "labels/obb/train/11147.txt"
+  },
+  {
+    "id": "11150",
+    "split": "train",
+    "current_pair": "11150",
+    "previous_pair": "11147",
+    "rgb_image": "images/rgb/train/11150.jpg",
+    "ir_image": "images/ir/train/11150.jpg",
+    "label_rgb_compat": "labels/rgb/train/11150.txt",
+    "label_obb": "labels/obb/train/11150.txt"
+  },
+  {
+    "id": "11236",
+    "split": "train",
+    "current_pair": "11236",
+    "previous_pair": "11150",
+    "rgb_image": "images/rgb/train/11236.jpg",
+    "ir_image": "images/ir/train/11236.jpg",
+    "label_rgb_compat": "labels/rgb/train/11236.txt",
+    "label_obb": "labels/obb/train/11236.txt"
+  },
+  {
+    "id": "11271",
+    "split": "train",
+    "current_pair": "11271",
+    "previous_pair": "11236",
+    "rgb_image": "images/rgb/train/11271.jpg",
+    "ir_image": "images/ir/train/11271.jpg",
+    "label_rgb_compat": "labels/rgb/train/11271.txt",
+    "label_obb": "labels/obb/train/11271.txt"
+  },
+  {
+    "id": "11437",
+    "split": "train",
+    "current_pair": "11437",
+    "previous_pair": "11271",
+    "rgb_image": "images/rgb/train/11437.jpg",
+    "ir_image": "images/ir/train/11437.jpg",
+    "label_rgb_compat": "labels/rgb/train/11437.txt",
+    "label_obb": "labels/obb/train/11437.txt"
+  },
+  {
+    "id": "11458",
+    "split": "train",
+    "current_pair": "11458",
+    "previous_pair": "11437",
+    "rgb_image": "images/rgb/train/11458.jpg",
+    "ir_image": "images/ir/train/11458.jpg",
+    "label_rgb_compat": "labels/rgb/train/11458.txt",
+    "label_obb": "labels/obb/train/11458.txt"
+  },
+  {
+    "id": "11507",
+    "split": "train",
+    "current_pair": "11507",
+    "previous_pair": "11458",
+    "rgb_image": "images/rgb/train/11507.jpg",
+    "ir_image": "images/ir/train/11507.jpg",
+    "label_rgb_compat": "labels/rgb/train/11507.txt",
+    "label_obb": "labels/obb/train/11507.txt"
+  },
+  {
+    "id": "11590",
+    "split": "train",
+    "current_pair": "11590",
+    "previous_pair": "11507",
+    "rgb_image": "images/rgb/train/11590.jpg",
+    "ir_image": "images/ir/train/11590.jpg",
+    "label_rgb_compat": "labels/rgb/train/11590.txt",
+    "label_obb": "labels/obb/train/11590.txt"
+  },
+  {
+    "id": "11610",
+    "split": "train",
+    "current_pair": "11610",
+    "previous_pair": "11590",
+    "rgb_image": "images/rgb/train/11610.jpg",
+    "ir_image": "images/ir/train/11610.jpg",
+    "label_rgb_compat": "labels/rgb/train/11610.txt",
+    "label_obb": "labels/obb/train/11610.txt"
+  },
+  {
+    "id": "11642",
+    "split": "train",
+    "current_pair": "11642",
+    "previous_pair": "11610",
+    "rgb_image": "images/rgb/train/11642.jpg",
+    "ir_image": "images/ir/train/11642.jpg",
+    "label_rgb_compat": "labels/rgb/train/11642.txt",
+    "label_obb": "labels/obb/train/11642.txt"
+  },
+  {
+    "id": "11725",
+    "split": "train",
+    "current_pair": "11725",
+    "previous_pair": "11642",
+    "rgb_image": "images/rgb/train/11725.jpg",
+    "ir_image": "images/ir/train/11725.jpg",
+    "label_rgb_compat": "labels/rgb/train/11725.txt",
+    "label_obb": "labels/obb/train/11725.txt"
+  },
+  {
+    "id": "11764",
+    "split": "train",
+    "current_pair": "11764",
+    "previous_pair": "11725",
+    "rgb_image": "images/rgb/train/11764.jpg",
+    "ir_image": "images/ir/train/11764.jpg",
+    "label_rgb_compat": "labels/rgb/train/11764.txt",
+    "label_obb": "labels/obb/train/11764.txt"
+  },
+  {
+    "id": "11851",
+    "split": "train",
+    "current_pair": "11851",
+    "previous_pair": "11764",
+    "rgb_image": "images/rgb/train/11851.jpg",
+    "ir_image": "images/ir/train/11851.jpg",
+    "label_rgb_compat": "labels/rgb/train/11851.txt",
+    "label_obb": "labels/obb/train/11851.txt"
+  },
+  {
+    "id": "11862",
+    "split": "train",
+    "current_pair": "11862",
+    "previous_pair": "11851",
+    "rgb_image": "images/rgb/train/11862.jpg",
+    "ir_image": "images/ir/train/11862.jpg",
+    "label_rgb_compat": "labels/rgb/train/11862.txt",
+    "label_obb": "labels/obb/train/11862.txt"
+  },
+  {
+    "id": "11895",
+    "split": "train",
+    "current_pair": "11895",
+    "previous_pair": "11862",
+    "rgb_image": "images/rgb/train/11895.jpg",
+    "ir_image": "images/ir/train/11895.jpg",
+    "label_rgb_compat": "labels/rgb/train/11895.txt",
+    "label_obb": "labels/obb/train/11895.txt"
+  },
+  {
+    "id": "11949",
+    "split": "train",
+    "current_pair": "11949",
+    "previous_pair": "11895",
+    "rgb_image": "images/rgb/train/11949.jpg",
+    "ir_image": "images/ir/train/11949.jpg",
+    "label_rgb_compat": "labels/rgb/train/11949.txt",
+    "label_obb": "labels/obb/train/11949.txt"
+  },
+  {
+    "id": "11955",
+    "split": "train",
+    "current_pair": "11955",
+    "previous_pair": "11949",
+    "rgb_image": "images/rgb/train/11955.jpg",
+    "ir_image": "images/ir/train/11955.jpg",
+    "label_rgb_compat": "labels/rgb/train/11955.txt",
+    "label_obb": "labels/obb/train/11955.txt"
+  },
+  {
+    "id": "12099",
+    "split": "train",
+    "current_pair": "12099",
+    "previous_pair": "11955",
+    "rgb_image": "images/rgb/train/12099.jpg",
+    "ir_image": "images/ir/train/12099.jpg",
+    "label_rgb_compat": "labels/rgb/train/12099.txt",
+    "label_obb": "labels/obb/train/12099.txt"
+  },
+  {
+    "id": "12109",
+    "split": "train",
+    "current_pair": "12109",
+    "previous_pair": "12099",
+    "rgb_image": "images/rgb/train/12109.jpg",
+    "ir_image": "images/ir/train/12109.jpg",
+    "label_rgb_compat": "labels/rgb/train/12109.txt",
+    "label_obb": "labels/obb/train/12109.txt"
+  },
+  {
+    "id": "12131",
+    "split": "train",
+    "current_pair": "12131",
+    "previous_pair": "12109",
+    "rgb_image": "images/rgb/train/12131.jpg",
+    "ir_image": "images/ir/train/12131.jpg",
+    "label_rgb_compat": "labels/rgb/train/12131.txt",
+    "label_obb": "labels/obb/train/12131.txt"
+  },
+  {
+    "id": "12237",
+    "split": "train",
+    "current_pair": "12237",
+    "previous_pair": "12131",
+    "rgb_image": "images/rgb/train/12237.jpg",
+    "ir_image": "images/ir/train/12237.jpg",
+    "label_rgb_compat": "labels/rgb/train/12237.txt",
+    "label_obb": "labels/obb/train/12237.txt"
+  },
+  {
+    "id": "12253",
+    "split": "train",
+    "current_pair": "12253",
+    "previous_pair": "12237",
+    "rgb_image": "images/rgb/train/12253.jpg",
+    "ir_image": "images/ir/train/12253.jpg",
+    "label_rgb_compat": "labels/rgb/train/12253.txt",
+    "label_obb": "labels/obb/train/12253.txt"
+  },
+  {
+    "id": "12404",
+    "split": "train",
+    "current_pair": "12404",
+    "previous_pair": "12253",
+    "rgb_image": "images/rgb/train/12404.jpg",
+    "ir_image": "images/ir/train/12404.jpg",
+    "label_rgb_compat": "labels/rgb/train/12404.txt",
+    "label_obb": "labels/obb/train/12404.txt"
+  },
+  {
+    "id": "12419",
+    "split": "train",
+    "current_pair": "12419",
+    "previous_pair": "12404",
+    "rgb_image": "images/rgb/train/12419.jpg",
+    "ir_image": "images/ir/train/12419.jpg",
+    "label_rgb_compat": "labels/rgb/train/12419.txt",
+    "label_obb": "labels/obb/train/12419.txt"
+  },
+  {
+    "id": "12434",
+    "split": "train",
+    "current_pair": "12434",
+    "previous_pair": "12419",
+    "rgb_image": "images/rgb/train/12434.jpg",
+    "ir_image": "images/ir/train/12434.jpg",
+    "label_rgb_compat": "labels/rgb/train/12434.txt",
+    "label_obb": "labels/obb/train/12434.txt"
+  },
+  {
+    "id": "12450",
+    "split": "train",
+    "current_pair": "12450",
+    "previous_pair": "12434",
+    "rgb_image": "images/rgb/train/12450.jpg",
+    "ir_image": "images/ir/train/12450.jpg",
+    "label_rgb_compat": "labels/rgb/train/12450.txt",
+    "label_obb": "labels/obb/train/12450.txt"
+  },
+  {
+    "id": "12456",
+    "split": "train",
+    "current_pair": "12456",
+    "previous_pair": "12450",
+    "rgb_image": "images/rgb/train/12456.jpg",
+    "ir_image": "images/ir/train/12456.jpg",
+    "label_rgb_compat": "labels/rgb/train/12456.txt",
+    "label_obb": "labels/obb/train/12456.txt"
+  },
+  {
+    "id": "12505",
+    "split": "train",
+    "current_pair": "12505",
+    "previous_pair": "12456",
+    "rgb_image": "images/rgb/train/12505.jpg",
+    "ir_image": "images/ir/train/12505.jpg",
+    "label_rgb_compat": "labels/rgb/train/12505.txt",
+    "label_obb": "labels/obb/train/12505.txt"
+  },
+  {
+    "id": "12536",
+    "split": "train",
+    "current_pair": "12536",
+    "previous_pair": "12505",
+    "rgb_image": "images/rgb/train/12536.jpg",
+    "ir_image": "images/ir/train/12536.jpg",
+    "label_rgb_compat": "labels/rgb/train/12536.txt",
+    "label_obb": "labels/obb/train/12536.txt"
+  },
+  {
+    "id": "12609",
+    "split": "train",
+    "current_pair": "12609",
+    "previous_pair": "12536",
+    "rgb_image": "images/rgb/train/12609.jpg",
+    "ir_image": "images/ir/train/12609.jpg",
+    "label_rgb_compat": "labels/rgb/train/12609.txt",
+    "label_obb": "labels/obb/train/12609.txt"
+  },
+  {
+    "id": "12794",
+    "split": "train",
+    "current_pair": "12794",
+    "previous_pair": "12609",
+    "rgb_image": "images/rgb/train/12794.jpg",
+    "ir_image": "images/ir/train/12794.jpg",
+    "label_rgb_compat": "labels/rgb/train/12794.txt",
+    "label_obb": "labels/obb/train/12794.txt"
+  },
+  {
+    "id": "12965",
+    "split": "train",
+    "current_pair": "12965",
+    "previous_pair": "12794",
+    "rgb_image": "images/rgb/train/12965.jpg",
+    "ir_image": "images/ir/train/12965.jpg",
+    "label_rgb_compat": "labels/rgb/train/12965.txt",
+    "label_obb": "labels/obb/train/12965.txt"
+  },
+  {
+    "id": "12970",
+    "split": "train",
+    "current_pair": "12970",
+    "previous_pair": "12965",
+    "rgb_image": "images/rgb/train/12970.jpg",
+    "ir_image": "images/ir/train/12970.jpg",
+    "label_rgb_compat": "labels/rgb/train/12970.txt",
+    "label_obb": "labels/obb/train/12970.txt"
+  },
+  {
+    "id": "13057",
+    "split": "train",
+    "current_pair": "13057",
+    "previous_pair": "12970",
+    "rgb_image": "images/rgb/train/13057.jpg",
+    "ir_image": "images/ir/train/13057.jpg",
+    "label_rgb_compat": "labels/rgb/train/13057.txt",
+    "label_obb": "labels/obb/train/13057.txt"
+  },
+  {
+    "id": "13075",
+    "split": "train",
+    "current_pair": "13075",
+    "previous_pair": "13057",
+    "rgb_image": "images/rgb/train/13075.jpg",
+    "ir_image": "images/ir/train/13075.jpg",
+    "label_rgb_compat": "labels/rgb/train/13075.txt",
+    "label_obb": "labels/obb/train/13075.txt"
+  },
+  {
+    "id": "13088",
+    "split": "train",
+    "current_pair": "13088",
+    "previous_pair": "13075",
+    "rgb_image": "images/rgb/train/13088.jpg",
+    "ir_image": "images/ir/train/13088.jpg",
+    "label_rgb_compat": "labels/rgb/train/13088.txt",
+    "label_obb": "labels/obb/train/13088.txt"
+  },
+  {
+    "id": "13097",
+    "split": "train",
+    "current_pair": "13097",
+    "previous_pair": "13088",
+    "rgb_image": "images/rgb/train/13097.jpg",
+    "ir_image": "images/ir/train/13097.jpg",
+    "label_rgb_compat": "labels/rgb/train/13097.txt",
+    "label_obb": "labels/obb/train/13097.txt"
+  },
+  {
+    "id": "13142",
+    "split": "train",
+    "current_pair": "13142",
+    "previous_pair": "13097",
+    "rgb_image": "images/rgb/train/13142.jpg",
+    "ir_image": "images/ir/train/13142.jpg",
+    "label_rgb_compat": "labels/rgb/train/13142.txt",
+    "label_obb": "labels/obb/train/13142.txt"
+  },
+  {
+    "id": "13146",
+    "split": "train",
+    "current_pair": "13146",
+    "previous_pair": "13142",
+    "rgb_image": "images/rgb/train/13146.jpg",
+    "ir_image": "images/ir/train/13146.jpg",
+    "label_rgb_compat": "labels/rgb/train/13146.txt",
+    "label_obb": "labels/obb/train/13146.txt"
+  },
+  {
+    "id": "13194",
+    "split": "train",
+    "current_pair": "13194",
+    "previous_pair": "13146",
+    "rgb_image": "images/rgb/train/13194.jpg",
+    "ir_image": "images/ir/train/13194.jpg",
+    "label_rgb_compat": "labels/rgb/train/13194.txt",
+    "label_obb": "labels/obb/train/13194.txt"
+  },
+  {
+    "id": "13231",
+    "split": "train",
+    "current_pair": "13231",
+    "previous_pair": "13194",
+    "rgb_image": "images/rgb/train/13231.jpg",
+    "ir_image": "images/ir/train/13231.jpg",
+    "label_rgb_compat": "labels/rgb/train/13231.txt",
+    "label_obb": "labels/obb/train/13231.txt"
+  },
+  {
+    "id": "13317",
+    "split": "train",
+    "current_pair": "13317",
+    "previous_pair": "13231",
+    "rgb_image": "images/rgb/train/13317.jpg",
+    "ir_image": "images/ir/train/13317.jpg",
+    "label_rgb_compat": "labels/rgb/train/13317.txt",
+    "label_obb": "labels/obb/train/13317.txt"
+  },
+  {
+    "id": "13318",
+    "split": "train",
+    "current_pair": "13318",
+    "previous_pair": "13317",
+    "rgb_image": "images/rgb/train/13318.jpg",
+    "ir_image": "images/ir/train/13318.jpg",
+    "label_rgb_compat": "labels/rgb/train/13318.txt",
+    "label_obb": "labels/obb/train/13318.txt"
+  },
+  {
+    "id": "13339",
+    "split": "train",
+    "current_pair": "13339",
+    "previous_pair": "13318",
+    "rgb_image": "images/rgb/train/13339.jpg",
+    "ir_image": "images/ir/train/13339.jpg",
+    "label_rgb_compat": "labels/rgb/train/13339.txt",
+    "label_obb": "labels/obb/train/13339.txt"
+  },
+  {
+    "id": "13471",
+    "split": "train",
+    "current_pair": "13471",
+    "previous_pair": "13339",
+    "rgb_image": "images/rgb/train/13471.jpg",
+    "ir_image": "images/ir/train/13471.jpg",
+    "label_rgb_compat": "labels/rgb/train/13471.txt",
+    "label_obb": "labels/obb/train/13471.txt"
+  },
+  {
+    "id": "13492",
+    "split": "train",
+    "current_pair": "13492",
+    "previous_pair": "13471",
+    "rgb_image": "images/rgb/train/13492.jpg",
+    "ir_image": "images/ir/train/13492.jpg",
+    "label_rgb_compat": "labels/rgb/train/13492.txt",
+    "label_obb": "labels/obb/train/13492.txt"
+  },
+  {
+    "id": "13511",
+    "split": "train",
+    "current_pair": "13511",
+    "previous_pair": "13492",
+    "rgb_image": "images/rgb/train/13511.jpg",
+    "ir_image": "images/ir/train/13511.jpg",
+    "label_rgb_compat": "labels/rgb/train/13511.txt",
+    "label_obb": "labels/obb/train/13511.txt"
+  },
+  {
+    "id": "13738",
+    "split": "train",
+    "current_pair": "13738",
+    "previous_pair": "13511",
+    "rgb_image": "images/rgb/train/13738.jpg",
+    "ir_image": "images/ir/train/13738.jpg",
+    "label_rgb_compat": "labels/rgb/train/13738.txt",
+    "label_obb": "labels/obb/train/13738.txt"
+  },
+  {
+    "id": "13747",
+    "split": "train",
+    "current_pair": "13747",
+    "previous_pair": "13738",
+    "rgb_image": "images/rgb/train/13747.jpg",
+    "ir_image": "images/ir/train/13747.jpg",
+    "label_rgb_compat": "labels/rgb/train/13747.txt",
+    "label_obb": "labels/obb/train/13747.txt"
+  },
+  {
+    "id": "13825",
+    "split": "train",
+    "current_pair": "13825",
+    "previous_pair": "13747",
+    "rgb_image": "images/rgb/train/13825.jpg",
+    "ir_image": "images/ir/train/13825.jpg",
+    "label_rgb_compat": "labels/rgb/train/13825.txt",
+    "label_obb": "labels/obb/train/13825.txt"
+  },
+  {
+    "id": "13826",
+    "split": "train",
+    "current_pair": "13826",
+    "previous_pair": "13825",
+    "rgb_image": "images/rgb/train/13826.jpg",
+    "ir_image": "images/ir/train/13826.jpg",
+    "label_rgb_compat": "labels/rgb/train/13826.txt",
+    "label_obb": "labels/obb/train/13826.txt"
+  },
+  {
+    "id": "13834",
+    "split": "train",
+    "current_pair": "13834",
+    "previous_pair": "13826",
+    "rgb_image": "images/rgb/train/13834.jpg",
+    "ir_image": "images/ir/train/13834.jpg",
+    "label_rgb_compat": "labels/rgb/train/13834.txt",
+    "label_obb": "labels/obb/train/13834.txt"
+  },
+  {
+    "id": "13849",
+    "split": "train",
+    "current_pair": "13849",
+    "previous_pair": "13834",
+    "rgb_image": "images/rgb/train/13849.jpg",
+    "ir_image": "images/ir/train/13849.jpg",
+    "label_rgb_compat": "labels/rgb/train/13849.txt",
+    "label_obb": "labels/obb/train/13849.txt"
+  },
+  {
+    "id": "13862",
+    "split": "train",
+    "current_pair": "13862",
+    "previous_pair": "13849",
+    "rgb_image": "images/rgb/train/13862.jpg",
+    "ir_image": "images/ir/train/13862.jpg",
+    "label_rgb_compat": "labels/rgb/train/13862.txt",
+    "label_obb": "labels/obb/train/13862.txt"
+  },
+  {
+    "id": "13866",
+    "split": "train",
+    "current_pair": "13866",
+    "previous_pair": "13862",
+    "rgb_image": "images/rgb/train/13866.jpg",
+    "ir_image": "images/ir/train/13866.jpg",
+    "label_rgb_compat": "labels/rgb/train/13866.txt",
+    "label_obb": "labels/obb/train/13866.txt"
+  },
+  {
+    "id": "13880",
+    "split": "train",
+    "current_pair": "13880",
+    "previous_pair": "13866",
+    "rgb_image": "images/rgb/train/13880.jpg",
+    "ir_image": "images/ir/train/13880.jpg",
+    "label_rgb_compat": "labels/rgb/train/13880.txt",
+    "label_obb": "labels/obb/train/13880.txt"
+  },
+  {
+    "id": "14015",
+    "split": "train",
+    "current_pair": "14015",
+    "previous_pair": "13880",
+    "rgb_image": "images/rgb/train/14015.jpg",
+    "ir_image": "images/ir/train/14015.jpg",
+    "label_rgb_compat": "labels/rgb/train/14015.txt",
+    "label_obb": "labels/obb/train/14015.txt"
+  },
+  {
+    "id": "14039",
+    "split": "train",
+    "current_pair": "14039",
+    "previous_pair": "14015",
+    "rgb_image": "images/rgb/train/14039.jpg",
+    "ir_image": "images/ir/train/14039.jpg",
+    "label_rgb_compat": "labels/rgb/train/14039.txt",
+    "label_obb": "labels/obb/train/14039.txt"
+  },
+  {
+    "id": "14084",
+    "split": "train",
+    "current_pair": "14084",
+    "previous_pair": "14039",
+    "rgb_image": "images/rgb/train/14084.jpg",
+    "ir_image": "images/ir/train/14084.jpg",
+    "label_rgb_compat": "labels/rgb/train/14084.txt",
+    "label_obb": "labels/obb/train/14084.txt"
+  },
+  {
+    "id": "14125",
+    "split": "train",
+    "current_pair": "14125",
+    "previous_pair": "14084",
+    "rgb_image": "images/rgb/train/14125.jpg",
+    "ir_image": "images/ir/train/14125.jpg",
+    "label_rgb_compat": "labels/rgb/train/14125.txt",
+    "label_obb": "labels/obb/train/14125.txt"
+  },
+  {
+    "id": "14247",
+    "split": "train",
+    "current_pair": "14247",
+    "previous_pair": "14125",
+    "rgb_image": "images/rgb/train/14247.jpg",
+    "ir_image": "images/ir/train/14247.jpg",
+    "label_rgb_compat": "labels/rgb/train/14247.txt",
+    "label_obb": "labels/obb/train/14247.txt"
+  },
+  {
+    "id": "14356",
+    "split": "train",
+    "current_pair": "14356",
+    "previous_pair": "14247",
+    "rgb_image": "images/rgb/train/14356.jpg",
+    "ir_image": "images/ir/train/14356.jpg",
+    "label_rgb_compat": "labels/rgb/train/14356.txt",
+    "label_obb": "labels/obb/train/14356.txt"
+  },
+  {
+    "id": "14359",
+    "split": "train",
+    "current_pair": "14359",
+    "previous_pair": "14356",
+    "rgb_image": "images/rgb/train/14359.jpg",
+    "ir_image": "images/ir/train/14359.jpg",
+    "label_rgb_compat": "labels/rgb/train/14359.txt",
+    "label_obb": "labels/obb/train/14359.txt"
+  },
+  {
+    "id": "14479",
+    "split": "train",
+    "current_pair": "14479",
+    "previous_pair": "14359",
+    "rgb_image": "images/rgb/train/14479.jpg",
+    "ir_image": "images/ir/train/14479.jpg",
+    "label_rgb_compat": "labels/rgb/train/14479.txt",
+    "label_obb": "labels/obb/train/14479.txt"
+  },
+  {
+    "id": "14521",
+    "split": "train",
+    "current_pair": "14521",
+    "previous_pair": "14479",
+    "rgb_image": "images/rgb/train/14521.jpg",
+    "ir_image": "images/ir/train/14521.jpg",
+    "label_rgb_compat": "labels/rgb/train/14521.txt",
+    "label_obb": "labels/obb/train/14521.txt"
+  },
+  {
+    "id": "14701",
+    "split": "train",
+    "current_pair": "14701",
+    "previous_pair": "14521",
+    "rgb_image": "images/rgb/train/14701.jpg",
+    "ir_image": "images/ir/train/14701.jpg",
+    "label_rgb_compat": "labels/rgb/train/14701.txt",
+    "label_obb": "labels/obb/train/14701.txt"
+  },
+  {
+    "id": "14720",
+    "split": "train",
+    "current_pair": "14720",
+    "previous_pair": "14701",
+    "rgb_image": "images/rgb/train/14720.jpg",
+    "ir_image": "images/ir/train/14720.jpg",
+    "label_rgb_compat": "labels/rgb/train/14720.txt",
+    "label_obb": "labels/obb/train/14720.txt"
+  },
+  {
+    "id": "14795",
+    "split": "train",
+    "current_pair": "14795",
+    "previous_pair": "14720",
+    "rgb_image": "images/rgb/train/14795.jpg",
+    "ir_image": "images/ir/train/14795.jpg",
+    "label_rgb_compat": "labels/rgb/train/14795.txt",
+    "label_obb": "labels/obb/train/14795.txt"
+  },
+  {
+    "id": "14858",
+    "split": "train",
+    "current_pair": "14858",
+    "previous_pair": "14795",
+    "rgb_image": "images/rgb/train/14858.jpg",
+    "ir_image": "images/ir/train/14858.jpg",
+    "label_rgb_compat": "labels/rgb/train/14858.txt",
+    "label_obb": "labels/obb/train/14858.txt"
+  },
+  {
+    "id": "14868",
+    "split": "train",
+    "current_pair": "14868",
+    "previous_pair": "14858",
+    "rgb_image": "images/rgb/train/14868.jpg",
+    "ir_image": "images/ir/train/14868.jpg",
+    "label_rgb_compat": "labels/rgb/train/14868.txt",
+    "label_obb": "labels/obb/train/14868.txt"
+  },
+  {
+    "id": "14910",
+    "split": "train",
+    "current_pair": "14910",
+    "previous_pair": "14868",
+    "rgb_image": "images/rgb/train/14910.jpg",
+    "ir_image": "images/ir/train/14910.jpg",
+    "label_rgb_compat": "labels/rgb/train/14910.txt",
+    "label_obb": "labels/obb/train/14910.txt"
+  },
+  {
+    "id": "14983",
+    "split": "train",
+    "current_pair": "14983",
+    "previous_pair": "14910",
+    "rgb_image": "images/rgb/train/14983.jpg",
+    "ir_image": "images/ir/train/14983.jpg",
+    "label_rgb_compat": "labels/rgb/train/14983.txt",
+    "label_obb": "labels/obb/train/14983.txt"
+  },
+  {
+    "id": "15018",
+    "split": "train",
+    "current_pair": "15018",
+    "previous_pair": "14983",
+    "rgb_image": "images/rgb/train/15018.jpg",
+    "ir_image": "images/ir/train/15018.jpg",
+    "label_rgb_compat": "labels/rgb/train/15018.txt",
+    "label_obb": "labels/obb/train/15018.txt"
+  },
+  {
+    "id": "15036",
+    "split": "train",
+    "current_pair": "15036",
+    "previous_pair": "15018",
+    "rgb_image": "images/rgb/train/15036.jpg",
+    "ir_image": "images/ir/train/15036.jpg",
+    "label_rgb_compat": "labels/rgb/train/15036.txt",
+    "label_obb": "labels/obb/train/15036.txt"
+  },
+  {
+    "id": "15055",
+    "split": "train",
+    "current_pair": "15055",
+    "previous_pair": "15036",
+    "rgb_image": "images/rgb/train/15055.jpg",
+    "ir_image": "images/ir/train/15055.jpg",
+    "label_rgb_compat": "labels/rgb/train/15055.txt",
+    "label_obb": "labels/obb/train/15055.txt"
+  },
+  {
+    "id": "15084",
+    "split": "train",
+    "current_pair": "15084",
+    "previous_pair": "15055",
+    "rgb_image": "images/rgb/train/15084.jpg",
+    "ir_image": "images/ir/train/15084.jpg",
+    "label_rgb_compat": "labels/rgb/train/15084.txt",
+    "label_obb": "labels/obb/train/15084.txt"
+  },
+  {
+    "id": "15148",
+    "split": "train",
+    "current_pair": "15148",
+    "previous_pair": "15084",
+    "rgb_image": "images/rgb/train/15148.jpg",
+    "ir_image": "images/ir/train/15148.jpg",
+    "label_rgb_compat": "labels/rgb/train/15148.txt",
+    "label_obb": "labels/obb/train/15148.txt"
+  },
+  {
+    "id": "15160",
+    "split": "train",
+    "current_pair": "15160",
+    "previous_pair": "15148",
+    "rgb_image": "images/rgb/train/15160.jpg",
+    "ir_image": "images/ir/train/15160.jpg",
+    "label_rgb_compat": "labels/rgb/train/15160.txt",
+    "label_obb": "labels/obb/train/15160.txt"
+  },
+  {
+    "id": "15304",
+    "split": "train",
+    "current_pair": "15304",
+    "previous_pair": "15160",
+    "rgb_image": "images/rgb/train/15304.jpg",
+    "ir_image": "images/ir/train/15304.jpg",
+    "label_rgb_compat": "labels/rgb/train/15304.txt",
+    "label_obb": "labels/obb/train/15304.txt"
+  },
+  {
+    "id": "15338",
+    "split": "train",
+    "current_pair": "15338",
+    "previous_pair": "15304",
+    "rgb_image": "images/rgb/train/15338.jpg",
+    "ir_image": "images/ir/train/15338.jpg",
+    "label_rgb_compat": "labels/rgb/train/15338.txt",
+    "label_obb": "labels/obb/train/15338.txt"
+  },
+  {
+    "id": "15424",
+    "split": "train",
+    "current_pair": "15424",
+    "previous_pair": "15338",
+    "rgb_image": "images/rgb/train/15424.jpg",
+    "ir_image": "images/ir/train/15424.jpg",
+    "label_rgb_compat": "labels/rgb/train/15424.txt",
+    "label_obb": "labels/obb/train/15424.txt"
+  },
+  {
+    "id": "15489",
+    "split": "train",
+    "current_pair": "15489",
+    "previous_pair": "15424",
+    "rgb_image": "images/rgb/train/15489.jpg",
+    "ir_image": "images/ir/train/15489.jpg",
+    "label_rgb_compat": "labels/rgb/train/15489.txt",
+    "label_obb": "labels/obb/train/15489.txt"
+  },
+  {
+    "id": "15499",
+    "split": "train",
+    "current_pair": "15499",
+    "previous_pair": "15489",
+    "rgb_image": "images/rgb/train/15499.jpg",
+    "ir_image": "images/ir/train/15499.jpg",
+    "label_rgb_compat": "labels/rgb/train/15499.txt",
+    "label_obb": "labels/obb/train/15499.txt"
+  },
+  {
+    "id": "15575",
+    "split": "train",
+    "current_pair": "15575",
+    "previous_pair": "15499",
+    "rgb_image": "images/rgb/train/15575.jpg",
+    "ir_image": "images/ir/train/15575.jpg",
+    "label_rgb_compat": "labels/rgb/train/15575.txt",
+    "label_obb": "labels/obb/train/15575.txt"
+  },
+  {
+    "id": "15624",
+    "split": "train",
+    "current_pair": "15624",
+    "previous_pair": "15575",
+    "rgb_image": "images/rgb/train/15624.jpg",
+    "ir_image": "images/ir/train/15624.jpg",
+    "label_rgb_compat": "labels/rgb/train/15624.txt",
+    "label_obb": "labels/obb/train/15624.txt"
+  },
+  {
+    "id": "15774",
+    "split": "train",
+    "current_pair": "15774",
+    "previous_pair": "15624",
+    "rgb_image": "images/rgb/train/15774.jpg",
+    "ir_image": "images/ir/train/15774.jpg",
+    "label_rgb_compat": "labels/rgb/train/15774.txt",
+    "label_obb": "labels/obb/train/15774.txt"
+  },
+  {
+    "id": "15907",
+    "split": "train",
+    "current_pair": "15907",
+    "previous_pair": "15774",
+    "rgb_image": "images/rgb/train/15907.jpg",
+    "ir_image": "images/ir/train/15907.jpg",
+    "label_rgb_compat": "labels/rgb/train/15907.txt",
+    "label_obb": "labels/obb/train/15907.txt"
+  },
+  {
+    "id": "15914",
+    "split": "train",
+    "current_pair": "15914",
+    "previous_pair": "15907",
+    "rgb_image": "images/rgb/train/15914.jpg",
+    "ir_image": "images/ir/train/15914.jpg",
+    "label_rgb_compat": "labels/rgb/train/15914.txt",
+    "label_obb": "labels/obb/train/15914.txt"
+  },
+  {
+    "id": "15925",
+    "split": "train",
+    "current_pair": "15925",
+    "previous_pair": "15914",
+    "rgb_image": "images/rgb/train/15925.jpg",
+    "ir_image": "images/ir/train/15925.jpg",
+    "label_rgb_compat": "labels/rgb/train/15925.txt",
+    "label_obb": "labels/obb/train/15925.txt"
+  },
+  {
+    "id": "15948",
+    "split": "train",
+    "current_pair": "15948",
+    "previous_pair": "15925",
+    "rgb_image": "images/rgb/train/15948.jpg",
+    "ir_image": "images/ir/train/15948.jpg",
+    "label_rgb_compat": "labels/rgb/train/15948.txt",
+    "label_obb": "labels/obb/train/15948.txt"
+  },
+  {
+    "id": "16009",
+    "split": "train",
+    "current_pair": "16009",
+    "previous_pair": "15948",
+    "rgb_image": "images/rgb/train/16009.jpg",
+    "ir_image": "images/ir/train/16009.jpg",
+    "label_rgb_compat": "labels/rgb/train/16009.txt",
+    "label_obb": "labels/obb/train/16009.txt"
+  },
+  {
+    "id": "16011",
+    "split": "train",
+    "current_pair": "16011",
+    "previous_pair": "16009",
+    "rgb_image": "images/rgb/train/16011.jpg",
+    "ir_image": "images/ir/train/16011.jpg",
+    "label_rgb_compat": "labels/rgb/train/16011.txt",
+    "label_obb": "labels/obb/train/16011.txt"
+  },
+  {
+    "id": "16172",
+    "split": "train",
+    "current_pair": "16172",
+    "previous_pair": "16011",
+    "rgb_image": "images/rgb/train/16172.jpg",
+    "ir_image": "images/ir/train/16172.jpg",
+    "label_rgb_compat": "labels/rgb/train/16172.txt",
+    "label_obb": "labels/obb/train/16172.txt"
+  },
+  {
+    "id": "16359",
+    "split": "train",
+    "current_pair": "16359",
+    "previous_pair": "16172",
+    "rgb_image": "images/rgb/train/16359.jpg",
+    "ir_image": "images/ir/train/16359.jpg",
+    "label_rgb_compat": "labels/rgb/train/16359.txt",
+    "label_obb": "labels/obb/train/16359.txt"
+  },
+  {
+    "id": "16404",
+    "split": "train",
+    "current_pair": "16404",
+    "previous_pair": "16359",
+    "rgb_image": "images/rgb/train/16404.jpg",
+    "ir_image": "images/ir/train/16404.jpg",
+    "label_rgb_compat": "labels/rgb/train/16404.txt",
+    "label_obb": "labels/obb/train/16404.txt"
+  },
+  {
+    "id": "16478",
+    "split": "train",
+    "current_pair": "16478",
+    "previous_pair": "16404",
+    "rgb_image": "images/rgb/train/16478.jpg",
+    "ir_image": "images/ir/train/16478.jpg",
+    "label_rgb_compat": "labels/rgb/train/16478.txt",
+    "label_obb": "labels/obb/train/16478.txt"
+  },
+  {
+    "id": "16560",
+    "split": "train",
+    "current_pair": "16560",
+    "previous_pair": "16478",
+    "rgb_image": "images/rgb/train/16560.jpg",
+    "ir_image": "images/ir/train/16560.jpg",
+    "label_rgb_compat": "labels/rgb/train/16560.txt",
+    "label_obb": "labels/obb/train/16560.txt"
+  },
+  {
+    "id": "16562",
+    "split": "train",
+    "current_pair": "16562",
+    "previous_pair": "16560",
+    "rgb_image": "images/rgb/train/16562.jpg",
+    "ir_image": "images/ir/train/16562.jpg",
+    "label_rgb_compat": "labels/rgb/train/16562.txt",
+    "label_obb": "labels/obb/train/16562.txt"
+  },
+  {
+    "id": "16577",
+    "split": "train",
+    "current_pair": "16577",
+    "previous_pair": "16562",
+    "rgb_image": "images/rgb/train/16577.jpg",
+    "ir_image": "images/ir/train/16577.jpg",
+    "label_rgb_compat": "labels/rgb/train/16577.txt",
+    "label_obb": "labels/obb/train/16577.txt"
+  },
+  {
+    "id": "16636",
+    "split": "train",
+    "current_pair": "16636",
+    "previous_pair": "16577",
+    "rgb_image": "images/rgb/train/16636.jpg",
+    "ir_image": "images/ir/train/16636.jpg",
+    "label_rgb_compat": "labels/rgb/train/16636.txt",
+    "label_obb": "labels/obb/train/16636.txt"
+  },
+  {
+    "id": "16641",
+    "split": "train",
+    "current_pair": "16641",
+    "previous_pair": "16636",
+    "rgb_image": "images/rgb/train/16641.jpg",
+    "ir_image": "images/ir/train/16641.jpg",
+    "label_rgb_compat": "labels/rgb/train/16641.txt",
+    "label_obb": "labels/obb/train/16641.txt"
+  },
+  {
+    "id": "16693",
+    "split": "train",
+    "current_pair": "16693",
+    "previous_pair": "16641",
+    "rgb_image": "images/rgb/train/16693.jpg",
+    "ir_image": "images/ir/train/16693.jpg",
+    "label_rgb_compat": "labels/rgb/train/16693.txt",
+    "label_obb": "labels/obb/train/16693.txt"
+  },
+  {
+    "id": "16697",
+    "split": "train",
+    "current_pair": "16697",
+    "previous_pair": "16693",
+    "rgb_image": "images/rgb/train/16697.jpg",
+    "ir_image": "images/ir/train/16697.jpg",
+    "label_rgb_compat": "labels/rgb/train/16697.txt",
+    "label_obb": "labels/obb/train/16697.txt"
+  },
+  {
+    "id": "16848",
+    "split": "train",
+    "current_pair": "16848",
+    "previous_pair": "16697",
+    "rgb_image": "images/rgb/train/16848.jpg",
+    "ir_image": "images/ir/train/16848.jpg",
+    "label_rgb_compat": "labels/rgb/train/16848.txt",
+    "label_obb": "labels/obb/train/16848.txt"
+  },
+  {
+    "id": "16960",
+    "split": "train",
+    "current_pair": "16960",
+    "previous_pair": "16848",
+    "rgb_image": "images/rgb/train/16960.jpg",
+    "ir_image": "images/ir/train/16960.jpg",
+    "label_rgb_compat": "labels/rgb/train/16960.txt",
+    "label_obb": "labels/obb/train/16960.txt"
+  },
+  {
+    "id": "17131",
+    "split": "train",
+    "current_pair": "17131",
+    "previous_pair": "16960",
+    "rgb_image": "images/rgb/train/17131.jpg",
+    "ir_image": "images/ir/train/17131.jpg",
+    "label_rgb_compat": "labels/rgb/train/17131.txt",
+    "label_obb": "labels/obb/train/17131.txt"
+  },
+  {
+    "id": "17291",
+    "split": "train",
+    "current_pair": "17291",
+    "previous_pair": "17131",
+    "rgb_image": "images/rgb/train/17291.jpg",
+    "ir_image": "images/ir/train/17291.jpg",
+    "label_rgb_compat": "labels/rgb/train/17291.txt",
+    "label_obb": "labels/obb/train/17291.txt"
+  },
+  {
+    "id": "17333",
+    "split": "train",
+    "current_pair": "17333",
+    "previous_pair": "17291",
+    "rgb_image": "images/rgb/train/17333.jpg",
+    "ir_image": "images/ir/train/17333.jpg",
+    "label_rgb_compat": "labels/rgb/train/17333.txt",
+    "label_obb": "labels/obb/train/17333.txt"
+  },
+  {
+    "id": "17339",
+    "split": "train",
+    "current_pair": "17339",
+    "previous_pair": "17333",
+    "rgb_image": "images/rgb/train/17339.jpg",
+    "ir_image": "images/ir/train/17339.jpg",
+    "label_rgb_compat": "labels/rgb/train/17339.txt",
+    "label_obb": "labels/obb/train/17339.txt"
+  },
+  {
+    "id": "17379",
+    "split": "train",
+    "current_pair": "17379",
+    "previous_pair": "17339",
+    "rgb_image": "images/rgb/train/17379.jpg",
+    "ir_image": "images/ir/train/17379.jpg",
+    "label_rgb_compat": "labels/rgb/train/17379.txt",
+    "label_obb": "labels/obb/train/17379.txt"
+  },
+  {
+    "id": "17404",
+    "split": "train",
+    "current_pair": "17404",
+    "previous_pair": "17379",
+    "rgb_image": "images/rgb/train/17404.jpg",
+    "ir_image": "images/ir/train/17404.jpg",
+    "label_rgb_compat": "labels/rgb/train/17404.txt",
+    "label_obb": "labels/obb/train/17404.txt"
+  },
+  {
+    "id": "17456",
+    "split": "train",
+    "current_pair": "17456",
+    "previous_pair": "17404",
+    "rgb_image": "images/rgb/train/17456.jpg",
+    "ir_image": "images/ir/train/17456.jpg",
+    "label_rgb_compat": "labels/rgb/train/17456.txt",
+    "label_obb": "labels/obb/train/17456.txt"
+  },
+  {
+    "id": "17503",
+    "split": "train",
+    "current_pair": "17503",
+    "previous_pair": "17456",
+    "rgb_image": "images/rgb/train/17503.jpg",
+    "ir_image": "images/ir/train/17503.jpg",
+    "label_rgb_compat": "labels/rgb/train/17503.txt",
+    "label_obb": "labels/obb/train/17503.txt"
+  },
+  {
+    "id": "17571",
+    "split": "train",
+    "current_pair": "17571",
+    "previous_pair": "17503",
+    "rgb_image": "images/rgb/train/17571.jpg",
+    "ir_image": "images/ir/train/17571.jpg",
+    "label_rgb_compat": "labels/rgb/train/17571.txt",
+    "label_obb": "labels/obb/train/17571.txt"
+  },
+  {
+    "id": "17572",
+    "split": "train",
+    "current_pair": "17572",
+    "previous_pair": "17571",
+    "rgb_image": "images/rgb/train/17572.jpg",
+    "ir_image": "images/ir/train/17572.jpg",
+    "label_rgb_compat": "labels/rgb/train/17572.txt",
+    "label_obb": "labels/obb/train/17572.txt"
+  },
+  {
+    "id": "17574",
+    "split": "train",
+    "current_pair": "17574",
+    "previous_pair": "17572",
+    "rgb_image": "images/rgb/train/17574.jpg",
+    "ir_image": "images/ir/train/17574.jpg",
+    "label_rgb_compat": "labels/rgb/train/17574.txt",
+    "label_obb": "labels/obb/train/17574.txt"
+  },
+  {
+    "id": "17596",
+    "split": "train",
+    "current_pair": "17596",
+    "previous_pair": "17574",
+    "rgb_image": "images/rgb/train/17596.jpg",
+    "ir_image": "images/ir/train/17596.jpg",
+    "label_rgb_compat": "labels/rgb/train/17596.txt",
+    "label_obb": "labels/obb/train/17596.txt"
+  },
+  {
+    "id": "17618",
+    "split": "train",
+    "current_pair": "17618",
+    "previous_pair": "17596",
+    "rgb_image": "images/rgb/train/17618.jpg",
+    "ir_image": "images/ir/train/17618.jpg",
+    "label_rgb_compat": "labels/rgb/train/17618.txt",
+    "label_obb": "labels/obb/train/17618.txt"
+  },
+  {
+    "id": "17662",
+    "split": "train",
+    "current_pair": "17662",
+    "previous_pair": "17618",
+    "rgb_image": "images/rgb/train/17662.jpg",
+    "ir_image": "images/ir/train/17662.jpg",
+    "label_rgb_compat": "labels/rgb/train/17662.txt",
+    "label_obb": "labels/obb/train/17662.txt"
+  },
+  {
+    "id": "17670",
+    "split": "train",
+    "current_pair": "17670",
+    "previous_pair": "17662",
+    "rgb_image": "images/rgb/train/17670.jpg",
+    "ir_image": "images/ir/train/17670.jpg",
+    "label_rgb_compat": "labels/rgb/train/17670.txt",
+    "label_obb": "labels/obb/train/17670.txt"
+  },
+  {
+    "id": "17672",
+    "split": "train",
+    "current_pair": "17672",
+    "previous_pair": "17670",
+    "rgb_image": "images/rgb/train/17672.jpg",
+    "ir_image": "images/ir/train/17672.jpg",
+    "label_rgb_compat": "labels/rgb/train/17672.txt",
+    "label_obb": "labels/obb/train/17672.txt"
+  },
+  {
+    "id": "17675",
+    "split": "train",
+    "current_pair": "17675",
+    "previous_pair": "17672",
+    "rgb_image": "images/rgb/train/17675.jpg",
+    "ir_image": "images/ir/train/17675.jpg",
+    "label_rgb_compat": "labels/rgb/train/17675.txt",
+    "label_obb": "labels/obb/train/17675.txt"
+  },
+  {
+    "id": "17714",
+    "split": "train",
+    "current_pair": "17714",
+    "previous_pair": "17675",
+    "rgb_image": "images/rgb/train/17714.jpg",
+    "ir_image": "images/ir/train/17714.jpg",
+    "label_rgb_compat": "labels/rgb/train/17714.txt",
+    "label_obb": "labels/obb/train/17714.txt"
+  },
+  {
+    "id": "17767",
+    "split": "train",
+    "current_pair": "17767",
+    "previous_pair": "17714",
+    "rgb_image": "images/rgb/train/17767.jpg",
+    "ir_image": "images/ir/train/17767.jpg",
+    "label_rgb_compat": "labels/rgb/train/17767.txt",
+    "label_obb": "labels/obb/train/17767.txt"
+  },
+  {
+    "id": "17801",
+    "split": "train",
+    "current_pair": "17801",
+    "previous_pair": "17767",
+    "rgb_image": "images/rgb/train/17801.jpg",
+    "ir_image": "images/ir/train/17801.jpg",
+    "label_rgb_compat": "labels/rgb/train/17801.txt",
+    "label_obb": "labels/obb/train/17801.txt"
+  },
+  {
+    "id": "17857",
+    "split": "train",
+    "current_pair": "17857",
+    "previous_pair": "17801",
+    "rgb_image": "images/rgb/train/17857.jpg",
+    "ir_image": "images/ir/train/17857.jpg",
+    "label_rgb_compat": "labels/rgb/train/17857.txt",
+    "label_obb": "labels/obb/train/17857.txt"
+  },
+  {
+    "id": "17871",
+    "split": "train",
+    "current_pair": "17871",
+    "previous_pair": "17857",
+    "rgb_image": "images/rgb/train/17871.jpg",
+    "ir_image": "images/ir/train/17871.jpg",
+    "label_rgb_compat": "labels/rgb/train/17871.txt",
+    "label_obb": "labels/obb/train/17871.txt"
+  },
+  {
+    "id": "17878",
+    "split": "train",
+    "current_pair": "17878",
+    "previous_pair": "17871",
+    "rgb_image": "images/rgb/train/17878.jpg",
+    "ir_image": "images/ir/train/17878.jpg",
+    "label_rgb_compat": "labels/rgb/train/17878.txt",
+    "label_obb": "labels/obb/train/17878.txt"
+  }
+]

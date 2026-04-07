@@ -1,0 +1,35 @@
+# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
+
+# Stage 6 explicit UAV OBB tracker configuration.
+# This file is consumed only by the dedicated Stage 6 tracking script. The native `yolo track` registry remains
+# unchanged, so loading this file does not affect ByteTrack/BoT-SORT baseline behavior.
+
+tracker_type: uav_obb_tracker
+
+# Detection thresholds
+track_high_thresh: 0.25
+track_low_thresh: 0.05
+new_track_thresh: 0.25
+
+# Track lifecycle
+track_buffer: 30
+min_confirm_frames: 2
+reactivation: true
+
+# OBB-aware association
+use_obb_matching: true
+match_thresh: 0.85
+match_iou_thresh: 0.15
+iou_weight: 0.70
+center_weight: 0.20
+class_mismatch_penalty: 0.75
+max_center_distance: 3.0
+
+# Lightweight appearance hook
+use_appearance: true
+appearance_weight: 0.10
+appearance_momentum: 0.85
+appearance_bins: 8
+
+# Optional temporal-detector hint for Stage 5 integration. The tracker itself does not require temporal mode.
+temporal_hint: false

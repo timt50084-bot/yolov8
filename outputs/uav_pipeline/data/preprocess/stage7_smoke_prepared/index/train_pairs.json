@@ -1,0 +1,170 @@
+[
+  {
+    "id": "00001",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00001.jpg",
+    "ir_image": "images/ir/train/00001.jpg",
+    "label_obb": "labels/obb/train/00001.txt",
+    "label_rgb_compat": "labels/rgb/train/00001.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00001.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00001.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00001.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00001.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 9,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00002",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00002.jpg",
+    "ir_image": "images/ir/train/00002.jpg",
+    "label_obb": "labels/obb/train/00002.txt",
+    "label_rgb_compat": "labels/rgb/train/00002.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00002.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00002.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00002.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00002.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 11,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00003",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00003.jpg",
+    "ir_image": "images/ir/train/00003.jpg",
+    "label_obb": "labels/obb/train/00003.txt",
+    "label_rgb_compat": "labels/rgb/train/00003.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00003.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00003.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00003.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00003.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 11,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00004",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00004.jpg",
+    "ir_image": "images/ir/train/00004.jpg",
+    "label_obb": "labels/obb/train/00004.txt",
+    "label_rgb_compat": "labels/rgb/train/00004.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00004.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00004.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00004.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00004.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 12,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00005",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00005.jpg",
+    "ir_image": "images/ir/train/00005.jpg",
+    "label_obb": "labels/obb/train/00005.txt",
+    "label_rgb_compat": "labels/rgb/train/00005.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00005.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00005.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00005.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00005.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 8,
+    "fusion_strategy": "shared_label"
+  },
+  {
+    "id": "00006",
+    "split": "train",
+    "rgb_image": "images/rgb/train/00006.jpg",
+    "ir_image": "images/ir/train/00006.jpg",
+    "label_obb": "labels/obb/train/00006.txt",
+    "label_rgb_compat": "labels/rgb/train/00006.txt",
+    "source_rgb_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\img\\00006.jpg",
+    "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00006.jpg",
+    "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00006.txt",
+    "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00006.txt",
+    "original_size": [
+      640,
+      512
+    ],
+    "processed_size": [
+      640,
+      512
+    ],
+    "crop_box_xyxy": [
+      0,
+      0,
+      640,
+      512
+    ],
+    "objects": 6,
+    "fusion_strategy": "shared_label"
+  }
+]

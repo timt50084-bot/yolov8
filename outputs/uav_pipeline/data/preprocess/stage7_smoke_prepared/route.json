@@ -1,0 +1,45 @@
+{
+  "subtask": "preprocess",
+  "mode": "data",
+  "mode_spec": {
+    "name": "data",
+    "description": "Stage 1 preprocessing route.",
+    "default_model": ".",
+    "train_script": null,
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": false,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess",
+  "run_name": "stage7_smoke_prepared",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\yolo\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\prepare_uav_rgbir_obb_dataset.py",
+      "--input-root",
+      "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample",
+      "--output-root",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared",
+      "--split-mode",
+      "auto",
+      "--val-ratio",
+      "0.2",
+      "--seed",
+      "0",
+      "--overwrite",
+      "--names",
+      "car",
+      "truck",
+      "bus",
+      "van",
+      "Freight Car"
+    ],
+    "output_root": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared"
+  }
+}

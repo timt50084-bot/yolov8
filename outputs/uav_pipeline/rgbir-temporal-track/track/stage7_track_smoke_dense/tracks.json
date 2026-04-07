@@ -1,0 +1,186 @@
+{
+  "source": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\images\\rgb\\train",
+  "tracker": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\trackers\\uav_obb_tracker.yaml",
+  "model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-temporal-obb.yaml",
+  "weights": "D:\\project\\ultralytics-main\\runs\\stage5_smoke\\stage5_temporal_small_compare\\weights\\best.pt",
+  "use_temporal_detector": true,
+  "frames": [
+    {
+      "frame_id": 0,
+      "frame_name": "00001.jpg",
+      "num_detections": 3,
+      "num_tracks": 3,
+      "tracks": [
+        {
+          "frame_id": 0,
+          "track_id": 1,
+          "class_id": 0,
+          "score": 0.0024940369185060263,
+          "obb": [
+            120.00582885742188,
+            57.50160217285156,
+            1200.000732421875,
+            1199.9879150390625,
+            0.8533927202224731
+          ],
+          "state": "tentative",
+          "age": 1,
+          "hits": 1,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 0,
+          "track_id": 2,
+          "class_id": 4,
+          "score": 0.002493977779522538,
+          "obb": [
+            40.00502395629883,
+            457.4994201660156,
+            1199.9969482421875,
+            1199.9859619140625,
+            0.8534045219421387
+          ],
+          "state": "tentative",
+          "age": 1,
+          "hits": 1,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 0,
+          "track_id": 3,
+          "class_id": 2,
+          "score": 0.002493970561772585,
+          "obb": [
+            120.00601959228516,
+            457.499755859375,
+            1199.993896484375,
+            1199.99267578125,
+            0.8533775806427002
+          ],
+          "state": "tentative",
+          "age": 1,
+          "hits": 1,
+          "time_since_update": 0
+        }
+      ]
+    },
+    {
+      "frame_id": 1,
+      "frame_name": "00002.jpg",
+      "num_detections": 3,
+      "num_tracks": 3,
+      "tracks": [
+        {
+          "frame_id": 1,
+          "track_id": 1,
+          "class_id": 0,
+          "score": 0.0024940131697803736,
+          "obb": [
+            40.00475311279297,
+            137.5000762939453,
+            1199.998779296875,
+            1199.9874267578125,
+            0.8533867597579956
+          ],
+          "state": "tracked",
+          "age": 2,
+          "hits": 2,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 1,
+          "track_id": 2,
+          "class_id": 4,
+          "score": 0.0024939635768532753,
+          "obb": [
+            40.004638671875,
+            457.49957275390625,
+            1199.9969482421875,
+            1199.98681640625,
+            0.8533982038497925
+          ],
+          "state": "tracked",
+          "age": 2,
+          "hits": 2,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 1,
+          "track_id": 3,
+          "class_id": 2,
+          "score": 0.0024939635768532753,
+          "obb": [
+            120.005615234375,
+            457.499755859375,
+            1199.994384765625,
+            1199.9925537109375,
+            0.8533721566200256
+          ],
+          "state": "tracked",
+          "age": 2,
+          "hits": 2,
+          "time_since_update": 0
+        }
+      ]
+    },
+    {
+      "frame_id": 2,
+      "frame_name": "00003.jpg",
+      "num_detections": 3,
+      "num_tracks": 3,
+      "tracks": [
+        {
+          "frame_id": 2,
+          "track_id": 1,
+          "class_id": 0,
+          "score": 0.0024940145667642355,
+          "obb": [
+            120.00566101074219,
+            57.50141143798828,
+            1200.000732421875,
+            1199.9879150390625,
+            0.8533858060836792
+          ],
+          "state": "tracked",
+          "age": 3,
+          "hits": 3,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 2,
+          "track_id": 2,
+          "class_id": 4,
+          "score": 0.0024939586874097586,
+          "obb": [
+            40.00479507446289,
+            457.49945068359375,
+            1199.9971923828125,
+            1199.986328125,
+            0.8533976078033447
+          ],
+          "state": "tracked",
+          "age": 3,
+          "hits": 3,
+          "time_since_update": 0
+        },
+        {
+          "frame_id": 2,
+          "track_id": 3,
+          "class_id": 2,
+          "score": 0.002493956359103322,
+          "obb": [
+            120.0057144165039,
+            457.4996643066406,
+            1199.9945068359375,
+            1199.9923095703125,
+            0.8533712029457092
+          ],
+          "state": "tracked",
+          "age": 3,
+          "hits": 3,
+          "time_since_update": 0
+        }
+      ]
+    }
+  ]
+}

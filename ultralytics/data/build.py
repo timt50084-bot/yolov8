@@ -252,6 +252,30 @@ def build_yolo_dataset(
     )
 
 
+def build_rgbir_temporal_obb_dataset(
+    cfg: IterableSimpleNamespace | None = None,
+    data: str | Path | dict[str, Any] | None = None,
+    data_root: str | Path | None = None,
+    mode: str = "train",
+    **dataset_kwargs: Any,
+) -> Dataset:
+    """Build the opt-in RGB-IR temporal OBB dataset without touching the baseline dataset path."""
+    from ultralytics.data.rgbir_temporal_obb_dataset import RGBIRTemporalOBBDataset
+
+    imgsz = dataset_kwargs.pop("imgsz", getattr(cfg, "imgsz", 640))
+    augment = dataset_kwargs.pop("augment", mode == "train")
+    hyp = dataset_kwargs.pop("hyp", cfg)
+    return RGBIRTemporalOBBDataset(
+        data_root=data_root,
+        data=data,
+        mode=mode,
+        imgsz=imgsz,
+        augment=augment,
+        hyp=hyp,
+        **dataset_kwargs,
+    )
+
+
 def build_grounding(
     cfg: IterableSimpleNamespace,
     img_path: str,

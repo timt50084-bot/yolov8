@@ -1,0 +1,32 @@
+{
+  "subtask": "check-data",
+  "mode": "data",
+  "mode_spec": {
+    "name": "data",
+    "description": "Stage 1 dataset-check route.",
+    "default_model": ".",
+    "train_script": null,
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": false,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "subprocess",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\check-data",
+  "run_name": "audit_medium_check",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\check-data\\audit_medium_check",
+  "payload": {
+    "command": [
+      "D:\\Anaconda\\envs\\drone\\python.exe",
+      "D:\\project\\ultralytics-main\\tools\\check_uav_rgbir_dataset.py",
+      "--dataset-root",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\audit_medium_prepared",
+      "--report-path",
+      "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\check-data\\audit_medium_check\\check_summary.json"
+    ],
+    "report_path": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\check-data\\audit_medium_check\\check_summary.json"
+  }
+}
