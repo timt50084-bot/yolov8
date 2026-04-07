@@ -4,6 +4,7 @@ import argparse
 import shutil
 import sys
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -54,6 +55,12 @@ def parse_args() -> argparse.Namespace:
         choices=("auto", "existing", "random"),
         default="auto",
         help="Use existing train/val folders or split one unsplit source root.",
+    )
+    parser.add_argument(
+        "--input-layout",
+        choices=("auto", "legacy_prepared", "dronevehicle_raw"),
+        default="auto",
+        help="Input directory layout. 'auto' tries the legacy prepared layout first, then DroneVehicle raw layout.",
     )
     parser.add_argument("--train-split-name", default="train", help="Split folder name for train data.")
     parser.add_argument("--val-split-name", default="val", help="Split folder name for val data.")
@@ -169,12 +176,150 @@ def select_one(indexed: dict[str, list[Path]], key: str) -> Path | None:
     return sorted(paths, key=lambda item: item.name.lower())[0]
 
 
-def collect_pairs_for_root(split: str, root: Path, args: argparse.Namespace, anomalies: list[dict[str, Any]]) -> list[RawPair]:
-    rgb_dir = root / args.rgb_subdir
-    ir_dir = root / args.ir_subdir
-    shared_label_dir = root / args.label_subdir if args.label_subdir else None
-    rgb_label_dir = root / args.rgb_label_subdir if args.rgb_label_subdir else None
-    ir_label_dir = root / args.ir_label_subdir if args.ir_label_subdir else None
+@dataclass(frozen=True)
+class SplitSourceDirs:
+    split: str
+    root: Path
+    rgb_dir: Path
+    ir_dir: Path
+    shared_label_dir: Path | None = None
+    rgb_label_dir: Path | None = None
+    ir_label_dir: Path | None = None
+
+
+def build_split_source_dirs(
+    split: str,
+    root: Path,
+    rgb_subdir: str,
+    ir_subdir: str,
+    label_subdir: str | None,
+    rgb_label_subdir: str | None,
+    ir_label_subdir: str | None,
+) -> SplitSourceDirs:
+    return SplitSourceDirs(
+        split=split,
+        root=root,
+        rgb_dir=root / rgb_subdir,
+        ir_dir=root / ir_subdir,
+        shared_label_dir=root / label_subdir if label_subdir else None,
+        rgb_label_dir=root / rgb_label_subdir if rgb_label_subdir else None,
+        ir_label_dir=root / ir_label_subdir if ir_label_subdir else None,
+    )
+
+
+def build_legacy_split_dirs(split: str, root: Path, args: argparse.Namespace) -> SplitSourceDirs:
+    return build_split_source_dirs(
+        split=split,
+        root=root,
+        rgb_subdir=args.rgb_subdir,
+        ir_subdir=args.ir_subdir,
+        label_subdir=args.label_subdir,
+        rgb_label_subdir=args.rgb_label_subdir,
+        ir_label_subdir=args.ir_label_subdir,
+    )
+
+
+def build_dronevehicle_split_dirs(split: str, root: Path) -> SplitSourceDirs:
+    split_prefix = root.name
+    return build_split_source_dirs(
+        split=split,
+        root=root,
+        rgb_subdir=f"{split_prefix}img",
+        ir_subdir=f"{split_prefix}imgr",
+        label_subdir=None,
+        rgb_label_subdir=f"{split_prefix}label",
+        ir_label_subdir=f"{split_prefix}labelr",
+    )
+
+
+def validate_split_source_dirs(source_dirs: SplitSourceDirs) -> list[str]:
+    missing: list[str] = []
+    if not source_dirs.root.is_dir():
+        missing.append(f"{source_dirs.split} root: {source_dirs.root}")
+    if not source_dirs.rgb_dir.is_dir():
+        missing.append(f"{source_dirs.split} RGB dir: {source_dirs.rgb_dir}")
+    if not source_dirs.ir_dir.is_dir():
+        missing.append(f"{source_dirs.split} IR dir: {source_dirs.ir_dir}")
+    return missing
+
+
+def format_layout_missing(layout_name: str, split_dirs: dict[str, SplitSourceDirs]) -> str:
+    missing: list[str] = []
+    for source_dirs in split_dirs.values():
+        missing.extend(validate_split_source_dirs(source_dirs))
+    if not missing:
+        return f"{layout_name}: OK"
+    return f"{layout_name}: missing " + "; ".join(missing)
+
+
+def resolve_existing_layout(args: argparse.Namespace) -> tuple[str, dict[str, SplitSourceDirs]]:
+    split_roots = {
+        "train": args.input_root / args.train_split_name,
+        "val": args.input_root / args.val_split_name,
+    }
+    candidates = {
+        "legacy_prepared": {
+            split: build_legacy_split_dirs(split, root, args) for split, root in split_roots.items()
+        },
+        "dronevehicle_raw": {
+            split: build_dronevehicle_split_dirs(split, root) for split, root in split_roots.items()
+        },
+    }
+
+    layout_order = ["legacy_prepared", "dronevehicle_raw"]
+    if args.input_layout == "auto":
+        candidate_names = layout_order
+    else:
+        candidate_names = [args.input_layout]
+
+    for layout_name in candidate_names:
+        split_dirs = candidates[layout_name]
+        missing: list[str] = []
+        for source_dirs in split_dirs.values():
+            missing.extend(validate_split_source_dirs(source_dirs))
+        if not missing:
+            return layout_name, split_dirs
+
+    if args.input_layout == "auto":
+        detail = " | ".join(format_layout_missing(name, candidates[name]) for name in layout_order)
+        raise FileNotFoundError(
+            f"Could not detect a supported input layout under '{args.input_root}'. {detail}"
+        )
+
+    detail = format_layout_missing(args.input_layout, candidates[args.input_layout])
+    raise FileNotFoundError(
+        f"input-layout={args.input_layout} does not match '{args.input_root}'. {detail}"
+    )
+
+
+def resolve_unsplit_source_dirs(args: argparse.Namespace) -> SplitSourceDirs:
+    if args.input_layout == "dronevehicle_raw":
+        raise ValueError(
+            "input-layout=dronevehicle_raw is only supported with split-mode=existing. "
+            "Use the dataset root that already contains train/val folders."
+        )
+
+    source_dirs = build_legacy_split_dirs("unsplit", args.input_root, args)
+    missing = validate_split_source_dirs(source_dirs)
+    if missing:
+        raise FileNotFoundError(
+            f"Could not resolve unsplit input directories under '{args.input_root}'. "
+            + "; ".join(missing)
+        )
+    return source_dirs
+
+
+def collect_pairs_for_root(
+    split: str,
+    source_dirs: SplitSourceDirs,
+    args: argparse.Namespace,
+    anomalies: list[dict[str, Any]],
+) -> list[RawPair]:
+    rgb_dir = source_dirs.rgb_dir
+    ir_dir = source_dirs.ir_dir
+    shared_label_dir = source_dirs.shared_label_dir
+    rgb_label_dir = source_dirs.rgb_label_dir
+    ir_label_dir = source_dirs.ir_label_dir
 
     rgb_index = scan_files_by_key(rgb_dir, IMAGE_SUFFIXES, args.rgb_key_remove)
     ir_index = scan_files_by_key(ir_dir, IMAGE_SUFFIXES, args.ir_key_remove)
@@ -261,11 +406,12 @@ def resolve_split_pairs(args: argparse.Namespace, anomalies: list[dict[str, Any]
             raise FileNotFoundError(
                 f"split-mode=existing requires '{train_root}' and '{val_root}' to exist."
             )
+        _, split_sources = resolve_existing_layout(args)
         return {
-            "train": collect_pairs_for_root("train", train_root, args, anomalies),
-            "val": collect_pairs_for_root("val", val_root, args, anomalies),
+            "train": collect_pairs_for_root("train", split_sources["train"], args, anomalies),
+            "val": collect_pairs_for_root("val", split_sources["val"], args, anomalies),
         }
-    unsplit_pairs = collect_pairs_for_root("unsplit", args.input_root, args, anomalies)
+    unsplit_pairs = collect_pairs_for_root("unsplit", resolve_unsplit_source_dirs(args), args, anomalies)
     return split_unsplit_pairs(unsplit_pairs, args.val_ratio, args.seed)
 
 
