@@ -104,6 +104,21 @@ def parse_args() -> argparse.Namespace:
         default="auto",
         help="Interpretation of xywha label angles.",
     )
+    parser.add_argument(
+        "--crop-mode",
+        choices=("auto", "fixed"),
+        default="auto",
+        help="Crop mode. 'auto' keeps the current white-border detection flow, 'fixed' applies explicit margins.",
+    )
+    parser.add_argument("--crop-left", type=int, default=100, help="Left crop margin used when --crop-mode=fixed.")
+    parser.add_argument("--crop-top", type=int, default=100, help="Top crop margin used when --crop-mode=fixed.")
+    parser.add_argument("--crop-right", type=int, default=100, help="Right crop margin used when --crop-mode=fixed.")
+    parser.add_argument(
+        "--crop-bottom",
+        type=int,
+        default=100,
+        help="Bottom crop margin used when --crop-mode=fixed.",
+    )
     parser.add_argument("--white-thresh", type=int, default=245, help="Pixels >= threshold are treated as white.")
     parser.add_argument(
         "--protect-size",
@@ -258,11 +273,70 @@ def compute_crop_box(
     rgb_image: Image.Image,
     ir_image: Image.Image,
     objects: list[OBBObject],
+    crop_mode: str,
     white_thresh: int,
     protect_size: int,
+    crop_left: int,
+    crop_top: int,
+    crop_right: int,
+    crop_bottom: int,
 ) -> tuple[int, int, int, int]:
+    if crop_mode == "fixed":
+        return compute_fixed_crop_box(
+            image_width=rgb_image.width,
+            image_height=rgb_image.height,
+            crop_left=crop_left,
+            crop_top=crop_top,
+            crop_right=crop_right,
+            crop_bottom=crop_bottom,
+        )
     crop_box = union_box(detect_valid_bbox(rgb_image, white_thresh), detect_valid_bbox(ir_image, white_thresh))
     return apply_target_protection(crop_box, objects, rgb_image.width, rgb_image.height, protect_size)
+
+
+def compute_fixed_crop_box(
+    image_width: int,
+    image_height: int,
+    crop_left: int,
+    crop_top: int,
+    crop_right: int,
+    crop_bottom: int,
+) -> tuple[int, int, int, int]:
+    if crop_left < 0 or crop_top < 0 or crop_right < 0 or crop_bottom < 0:
+        raise ValueError(
+            "Fixed crop margins must be >= 0, got "
+            f"left={crop_left}, top={crop_top}, right={crop_right}, bottom={crop_bottom}."
+        )
+    if crop_left + crop_right >= image_width:
+        raise ValueError(
+            f"Fixed crop is invalid for image width {image_width}: "
+            f"crop_left + crop_right must be < image_width, got {crop_left} + {crop_right}."
+        )
+    if crop_top + crop_bottom >= image_height:
+        raise ValueError(
+            f"Fixed crop is invalid for image height {image_height}: "
+            f"crop_top + crop_bottom must be < image_height, got {crop_top} + {crop_bottom}."
+        )
+
+    x0 = crop_left
+    y0 = crop_top
+    x1 = image_width - crop_right
+    y1 = image_height - crop_bottom
+    crop_width = x1 - x0
+    crop_height = y1 - y0
+    if crop_width <= 0 or crop_height <= 0:
+        raise ValueError(
+            f"Fixed crop produced non-positive output size {crop_width}x{crop_height} "
+            f"from image size {image_width}x{image_height}."
+        )
+    return x0, y0, x1, y1
+
+
+def infer_single_size(size_counter: Counter[tuple[int, int]]) -> list[int] | None:
+    if len(size_counter) != 1:
+        return None
+    width, height = next(iter(size_counter))
+    return [width, height]
 
 
 def crop_objects(
@@ -361,6 +435,8 @@ def main() -> None:
 
     pair_indexes: dict[str, list[dict[str, Any]]] = defaultdict(list)
     split_summaries: dict[str, Counter[str]] = defaultdict(Counter)
+    observed_input_sizes: Counter[tuple[int, int]] = Counter()
+    observed_output_sizes: Counter[tuple[int, int]] = Counter()
 
     for split, pairs in split_pairs.items():
         rgb_output_dir = output_dirs[f"rgb_{split}"]
@@ -415,10 +491,29 @@ def main() -> None:
                 )
 
             combined_objects = rgb_objects + ir_objects
-            crop_box = compute_crop_box(rgb_image, ir_image, combined_objects, args.white_thresh, args.protect_size)
+            try:
+                crop_box = compute_crop_box(
+                    rgb_image,
+                    ir_image,
+                    combined_objects,
+                    args.crop_mode,
+                    args.white_thresh,
+                    args.protect_size,
+                    args.crop_left,
+                    args.crop_top,
+                    args.crop_right,
+                    args.crop_bottom,
+                )
+            except ValueError as error:
+                raise ValueError(
+                    f"Failed to compute crop box for pair '{pair.key}' with image size "
+                    f"{image_width}x{image_height}: {error}"
+                ) from error
             rgb_cropped = rgb_image.crop(crop_box)
             ir_cropped = ir_image.crop(crop_box)
             output_width, output_height = rgb_cropped.size
+            observed_input_sizes[(image_width, image_height)] += 1
+            observed_output_sizes[(output_width, output_height)] += 1
 
             rgb_objects, rgb_crop_events = crop_objects(rgb_objects, crop_box, output_width, output_height, args.min_area)
             ir_objects, ir_crop_events = crop_objects(ir_objects, crop_box, output_width, output_height, args.min_area)
@@ -517,10 +612,41 @@ def main() -> None:
         write_json(output_dirs["index"] / f"{split}_temporal.json", temporal_indexes.get(split, []))
 
     anomaly_counter = Counter(item["type"] for item in anomalies)
+    expected_input_size = infer_single_size(observed_input_sizes)
+    expected_output_size = infer_single_size(observed_output_sizes)
+    expected_fixed_crop_box = None
+    if args.crop_mode == "fixed" and expected_input_size is not None:
+        expected_fixed_crop_box = list(
+            compute_fixed_crop_box(
+                image_width=expected_input_size[0],
+                image_height=expected_input_size[1],
+                crop_left=args.crop_left,
+                crop_top=args.crop_top,
+                crop_right=args.crop_right,
+                crop_bottom=args.crop_bottom,
+            )
+        )
     summary = {
         "input_root": str(args.input_root),
         "output_root": str(args.output_root),
         "split_mode": args.split_mode,
+        "crop_mode": args.crop_mode,
+        "fixed_crop": {
+            "left": args.crop_left,
+            "top": args.crop_top,
+            "right": args.crop_right,
+            "bottom": args.crop_bottom,
+        },
+        "expected_input_size": expected_input_size,
+        "expected_output_size": expected_output_size,
+        "fixed_crop_box_rule": {
+            "format": "xyxy",
+            "x0": "crop_left",
+            "y0": "crop_top",
+            "x1": "image_width - crop_right",
+            "y1": "image_height - crop_bottom",
+            "expected_crop_box_xyxy": expected_fixed_crop_box,
+        },
         "data_yaml": relative_posix(create_data_yaml(args.output_root, class_mapper.names), args.output_root),
         "splits": {split: dict(counter) for split, counter in split_summaries.items()},
         "class_names": class_mapper.names,
