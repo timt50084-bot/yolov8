@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import numpy as np
@@ -150,9 +151,9 @@ class SmallObjectOBBValidator(OBBValidator):
         return overall
 
     def print_results(self) -> None:
-        """Print the standard overall metrics and one extra small-object summary line when enabled."""
+        """Print the standard overall metrics and keep small-object details opt-in for terminal clarity."""
         super().print_results()
-        if self.enable_small_object_metrics:
+        if self.enable_small_object_metrics and os.getenv("ULTRALYTICS_SHOW_SMALL_OBJECT_TERMINAL_METRICS") == "1":
             LOGGER.info(
                 "small-object subset: "
                 f"images={self.small_seen}, "

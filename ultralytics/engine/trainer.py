@@ -404,8 +404,7 @@ class BaseTrainer:
                 self.train_loader.reset()
 
             if RANK in {-1, 0}:
-                LOGGER.info(self.progress_string())
-                pbar = TQDM(enumerate(self.train_loader), total=nb)
+                pbar = TQDM(enumerate(self.train_loader), total=nb, desc=f"Epoch {epoch + 1}/{self.epochs}")
             self.tloss = None
             for i, batch in pbar:
                 self.run_callbacks("on_train_batch_start")
@@ -480,17 +479,8 @@ class BaseTrainer:
 
                 # Log
                 if RANK in {-1, 0}:
-                    loss_length = self.tloss.shape[0] if len(self.tloss.shape) else 1
-                    pbar.set_description(
-                        ("%11s" * 2 + "%11.4g" * (2 + loss_length))
-                        % (
-                            f"{epoch + 1}/{self.epochs}",
-                            f"{self._get_memory():.3g}G",  # (GB) GPU memory util
-                            *(self.tloss if loss_length > 1 else torch.unsqueeze(self.tloss, 0)),  # losses
-                            batch["cls"].shape[0],  # batch size, i.e. 8
-                            batch["img"].shape[-1],  # imgsz, i.e 640
-                        )
-                    )
+                    pbar.set_description(f"Epoch {epoch + 1}/{self.epochs}", refresh=False)
+                    pbar.set_postfix(refresh=False, **self.get_progress_postfix(batch))
                     self.run_callbacks("on_batch_end")
                     if self.args.plots and ni in self.plot_idx:
                         self.plot_training_samples(batch, ni)
@@ -793,6 +783,49 @@ class BaseTrainer:
     def progress_string(self):
         """Return a string describing training progress."""
         return ""
+
+    def get_progress_postfix(self, batch):
+        """Return a compact postfix for the batch progress bar."""
+        postfix = {}
+        loss_value = self.get_progress_loss()
+        if loss_value is not None:
+            postfix["Loss"] = f"{loss_value:.4f}"
+
+        gt_count = self.get_progress_gt_count(batch)
+        if gt_count is not None:
+            postfix["GT"] = gt_count
+        return postfix
+
+    def get_progress_loss(self):
+        """Return a single compact loss value for the progress bar."""
+        loss_items = self.label_loss_items(self.tloss) if self.tloss is not None else {}
+        loss_items = loss_items if isinstance(loss_items, dict) else {}
+
+        losses = []
+        total_loss = None
+        for key, value in loss_items.items():
+            scalar = self._as_scalar(value)
+            if scalar is None:
+                continue
+            if self._normalize_epoch_loss_name(key) == "loss":
+                total_loss = scalar
+            else:
+                losses.append(scalar)
+
+        return self._coalesce(total_loss, sum(losses) if losses else None, self._as_scalar(self.loss))
+
+    @staticmethod
+    def get_progress_gt_count(batch):
+        """Return the current batch ground-truth count when it is easy to infer."""
+        if not isinstance(batch, dict):
+            return None
+        for key in ("cls", "batch_idx"):
+            value = batch.get(key)
+            if isinstance(value, torch.Tensor):
+                return int(value.numel()) if value.ndim == 0 else int(value.shape[0])
+            if isinstance(value, (list, tuple)):
+                return len(value)
+        return None
 
     # TODO: may need to put these following functions into callback
     def plot_training_samples(self, batch, ni):

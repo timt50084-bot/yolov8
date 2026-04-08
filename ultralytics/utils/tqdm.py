@@ -127,6 +127,7 @@ class TQDM:
         self.unit_scale = unit_scale
         self.unit_divisor = unit_divisor
         self.leave = leave
+        self.postfix = ""
         self.noninteractive = is_noninteractive_console()
         self.mininterval = max(mininterval, self.NONINTERACTIVE_MIN_INTERVAL) if self.noninteractive else mininterval
         self.initial = initial
@@ -193,13 +194,13 @@ class TQDM:
     def _generate_bar(self, width: int = 12) -> str:
         """Generate progress bar."""
         if self.total is None:
-            return "━" * width if self.closed else "─" * width
+            return "█" * width if self.closed else "░" * width
 
         frac = min(1.0, self.n / self.total)
         filled = int(frac * width)
-        bar = "━" * filled + "─" * (width - filled)
+        bar = "█" * filled + "░" * (width - filled)
         if filled < width and frac * width - filled > 0.5:
-            bar = f"{bar[:filled]}╸{bar[filled + 1 :]}"
+            bar = f"{bar[:filled]}▌{bar[filled + 1 :]}"
         return bar
 
     def _should_update(self, dt: float, dn: int) -> bool:
@@ -263,17 +264,25 @@ class TQDM:
 
         bar = self._generate_bar()
 
+        timing = f"{elapsed_str}{remaining_str}"
+        info_parts = [part for part in (rate_str, self.postfix) if part]
+        info = ", ".join(info_parts)
+        desc = f"{self.desc}: " if self.desc else ""
+
         # Compose progress line via f-strings (two shapes: with/without total)
         if self.total:
             if self.is_bytes and self.n >= self.total:
                 # Completed bytes: show only final size
-                progress_str = f"{self.desc}: {percent:.0f}% {bar} {t_str} {rate_str} {elapsed_str}"
+                progress_str = f"{desc}{percent:3.0f}%|{bar}| {t_str}"
             else:
-                progress_str = (
-                    f"{self.desc}: {percent:.0f}% {bar} {n_str}/{t_str} {rate_str} {elapsed_str}{remaining_str}"
-                )
+                progress_str = f"{desc}{percent:3.0f}%|{bar}| {n_str}/{t_str}"
         else:
-            progress_str = f"{self.desc}: {bar} {n_str} {rate_str} {elapsed_str}"
+            progress_str = f"{desc}{bar} {n_str}"
+
+        bracket_parts = [timing]
+        if info:
+            bracket_parts.append(info)
+        progress_str = f"{progress_str} [{', '.join(bracket_parts)}]"
 
         # Write to output
         try:
@@ -293,18 +302,17 @@ class TQDM:
             self.n += n
             self._display()
 
-    def set_description(self, desc: str | None) -> None:
+    def set_description(self, desc: str | None, refresh: bool = True) -> None:
         """Set description."""
         self.desc = desc or ""
-        if not self.disable:
+        if refresh and not self.disable:
             self._display()
 
-    def set_postfix(self, **kwargs: Any) -> None:
-        """Set postfix (appends to description)."""
-        if kwargs:
-            postfix = ", ".join(f"{k}={v}" for k, v in kwargs.items())
-            base_desc = self.desc.split(" | ")[0] if " | " in self.desc else self.desc
-            self.set_description(f"{base_desc} | {postfix}")
+    def set_postfix(self, refresh: bool = True, **kwargs: Any) -> None:
+        """Set postfix content rendered inside the trailing brackets."""
+        self.postfix = ", ".join(f"{k}={v}" for k, v in kwargs.items()) if kwargs else ""
+        if refresh and not self.disable:
+            self._display()
 
     def close(self) -> None:
         """Close progress bar."""
