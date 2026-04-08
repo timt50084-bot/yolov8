@@ -91,6 +91,7 @@ def add_common_output_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--project", default=None, type=str, help="Optional project/output root override.")
     parser.add_argument("--name", default=None, type=str, help="Optional run name override.")
     parser.add_argument("--save-dir", default=None, type=str, help="Optional full run directory override.")
+    parser.add_argument("--exp-tag", default=None, type=str, help="Optional experiment tag appended to the run name.")
     parser.add_argument("--dry-run", action="store_true", help="Print the resolved route without executing it.")
     parser.add_argument("--print-route", action="store_true", help="Print the resolved route before execution.")
 
@@ -205,6 +206,7 @@ def preprocess_route(args: argparse.Namespace) -> int:
         subtask="preprocess",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir or args.output_root,
         exist_ok=False,
     )
@@ -258,6 +260,7 @@ def check_data_route(args: argparse.Namespace) -> int:
         subtask="check-data",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=False,
     )
@@ -307,6 +310,7 @@ def train_route(args: argparse.Namespace) -> Any:
         subtask="train",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=args.exist_ok,
     )
@@ -444,6 +448,7 @@ def val_route(args: argparse.Namespace) -> Any:
         subtask="val",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=args.exist_ok,
     )
@@ -548,6 +553,7 @@ def predict_route(args: argparse.Namespace) -> Any:
         subtask="predict",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=args.exist_ok,
     )
@@ -593,6 +599,7 @@ def temporal_predict_route(args: argparse.Namespace) -> int:
         subtask="temporal_predict",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=False,
     )
@@ -638,6 +645,7 @@ def track_route(args: argparse.Namespace) -> Any:
         subtask="track",
         project=args.project,
         name=args.name,
+        exp_tag=args.exp_tag,
         save_dir=args.save_dir,
         exist_ok=args.exist_ok,
     )

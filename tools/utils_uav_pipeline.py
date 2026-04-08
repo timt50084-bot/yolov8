@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path
+import re
 from typing import Any
 
 
@@ -109,9 +110,19 @@ def resolve_mode(mode: str) -> ModeSpec:
     return MODE_REGISTRY[mode]
 
 
-def make_default_run_name(subtask: str) -> str:
+def normalize_exp_tag(exp_tag: str) -> str:
+    """Return a filesystem-friendly experiment tag while preserving readability."""
+    cleaned = re.sub(r'[\\/:*?"<>|\s]+', "_", exp_tag.strip())
+    cleaned = cleaned.strip("._-")
+    return cleaned or "exp"
+
+
+def make_default_run_name(subtask: str, exp_tag: str | None = None) -> str:
     """Return a stable timestamp-based run name."""
-    return f"{subtask}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    if exp_tag:
+        return f"{subtask}_{normalize_exp_tag(exp_tag)}_{timestamp}"
+    return f"{subtask}_{timestamp}"
 
 
 def resolve_output_dir(
@@ -120,11 +131,16 @@ def resolve_output_dir(
     subtask: str,
     project: str | None,
     name: str | None,
+    exp_tag: str | None,
     save_dir: str | None,
     exist_ok: bool = False,
 ) -> tuple[Path, str, Path]:
     """Resolve `(project_dir, run_name, run_dir)` with Stage 7 default directory conventions."""
-    run_name = name or make_default_run_name(subtask)
+    normalized_tag = normalize_exp_tag(exp_tag) if exp_tag else None
+    if name and normalized_tag:
+        run_name = name if name.endswith(normalized_tag) else f"{name}_{normalized_tag}"
+    else:
+        run_name = name or make_default_run_name(subtask, normalized_tag)
     if save_dir:
         run_dir = Path(save_dir).expanduser().resolve()
         return run_dir.parent, run_dir.name, run_dir

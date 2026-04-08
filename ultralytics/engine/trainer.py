@@ -198,8 +198,11 @@ class BaseTrainer:
         self.tloss = None
         self.loss_names = ["Loss"]
         self.csv = self.save_dir / "results.csv"
+        self.epoch_log = self.save_dir / "epoch_metrics.log"
         if self.csv.exists() and not self.args.resume:
             self.csv.unlink()
+        if RANK in {-1, 0} and self.epoch_log.exists() and not self.args.resume:
+            self.epoch_log.unlink()
         self.plot_idx = [0, 1, 2]
         self.nan_recovery_attempts = 0
 
@@ -513,9 +516,11 @@ class BaseTrainer:
 
             # Validation
             final_epoch = epoch + 1 >= self.epochs
+            validated = False
             if self.args.val or final_epoch or self.stopper.possible_stop or self.stop:
                 self._clear_memory(threshold=0.5)  # prevent VRAM spike
                 self.metrics, self.fitness = self.validate()
+                validated = self.metrics is not None
 
             # NaN recovery
             if self._handle_nan_recovery(epoch):
@@ -524,6 +529,7 @@ class BaseTrainer:
             self.nan_recovery_attempts = 0
             if RANK in {-1, 0}:
                 self.save_metrics(metrics={**self.label_loss_items(self.tloss), **self.metrics, **self.lr})
+                self.append_epoch_log(validated=validated)
                 self.stop |= self.stopper(epoch + 1, self.fitness) or final_epoch
                 if self.args.time:
                     self.stop |= (time.time() - self.train_time_start) > (self.args.time * 3600)
@@ -806,6 +812,106 @@ class BaseTrainer:
         s = "" if self.csv.exists() else ("%s," * n % ("epoch", "time", *keys)).rstrip(",") + "\n"
         with open(self.csv, "a", encoding="utf-8") as f:
             f.write(s + ("%.6g," * n % (self.epoch + 1, t, *vals)).rstrip(",") + "\n")
+
+    @staticmethod
+    def _coalesce(*values):
+        """Return the first non-None value."""
+        return next((value for value in values if value is not None), None)
+
+    @staticmethod
+    def _as_scalar(value):
+        """Convert tensors, arrays, and scalars to a finite float when possible."""
+        if value is None:
+            return None
+        if isinstance(value, torch.Tensor):
+            if value.numel() != 1:
+                return None
+            value = value.detach().float().cpu().item()
+        elif isinstance(value, np.ndarray):
+            if value.size != 1:
+                return None
+            value = value.item()
+        try:
+            value = float(value)
+        except (TypeError, ValueError):
+            return None
+        return value if math.isfinite(value) else None
+
+    @staticmethod
+    def _format_epoch_log_value(value, precision=4, suffix=""):
+        """Format a scalar for the human-readable epoch log."""
+        value = BaseTrainer._as_scalar(value)
+        return f"{value:.{precision}f}{suffix}" if value is not None else "NA"
+
+    @staticmethod
+    def _normalize_epoch_loss_name(name):
+        """Map loss keys like `train/box_loss` to a shorter label like `box`."""
+        name = str(name).split("/", 1)[-1]
+        if name.endswith("_loss"):
+            name = name[:-5]
+        return name
+
+    def _extract_epoch_metric(self, metrics, needle):
+        """Find one scalar metric by substring, excluding small-object-only metrics."""
+        if not isinstance(metrics, dict):
+            return None
+        needle = needle.lower()
+        for key, value in metrics.items():
+            key_lower = str(key).lower()
+            if needle in key_lower and "small" not in key_lower:
+                return self._as_scalar(value)
+        return None
+
+    def append_epoch_log(self, validated=True):
+        """Append one human-readable epoch summary next to results.csv."""
+        loss_items = self.label_loss_items(self.tloss) if self.tloss is not None else {}
+        loss_items = loss_items if isinstance(loss_items, dict) else {}
+
+        losses = {}
+        total_loss = None
+        for key, value in loss_items.items():
+            scalar = self._as_scalar(value)
+            if scalar is None:
+                continue
+            short_name = self._normalize_epoch_loss_name(key)
+            if short_name == "loss":
+                total_loss = scalar
+                continue
+            losses[short_name] = scalar
+
+        total_loss = self._coalesce(total_loss, sum(losses.values()) if losses else None, self._as_scalar(self.loss))
+        metrics = self.metrics if validated and isinstance(self.metrics, dict) else {}
+        precision = self._extract_epoch_metric(metrics, "metrics/precision")
+        recall = self._extract_epoch_metric(metrics, "metrics/recall")
+        map50 = self._extract_epoch_metric(metrics, "metrics/map50(")
+        map5095 = self._extract_epoch_metric(metrics, "metrics/map50-95")
+
+        now = time.time()
+        parts = [
+            f"[epoch {self.epoch + 1}/{self.epochs}]",
+            f"epoch_time={self._format_epoch_log_value(now - self.epoch_time_start, precision=2, suffix='s')}",
+            f"elapsed={self._format_epoch_log_value(now - self.train_time_start, precision=2, suffix='s')}",
+            f"loss={self._format_epoch_log_value(total_loss, precision=4)}",
+        ]
+
+        for name in ("box", "cls", "dfl", "angle"):
+            if name in losses:
+                parts.append(f"{name}={self._format_epoch_log_value(losses[name], precision=4)}")
+        for name in sorted(key for key in losses if key not in {"box", "cls", "dfl", "angle"}):
+            parts.append(f"{name}={self._format_epoch_log_value(losses[name], precision=4)}")
+
+        parts.extend(
+            (
+                f"P={self._format_epoch_log_value(precision, precision=3)}",
+                f"R={self._format_epoch_log_value(recall, precision=3)}",
+                f"mAP50={self._format_epoch_log_value(map50, precision=3)}",
+                f"mAP50-95={self._format_epoch_log_value(map5095, precision=3)}",
+            )
+        )
+
+        self.epoch_log.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.epoch_log, "a", encoding="utf-8") as f:
+            f.write(" ".join(parts) + "\n")
 
     def plot_metrics(self):
         """Plot metrics from a CSV file."""
