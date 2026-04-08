@@ -16,6 +16,15 @@ import yaml
 
 IMAGE_SUFFIXES = {".bmp", ".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
 LABEL_SUFFIXES = {".txt", ".xml"}
+DEFAULT_UAV_CLASS_NAMES = ["car", "truck", "bus", "van", "Freight Car"]
+DEFAULT_UAV_CLASS_ALIASES = {
+    "car": ["car"],
+    "truck": ["truck", "truvk"],
+    "bus": ["bus"],
+    "van": ["van"],
+    "Freight Car": ["Freight Car", "freightcar", "feright car", "feright"],
+}
+DEFAULT_INVALID_CLASS_TOKENS = {"*"}
 
 
 def natural_sort_key(value: str) -> list[Any]:
@@ -26,6 +35,28 @@ def natural_sort_key(value: str) -> list[Any]:
 def normalize_class_key(name: str) -> str:
     """Normalize class aliases for case-insensitive matching."""
     return re.sub(r"[\s_\-]+", "", name.strip().lower())
+
+
+def build_alias_map(alias_groups: dict[str, list[str]]) -> dict[str, str]:
+    """Expand canonical->aliases groups into a normalized alias lookup."""
+    alias_map: dict[str, str] = {}
+    for canonical, aliases in alias_groups.items():
+        alias_map[normalize_class_key(canonical)] = canonical
+        for alias in aliases:
+            alias_map[normalize_class_key(str(alias))] = canonical
+    return alias_map
+
+
+def build_default_uav_alias_map(class_names: list[str] | None = None) -> dict[str, str]:
+    """Return the built-in DroneVehicle alias normalization map."""
+    canonical_names = class_names or DEFAULT_UAV_CLASS_NAMES
+    allowed_canonicals = {normalize_class_key(name) for name in canonical_names}
+    alias_groups = {
+        canonical: aliases
+        for canonical, aliases in DEFAULT_UAV_CLASS_ALIASES.items()
+        if normalize_class_key(canonical) in allowed_canonicals
+    }
+    return build_alias_map(alias_groups)
 
 
 def ensure_dir(path: Path) -> None:
@@ -89,11 +120,19 @@ def load_alias_map(path: Path | None) -> dict[str, str]:
 class ClassMapper:
     """Resolve raw class tokens into stable IDs and canonical names."""
 
-    def __init__(self, names: list[str] | None = None, alias_map: dict[str, str] | None = None) -> None:
+    def __init__(
+        self,
+        names: list[str] | None = None,
+        alias_map: dict[str, str] | None = None,
+        allow_new_classes: bool = True,
+        invalid_tokens: set[str] | None = None,
+    ) -> None:
         self.names: list[str] = []
         self.canonical_to_id: dict[str, int] = {}
         self.alias_to_canonical: dict[str, str] = {}
         self.raw_to_canonical: dict[str, str] = {}
+        self.allow_new_classes = allow_new_classes
+        self.invalid_class_keys = {normalize_class_key(token) for token in (invalid_tokens or set())}
         if names:
             for name in names:
                 self._register_canonical(name)
@@ -118,13 +157,23 @@ class ClassMapper:
             class_id = int(token)
             if class_id < 0:
                 raise ValueError(f"Negative class id '{token}' is not allowed.")
+            if not self.allow_new_classes and class_id >= len(self.names):
+                raise ValueError(f"Unknown class id '{token}' is outside the configured class range.")
             while len(self.names) <= class_id:
                 self._register_canonical(str(len(self.names)))
             canonical = self.names[class_id]
             self.raw_to_canonical[token] = canonical
             return class_id, canonical
         normalized = normalize_class_key(token)
-        canonical = self.alias_to_canonical.get(normalized, token)
+        if not normalized:
+            raise ValueError("Blank class name is not allowed.")
+        if normalized in self.invalid_class_keys:
+            raise ValueError(f"Invalid placeholder class '{token}'.")
+        canonical = self.alias_to_canonical.get(normalized)
+        if canonical is None:
+            if not self.allow_new_classes:
+                raise ValueError(f"Unknown class '{token}' is not in the configured class map.")
+            canonical = token
         class_id = self._register_canonical(canonical)
         self.alias_to_canonical[normalized] = canonical
         self.raw_to_canonical[token] = canonical
@@ -342,7 +391,11 @@ def parse_text_labels(
         if len(parts) not in {6, 9} and not (len(parts) > 9 and (len(parts) - 1) % 2 == 0):
             issues.append(f"{path.name}:{line_number} unsupported column count {len(parts)}")
             continue
-        class_id, class_name = class_mapper.resolve(parts[0])
+        try:
+            class_id, class_name = class_mapper.resolve(parts[0])
+        except ValueError as error:
+            issues.append(f"{path.name}:{line_number} ignored object with class '{parts[0]}': {error}")
+            continue
         numeric = np.asarray([float(value) for value in parts[1:]], dtype=np.float32)
         if len(parts) == 6:
             polygon = resolve_xywha(numeric, image_width, image_height, angle_unit)
@@ -384,7 +437,11 @@ def parse_xml_labels(
     root = tree.getroot()
     for index, obj in enumerate(root.findall(".//object"), start=1):
         raw_class = _find_first_text(obj, ("name", "label", "class")) or "0"
-        class_id, class_name = class_mapper.resolve(raw_class)
+        try:
+            class_id, class_name = class_mapper.resolve(raw_class)
+        except ValueError as error:
+            issues.append(f"{path.name}:object_{index} ignored object with class '{raw_class}': {error}")
+            continue
         polygon: np.ndarray | None = None
 
         polygon_node = obj.find("polygon")

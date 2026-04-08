@@ -16,11 +16,14 @@ if str(THIS_DIR) not in sys.path:
 
 from utils_preprocess_uav import (
     ClassMapper,
+    DEFAULT_INVALID_CLASS_TOKENS,
+    DEFAULT_UAV_CLASS_NAMES,
     IMAGE_SUFFIXES,
     LABEL_SUFFIXES,
     OBBObject,
     RawPair,
     apply_target_protection,
+    build_default_uav_alias_map,
     clamp_polygon,
     clip_polygon_to_box,
     copy_text_file,
@@ -31,6 +34,7 @@ from utils_preprocess_uav import (
     load_alias_map,
     load_image,
     natural_sort_key,
+    normalize_class_key,
     parse_label_file,
     polygon_area,
     relative_posix,
@@ -174,6 +178,22 @@ def select_one(indexed: dict[str, list[Path]], key: str) -> Path | None:
     if not paths:
         return None
     return sorted(paths, key=lambda item: item.name.lower())[0]
+
+
+def resolve_class_config(args: argparse.Namespace) -> tuple[list[str], dict[str, str]]:
+    class_names = list(args.names) if args.names else list(DEFAULT_UAV_CLASS_NAMES)
+    canonical_by_key = {normalize_class_key(name): name for name in class_names}
+    alias_map = build_default_uav_alias_map(class_names)
+    user_alias_map = load_alias_map(args.class_map)
+    for alias, canonical in user_alias_map.items():
+        canonical_key = normalize_class_key(canonical)
+        resolved_canonical = canonical_by_key.get(canonical_key)
+        if resolved_canonical is None:
+            raise ValueError(
+                f"Class map canonical '{canonical}' is not in the configured names list: {class_names}"
+            )
+        alias_map[normalize_class_key(alias)] = resolved_canonical
+    return class_names, alias_map
 
 
 @dataclass(frozen=True)
@@ -573,8 +593,13 @@ def main() -> None:
             )
         shutil.rmtree(args.output_root)
 
-    alias_map = load_alias_map(args.class_map)
-    class_mapper = ClassMapper(names=args.names, alias_map=alias_map)
+    class_names, alias_map = resolve_class_config(args)
+    class_mapper = ClassMapper(
+        names=class_names,
+        alias_map=alias_map,
+        allow_new_classes=False,
+        invalid_tokens=DEFAULT_INVALID_CLASS_TOKENS,
+    )
     anomalies: list[dict[str, Any]] = []
     split_pairs = resolve_split_pairs(args, anomalies)
     output_dirs = prepare_output_dirs(args.output_root)
