@@ -205,6 +205,7 @@ class BaseTrainer:
             self.epoch_log.unlink()
         self.plot_idx = [0, 1, 2]
         self.nan_recovery_attempts = 0
+        self.console_epoch_summary_only = bool(getattr(self.args, "console_epoch_summary_only", False))
 
     def add_callback(self, event: str, callback):
         """Append the given callback to the event's callback list."""
@@ -404,7 +405,12 @@ class BaseTrainer:
                 self.train_loader.reset()
 
             if RANK in {-1, 0}:
-                pbar = TQDM(enumerate(self.train_loader), total=nb, desc=f"Epoch {epoch + 1}/{self.epochs}")
+                pbar = TQDM(
+                    enumerate(self.train_loader),
+                    total=nb,
+                    desc=f"Epoch {epoch + 1}/{self.epochs}",
+                    disable=self.console_epoch_summary_only,
+                )
             self.tloss = None
             for i, batch in pbar:
                 self.run_callbacks("on_train_batch_start")
@@ -520,6 +526,8 @@ class BaseTrainer:
             if RANK in {-1, 0}:
                 self.save_metrics(metrics={**self.label_loss_items(self.tloss), **self.metrics, **self.lr})
                 self.append_epoch_log(validated=validated)
+                if self.console_epoch_summary_only:
+                    LOGGER.info(self._build_epoch_summary(validated=validated, detailed=False))
                 self.stop |= self.stopper(epoch + 1, self.fitness) or final_epoch
                 if self.args.time:
                     self.stop |= (time.time() - self.train_time_start) > (self.args.time * 3600)
@@ -895,8 +903,8 @@ class BaseTrainer:
                 return self._as_scalar(value)
         return None
 
-    def append_epoch_log(self, validated=True):
-        """Append one human-readable epoch summary next to results.csv."""
+    def _build_epoch_summary(self, validated=True, detailed=True):
+        """Build the human-readable epoch summary for file logging or compact console output."""
         loss_items = self.label_loss_items(self.tloss) if self.tloss is not None else {}
         loss_items = loss_items if isinstance(loss_items, dict) else {}
 
@@ -918,33 +926,35 @@ class BaseTrainer:
         recall = self._extract_epoch_metric(metrics, "metrics/recall")
         map50 = self._extract_epoch_metric(metrics, "metrics/map50(")
         map5095 = self._extract_epoch_metric(metrics, "metrics/map50-95")
-
-        now = time.time()
         parts = [
-            f"[epoch {self.epoch + 1}/{self.epochs}]",
-            f"epoch_time={self._format_epoch_log_value(now - self.epoch_time_start, precision=2, suffix='s')}",
-            f"elapsed={self._format_epoch_log_value(now - self.train_time_start, precision=2, suffix='s')}",
-            f"loss={self._format_epoch_log_value(total_loss, precision=4)}",
+            f"Epoch {self.epoch + 1}/{self.epochs}",
+            f"{'train_loss' if detailed else 'Loss'}={self._format_epoch_log_value(total_loss, precision=4)}",
         ]
-
-        for name in ("box", "cls", "dfl", "angle"):
-            if name in losses:
+        if detailed:
+            for name in ("box", "cls", "dfl", "angle"):
+                if name in losses:
+                    parts.append(f"{name}={self._format_epoch_log_value(losses[name], precision=4)}")
+            for name in sorted(key for key in losses if key not in {"box", "cls", "dfl", "angle"}):
                 parts.append(f"{name}={self._format_epoch_log_value(losses[name], precision=4)}")
-        for name in sorted(key for key in losses if key not in {"box", "cls", "dfl", "angle"}):
-            parts.append(f"{name}={self._format_epoch_log_value(losses[name], precision=4)}")
-
-        parts.extend(
-            (
-                f"P={self._format_epoch_log_value(precision, precision=3)}",
-                f"R={self._format_epoch_log_value(recall, precision=3)}",
-                f"mAP50={self._format_epoch_log_value(map50, precision=3)}",
-                f"mAP50-95={self._format_epoch_log_value(map5095, precision=3)}",
-            )
+        metric_parts = (
+            ("P", precision),
+            ("R", recall),
+            ("mAP50", map50),
+            ("mAP50-95", map5095),
         )
+        parts.extend(
+            f"{name}={self._format_epoch_log_value(value, precision=3)}"
+            for name, value in metric_parts
+            if value is not None
+        )
+        return " | ".join(parts)
 
+    def append_epoch_log(self, validated=True):
+        """Append one human-readable epoch summary next to results.csv."""
+        summary = self._build_epoch_summary(validated=validated, detailed=True)
         self.epoch_log.parent.mkdir(parents=True, exist_ok=True)
         with open(self.epoch_log, "a", encoding="utf-8") as f:
-            f.write(" ".join(parts) + "\n")
+            f.write(summary + "\n")
 
     def plot_metrics(self):
         """Plot metrics from a CSV file."""

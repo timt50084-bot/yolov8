@@ -209,6 +209,7 @@ CFG_BOOL_KEYS = frozenset(
         "save",
         "exist_ok",
         "verbose",
+        "console_epoch_summary_only",
         "deterministic",
         "single_cls",
         "rect",

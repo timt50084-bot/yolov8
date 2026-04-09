@@ -202,7 +202,12 @@ class BaseValidator:
             Profile(device=self.device),
             Profile(device=self.device),
         )
-        bar = TQDM(self.dataloader, desc=self.get_desc(), total=len(self.dataloader))
+        bar = TQDM(
+            self.dataloader,
+            desc=self.get_desc(),
+            total=len(self.dataloader),
+            disable=bool(getattr(self.args, "console_epoch_summary_only", False)),
+        )
         self.init_metrics(unwrap_model(model))
         self.jdict = []  # empty before each val
         for batch_i, batch in enumerate(bar):
@@ -238,7 +243,8 @@ class BaseValidator:
             stats = self.get_stats()
             self.speed = dict(zip(self.speed.keys(), (x.t / len(self.dataloader.dataset) * 1e3 for x in dt)))
             self.finalize_metrics()
-            self.print_results()
+            if not (self.training and getattr(self.args, "console_epoch_summary_only", False)):
+                self.print_results()
             self.run_callbacks("on_val_end")
 
         if self.training:

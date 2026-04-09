@@ -142,6 +142,19 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument("--exist-ok", action="store_true")
     train.add_argument("--plots", action="store_true")
     train.add_argument("--val", action="store_true")
+    train.add_argument(
+        "--console-epoch-summary-only",
+        dest="console_epoch_summary_only",
+        action="store_true",
+        help="Disable batch-level progress bars and keep only one compact epoch summary on the console.",
+    )
+    train.add_argument(
+        "--disable-console-epoch-summary-only",
+        dest="console_epoch_summary_only",
+        action="store_false",
+        help="Explicitly keep the default batch-level training progress bar enabled.",
+    )
+    train.set_defaults(console_epoch_summary_only=False)
     train.add_argument("--enable-rgbir", action="store_true")
     train.add_argument("--disable-rgbir", action="store_true")
     train.add_argument("--enable-small-object", action="store_true")
@@ -160,6 +173,19 @@ def build_parser() -> argparse.ArgumentParser:
     val.add_argument("--max-det", default=300, type=int)
     val.add_argument("--plots", action="store_true")
     val.add_argument("--exist-ok", action="store_true")
+    val.add_argument(
+        "--console-epoch-summary-only",
+        dest="console_epoch_summary_only",
+        action="store_true",
+        help="Disable batch-level validation progress bars and keep only the final metric print.",
+    )
+    val.add_argument(
+        "--disable-console-epoch-summary-only",
+        dest="console_epoch_summary_only",
+        action="store_false",
+        help="Explicitly keep the default batch-level validation progress bar enabled.",
+    )
+    val.set_defaults(console_epoch_summary_only=False)
 
     predict = subparsers.add_parser("predict", help="Run single-frame RGB-only prediction for the selected mode.")
     add_common_mode_args(predict)
@@ -334,6 +360,7 @@ def train_route(args: argparse.Namespace) -> Any:
             "close_mosaic": args.close_mosaic,
             "plots": args.plots,
             "val": args.val,
+            "console_epoch_summary_only": args.console_epoch_summary_only,
         }
         if args.weights and not args.model:
             # Training from a checkpoint uses the checkpoint as the model source directly.
@@ -467,6 +494,7 @@ def val_route(args: argparse.Namespace) -> Any:
             "project": str(project_dir),
             "name": run_name,
             "exist_ok": True,
+            "console_epoch_summary_only": args.console_epoch_summary_only,
         }
         manifest = route_manifest(
             subtask="val",
