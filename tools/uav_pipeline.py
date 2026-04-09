@@ -100,7 +100,7 @@ def add_common_mode_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--mode",
         required=True,
-        choices=["baseline", "rgbir", "rgbir-small", "rgbir-temporal", "rgbir-temporal-track"],
+        choices=["baseline", "rgbir", "rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"],
         help="Stage mode to route.",
     )
     parser.add_argument("--model", default=None, type=str, help="Optional model yaml override.")
@@ -422,7 +422,7 @@ def train_route(args: argparse.Namespace) -> Any:
         cmd.append("--val")
 
     cmd.append("--use-rgbir-train-assist" if use_rgbir else "--disable-rgbir-train-assist")
-    if spec.name in {"rgbir-small", "rgbir-temporal", "rgbir-temporal-track"}:
+    if spec.name in {"rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"}:
         cmd.append("--use-small-object-sampling" if use_small else "--disable-small-object-sampling")
         if spec.name == "rgbir-small" and use_small:
             cmd.append("--disable-small-object-loss-weighting")
@@ -432,7 +432,7 @@ def train_route(args: argparse.Namespace) -> Any:
     elif use_small:
         raise ValueError(f"Mode '{spec.name}' does not support small-object toggles.")
 
-    if spec.name in {"rgbir-temporal", "rgbir-temporal-track"}:
+    if spec.name in {"rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"}:
         cmd.append("--use-temporal" if use_temporal else "--disable-temporal")
     elif use_temporal:
         raise ValueError(f"Mode '{spec.name}' does not support temporal training.")
@@ -621,7 +621,10 @@ def predict_route(args: argparse.Namespace) -> Any:
 def temporal_predict_route(args: argparse.Namespace) -> int:
     spec = resolve_mode(args.mode)
     if not spec.supports_temporal_predict:
-        raise ValueError(f"Mode '{spec.name}' does not support temporal-predict. Use 'rgbir-temporal' or 'rgbir-temporal-track'.")
+        raise ValueError(
+            f"Mode '{spec.name}' does not support temporal-predict. "
+            "Use 'rgbir-small-temporal', 'rgbir-temporal', or 'rgbir-temporal-track'."
+        )
     project_dir, run_name, run_dir = resolve_output_dir(
         mode=spec.name,
         subtask="temporal_predict",

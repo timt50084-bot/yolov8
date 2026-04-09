@@ -25,6 +25,7 @@ from ultralytics.nn.tasks import torch_safe_load, yaml_model_load
 MODE_DEFAULT_MODELS = {
     "rgbir": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb.yaml",
     "rgbir-small": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
+    "rgbir-small-temporal": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
     "rgbir-temporal": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml",
     "rgbir-temporal-track": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml",
 }
@@ -35,7 +36,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--mode",
         required=True,
-        choices=["rgbir", "rgbir-small", "rgbir-temporal", "rgbir-temporal-track"],
+        choices=["rgbir", "rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"],
         help="Stage mode whose explicit validation semantics should be used.",
     )
     parser.add_argument("--data", required=True, type=str, help="Prepared dataset yaml.")
@@ -86,6 +87,9 @@ def default_model_for_mode(mode: str) -> str:
 
 def build_model(args: argparse.Namespace, data_cfg: dict[str, Any]):
     model_cfg = yaml_model_load(args.model or default_model_for_mode(args.mode))
+    if args.mode == "rgbir-small-temporal":
+        model_cfg["use_temporal"] = True
+        model_cfg["temporal_mode"] = str(model_cfg.get("temporal_mode", "two_frame") or "two_frame")
     names = normalize_names(data_cfg.get("names"))
     nc = data_cfg.get("nc", len(names) if names else None)
 
@@ -129,7 +133,7 @@ def build_validator(args: argparse.Namespace, save_dir: Path):
     }
     enable_small_metrics = args.enable_small_object_metrics
     if enable_small_metrics is None:
-        enable_small_metrics = args.mode == "rgbir-small"
+        enable_small_metrics = args.mode in {"rgbir-small", "rgbir-small-temporal"}
 
     if args.mode == "rgbir":
         return OBBValidator(save_dir=save_dir, args=validator_args)

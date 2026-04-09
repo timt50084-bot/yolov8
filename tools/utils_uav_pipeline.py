@@ -75,6 +75,18 @@ MODE_REGISTRY: dict[str, ModeSpec] = {
         use_temporal=False,
         use_tracking=False,
     ),
+    "rgbir-small-temporal": ModeSpec(
+        name="rgbir-small-temporal",
+        description="Stage 5 RGB-IR + small-object + temporal path combining P2 small-object structure with lightweight two-frame temporal detection.",
+        default_model=REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
+        train_script=REPO_ROOT / "tools" / "train_uav_rgbir_temporal_obb.py",
+        supports_temporal_predict=True,
+        supports_stage6_track=False,
+        use_rgbir=True,
+        use_small=True,
+        use_temporal=True,
+        use_tracking=False,
+    ),
     "rgbir-temporal": ModeSpec(
         name="rgbir-temporal",
         description="Stage 5 RGB-IR path with explicit lightweight two-frame temporal detection enabled.",
