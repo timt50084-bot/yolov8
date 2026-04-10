@@ -4,29 +4,56 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from types import SimpleNamespace
 from typing import Any
-
-import cv2
-import numpy as np
-import torch
-import yaml
 
 THIS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = THIS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from ultralytics.data.augment import LetterBox
-from ultralytics.models.yolo.obb.rgbir_obb_train import _parse_stage_list
-from ultralytics.models.yolo.obb.rgbir_temporal_obb_train import RGBIRTemporalOBBModel
-from ultralytics.nn.tasks import torch_safe_load, yaml_model_load
-from ultralytics.trackers.uav_obb_tracker import UAVOBBTracker
-from ultralytics.utils import YAML, nms, ops
+_IMPORT_ERROR: ModuleNotFoundError | None = None
+
+try:
+    import cv2
+    import numpy as np
+    import torch
+    import yaml
+
+    from ultralytics.data.augment import LetterBox
+    from ultralytics.engine.results import Results
+    from ultralytics.models.yolo.obb.rgbir_obb_train import _parse_stage_list
+    from ultralytics.models.yolo.obb.rgbir_temporal_obb_train import RGBIRTemporalOBBModel
+    from ultralytics.nn.tasks import torch_safe_load, yaml_model_load
+    from ultralytics.trackers.uav_obb_tracker import UAVOBBTracker
+    from ultralytics.utils import YAML, nms, ops
+except ModuleNotFoundError as exc:
+    cv2 = None
+    np = None
+    torch = None
+    yaml = None
+    LetterBox = Any
+    Results = Any
+    _parse_stage_list = None
+    RGBIRTemporalOBBModel = Any
+    torch_safe_load = None
+    yaml_model_load = None
+    UAVOBBTracker = Any
+    YAML = None
+    nms = None
+    ops = None
+    _IMPORT_ERROR = exc
 
 
-IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"}
-VIDEO_EXTS = {".mp4", ".avi", ".mov", ".mkv", ".wmv"}
+IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
+VIDEO_EXTS = {".mp4", ".avi", ".mov", ".mkv", ".webm", ".wmv"}
+
+
+def ensure_runtime_dependencies() -> None:
+    if _IMPORT_ERROR is not None:
+        raise ModuleNotFoundError(
+            "Runtime dependencies for tools/track_uav_obb.py are missing. "
+            "Install/activate an environment with torch, opencv-python, pyyaml, and ultralytics before running tracking."
+        ) from _IMPORT_ERROR
 
 
 def parse_args() -> argparse.Namespace:
@@ -53,6 +80,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-det", default=100, type=int, help="Maximum detections per frame.")
     parser.add_argument("--max-frames", default=0, type=int, help="Optional maximum number of frames to process.")
     parser.add_argument("--save-json", default=None, type=str, help="Optional JSON path for tracked results.")
+    parser.add_argument("--save-video", default=None, type=str, help="Optional rendered output video path.")
+    parser.add_argument("--line-width", default=None, type=int, help="Optional visualization line width override.")
     parser.add_argument("--track-low-thresh", default=-1.0, type=float, help="Optional override for tracker low threshold.")
     parser.add_argument("--new-track-thresh", default=-1.0, type=float, help="Optional override for tracker initialization threshold.")
     parser.add_argument("--match-thresh", default=-1.0, type=float, help="Optional override for tracker assignment cost threshold.")
@@ -79,6 +108,7 @@ def normalize_device_arg(device: str) -> str:
 
 
 def load_data_cfg(path: str | None) -> dict[str, Any]:
+    ensure_runtime_dependencies()
     if path is None:
         return {}
     with Path(path).open("r", encoding="utf-8") as handle:
@@ -99,6 +129,7 @@ def normalize_names(raw: Any) -> dict[int, str]:
 
 
 def build_detector(args: argparse.Namespace) -> RGBIRTemporalOBBModel:
+    ensure_runtime_dependencies()
     cfg = yaml_model_load(args.model)
     cfg["use_temporal"] = bool(args.use_temporal_detector)
     cfg["temporal_mode"] = args.temporal_mode
@@ -125,6 +156,7 @@ def build_detector(args: argparse.Namespace) -> RGBIRTemporalOBBModel:
 
 
 def build_tracker(args: argparse.Namespace) -> UAVOBBTracker:
+    ensure_runtime_dependencies()
     tracker_cfg = YAML.load(args.tracker)
     if not isinstance(tracker_cfg, dict):
         raise TypeError(f"Expected tracker yaml at {args.tracker} to load into a mapping.")
@@ -153,11 +185,14 @@ def iter_image_paths(source: str, max_frames: int = 0) -> list[Path]:
         return [path]
     if not path.is_dir():
         raise FileNotFoundError(f"Source not found: {source}")
-    frames = [p for p in sorted(path.iterdir()) if p.suffix.lower() in IMAGE_EXTS]
+    frames = [p for p in sorted(path.iterdir(), key=lambda item: item.name.lower()) if p.suffix.lower() in IMAGE_EXTS]
+    if not frames:
+        raise ValueError(f"No image frames found in source directory: {source}")
     return frames[:max_frames] if max_frames > 0 else frames
 
 
 def frame_generator(source: str, max_frames: int = 0):
+    ensure_runtime_dependencies()
     path = Path(source)
     if is_video(path):
         cap = cv2.VideoCapture(str(path))
@@ -169,7 +204,7 @@ def frame_generator(source: str, max_frames: int = 0):
                 ok, frame_bgr = cap.read()
                 if not ok:
                     break
-                yield count, frame_bgr, path.name
+                yield count, frame_bgr, f"{path.stem}_{count:06d}"
                 count += 1
                 if max_frames > 0 and count >= max_frames:
                     break
@@ -185,6 +220,7 @@ def frame_generator(source: str, max_frames: int = 0):
 
 
 def preprocess_frame(frame_bgr: np.ndarray, imgsz: int, device: torch.device) -> tuple[torch.Tensor, np.ndarray]:
+    ensure_runtime_dependencies()
     rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
     letterbox = LetterBox(new_shape=(imgsz, imgsz), auto=False, stride=32)
     resized = letterbox(image=rgb)
@@ -202,6 +238,7 @@ def postprocess_obb_predictions(
     iou: float,
     max_det: int,
 ) -> np.ndarray:
+    ensure_runtime_dependencies()
     outputs = nms.non_max_suppression(
         preds,
         conf_thres=conf,
@@ -229,59 +266,129 @@ def summarize_states(tracks: list[dict[str, Any]]) -> dict[str, int]:
     return summary
 
 
-def main() -> None:
-    args = parse_args()
+def build_results(frame_bgr: np.ndarray, frame_name: str, names: dict[int, str], track_rows: np.ndarray) -> Results:
+    ensure_runtime_dependencies()
+    obb = torch.from_numpy(track_rows.copy()) if track_rows.size else torch.zeros((0, 8), dtype=torch.float32)
+    return Results(orig_img=frame_bgr, path=frame_name, names=names, obb=obb)
+
+
+def resolve_output_frame_rate(source: str) -> float:
+    ensure_runtime_dependencies()
+    path = Path(source)
+    if not is_video(path):
+        return 30.0
+    cap = cv2.VideoCapture(str(path))
+    if not cap.isOpened():
+        raise FileNotFoundError(f"Failed to open video source: {source}")
+    try:
+        fps = float(cap.get(cv2.CAP_PROP_FPS) or 0.0)
+    finally:
+        cap.release()
+    return fps if fps > 0 else 30.0
+
+
+def create_video_writer(save_path: Path, frame_shape: tuple[int, int, int], fps: float) -> cv2.VideoWriter:
+    ensure_runtime_dependencies()
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    suffix = save_path.suffix.lower()
+    fourcc = cv2.VideoWriter_fourcc(*("XVID" if suffix == ".avi" else "mp4v"))
+    writer = cv2.VideoWriter(str(save_path), fourcc, float(fps), (frame_shape[1], frame_shape[0]))
+    if not writer.isOpened():
+        raise RuntimeError(f"Failed to open output video writer: {save_path}")
+    return writer
+
+
+def run_tracking(args: argparse.Namespace) -> dict[str, Any]:
+    ensure_runtime_dependencies()
     device = torch.device(normalize_device_arg(args.device))
     detector = build_detector(args)
     tracker = build_tracker(args)
+    save_json_path = Path(args.save_json).expanduser().resolve() if args.save_json else None
+    save_video_path = Path(args.save_video).expanduser().resolve() if args.save_video else None
+    if save_json_path:
+        save_json_path.parent.mkdir(parents=True, exist_ok=True)
+    if save_video_path:
+        save_video_path.parent.mkdir(parents=True, exist_ok=True)
+
+    output_fps = resolve_output_frame_rate(args.source) if save_video_path else 0.0
+    video_writer: cv2.VideoWriter | None = None
     records: list[dict[str, Any]] = []
 
-    with torch.no_grad():
-        for frame_idx, frame_bgr, frame_name in frame_generator(args.source, max_frames=args.max_frames):
-            img_tensor, frame_rgb = preprocess_frame(frame_bgr, imgsz=args.imgsz, device=device)
-            if args.use_temporal_detector:
-                preds = detector.predict_with_prev_cache(img_tensor)
-            else:
-                preds = detector.predict(img_tensor, img_prev=None, temporal_valid=None)
+    try:
+        with torch.no_grad():
+            for frame_idx, frame_bgr, frame_name in frame_generator(args.source, max_frames=args.max_frames):
+                img_tensor, frame_rgb = preprocess_frame(frame_bgr, imgsz=args.imgsz, device=device)
+                if args.use_temporal_detector:
+                    preds = detector.predict_with_prev_cache(img_tensor)
+                else:
+                    preds = detector.predict(img_tensor, img_prev=None, temporal_valid=None)
 
-            detections = postprocess_obb_predictions(
-                detector,
-                preds,
-                img_tensor,
-                frame_rgb.shape[:2],
-                conf=args.conf,
-                iou=args.iou,
-                max_det=args.max_det,
-            )
-            tracker_rows = tracker.update(detections, frame_rgb, frame_id=frame_idx)
-            active_tracks = tracker.get_active_tracks()
-            records.append(
-                {
-                    "frame_id": int(frame_idx),
-                    "frame_name": frame_name,
-                    "num_detections": int(detections.shape[0]),
-                    "num_tracks": int(len(active_tracks)),
-                    "tracks": active_tracks,
-                }
-            )
-            print(
-                f"frame={frame_idx} file={frame_name} detections={detections.shape[0]} tracks={len(active_tracks)} "
-                f"temporal_detector={args.use_temporal_detector} temporal_used={detector.last_temporal_used} "
-                f"states={summarize_states(active_tracks)}"
-            )
+                detections = postprocess_obb_predictions(
+                    detector,
+                    preds,
+                    img_tensor,
+                    frame_rgb.shape[:2],
+                    conf=args.conf,
+                    iou=args.iou,
+                    max_det=args.max_det,
+                )
+                track_rows = tracker.update(detections, frame_rgb, frame_id=frame_idx)
+                active_tracks = tracker.get_active_tracks()
+                result = build_results(frame_bgr, frame_name, detector.names, track_rows)
 
-    if args.save_json:
-        payload = {
-            "source": args.source,
-            "tracker": args.tracker,
-            "model": args.model,
-            "weights": args.weights,
-            "use_temporal_detector": bool(args.use_temporal_detector),
-            "frames": records,
-        }
-        save_path = Path(args.save_json)
-        save_path.parent.mkdir(parents=True, exist_ok=True)
-        save_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+                if save_video_path:
+                    if video_writer is None:
+                        video_writer = create_video_writer(save_video_path, frame_bgr.shape, output_fps)
+                    rendered = result.plot(line_width=args.line_width)
+                    video_writer.write(rendered)
+
+                records.append(
+                    {
+                        "frame_id": int(frame_idx),
+                        "frame_name": frame_name,
+                        "num_detections": int(detections.shape[0]),
+                        "num_tracks": int(len(active_tracks)),
+                        "temporal_detector": bool(args.use_temporal_detector),
+                        "temporal_used": bool(detector.last_temporal_used),
+                        "tracks": active_tracks,
+                    }
+                )
+                print(
+                    f"frame={frame_idx} file={frame_name} detections={detections.shape[0]} tracks={len(active_tracks)} "
+                    f"temporal_detector={args.use_temporal_detector} temporal_used={detector.last_temporal_used} "
+                    f"states={summarize_states(active_tracks)}"
+                )
+    finally:
+        if video_writer is not None:
+            video_writer.release()
+
+    if not records:
+        raise ValueError(f"No frames found in source: {args.source}")
+
+    payload = {
+        "source": str(Path(args.source).expanduser()),
+        "tracker": str(Path(args.tracker).expanduser()),
+        "model": str(Path(args.model).expanduser()),
+        "weights": None if args.weights is None else str(Path(args.weights).expanduser()),
+        "imgsz": int(args.imgsz),
+        "device": str(args.device),
+        "conf": float(args.conf),
+        "iou": float(args.iou),
+        "max_det": int(args.max_det),
+        "use_temporal_detector": bool(args.use_temporal_detector),
+        "save_video": None if save_video_path is None else str(save_video_path),
+        "frames": records,
+    }
+
+    if save_json_path:
+        save_json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return payload
+
+
+def main() -> None:
+    args = parse_args()
+    run_tracking(args)
 
 
 if __name__ == "__main__":
