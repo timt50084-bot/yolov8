@@ -454,17 +454,33 @@ def set_logging(name="LOGGING_NAME", verbose=True):
     formatter = PrefixFormatter("%(message)s")
 
     # Handle Windows UTF-8 encoding issues
-    if WINDOWS and hasattr(sys.stdout, "encoding") and sys.stdout.encoding != "utf-8":
+    if WINDOWS:
         with contextlib.suppress(Exception):
-            # Attempt to reconfigure stdout to use UTF-8 encoding if possible
-            if hasattr(sys.stdout, "reconfigure"):
-                sys.stdout.reconfigure(encoding="utf-8")
-            # For environments where reconfigure is not available, wrap stdout in a TextIOWrapper
-            elif hasattr(sys.stdout, "buffer"):
-                import io
+            import ctypes
 
-                sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+            ctypes.windll.kernel32.SetConsoleOutputCP(65001)
+            ctypes.windll.kernel32.SetConsoleCP(65001)
 
+        for stream_name in ("stdout", "stderr"):
+            stream = getattr(sys, stream_name, None)
+            if stream is None:
+                continue
+
+            encoding = (getattr(stream, "encoding", "") or "").lower()
+            if encoding == "utf-8":
+                continue
+
+            with contextlib.suppress(Exception):
+                if hasattr(stream, "reconfigure"):
+                    stream.reconfigure(encoding="utf-8", errors="replace")
+                elif hasattr(stream, "buffer"):
+                    import io
+
+                    setattr(
+                        sys,
+                        stream_name,
+                        io.TextIOWrapper(stream.buffer, encoding="utf-8", errors="replace"),
+                    )
     # Create and configure the StreamHandler with the appropriate formatter and level
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
