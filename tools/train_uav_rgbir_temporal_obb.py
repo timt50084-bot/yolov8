@@ -25,22 +25,33 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data", required=True, type=str, help="Stage 1 prepared dataset yaml.")
     parser.add_argument(
         "--model",
-        default=str(REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml"),
+        default=str(REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-small-temporal-obb.yaml"),
         type=str,
-        help="Stage 5 temporal OBB model yaml. Can also point to the Stage 4 small yaml.",
+        help="Stage 5 final small-temporal OBB model yaml. Can also point to another staged model yaml.",
     )
     parser.add_argument("--pretrained", default=None, type=str, help="Optional pretrained weights checkpoint.")
-    parser.add_argument("--epochs", default=1, type=int, help="Number of training epochs.")
-    parser.add_argument("--batch", default=2, type=int, help="Batch size.")
-    parser.add_argument("--imgsz", default=640, type=int, help="Image size.")
+    parser.add_argument("--epochs", default=100, type=int, help="Number of training epochs.")
+    parser.add_argument("--batch", default=4, type=int, help="Batch size.")
+    parser.add_argument("--imgsz", default=960, type=int, help="Image size.")
     parser.add_argument("--device", default="cpu", type=str, help="Training device, e.g. cpu or 0.")
     parser.add_argument("--workers", default=0, type=int, help="Dataloader workers.")
     parser.add_argument("--project", default=str(REPO_ROOT / "runs" / "stage5_temporal"), type=str, help="Output project directory.")
     parser.add_argument("--name", default="train", type=str, help="Run name.")
     parser.add_argument("--exist-ok", action="store_true", help="Allow existing save dir.")
-    parser.add_argument("--close-mosaic", default=0, type=int, help="Disable mosaic from the beginning for smoke tests.")
+    parser.add_argument("--close-mosaic", default=15, type=int, help="Disable mosaic in the final training phase.")
     parser.add_argument("--plots", action="store_true", help="Enable training/validation plots.")
     parser.add_argument("--val", action="store_true", help="Run validation during training.")
+    parser.add_argument("--optimizer", default="AdamW", type=str, help="Optimizer name.")
+    parser.add_argument("--lr0", default=0.0008, type=float, help="Initial learning rate.")
+    parser.add_argument("--lrf", default=0.1, type=float, help="Final LR fraction.")
+    parser.add_argument("--warmup-epochs", dest="warmup_epochs", default=5.0, type=float, help="Warmup epochs.")
+    parser.add_argument("--patience", default=40, type=int, help="Early stopping patience.")
+    parser.add_argument("--weight-decay", dest="weight_decay", default=0.0005, type=float, help="Weight decay.")
+    parser.add_argument("--cos-lr", dest="cos_lr", action="store_true", help="Enable cosine LR schedule.")
+    parser.add_argument("--no-cos-lr", dest="cos_lr", action="store_false", help="Disable cosine LR schedule.")
+    parser.set_defaults(cos_lr=True)
+    parser.add_argument("--mosaic", default=0.3, type=float, help="Mosaic augmentation probability.")
+    parser.add_argument("--mixup", default=0.0, type=float, help="MixUp augmentation probability.")
 
     parser.add_argument("--use-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_true")
     parser.add_argument("--disable-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_false")
@@ -61,10 +72,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--disable-small-object-metrics", dest="enable_small_object_metrics", action="store_false")
     parser.set_defaults(enable_small_object_metrics=True)
     parser.add_argument("--small-object-area-thr-norm", default=0.005, type=float, help="Shared normalized OBB area threshold for Stage 4/5.")
-    parser.add_argument("--small-object-sampling-power", default=1.0, type=float, help="Weight emphasis power for small-object sampling.")
+    parser.add_argument("--small-object-sampling-power", default=1.25, type=float, help="Weight emphasis power for small-object sampling.")
     parser.add_argument("--small-object-sampling-min-weight", default=1.0, type=float, help="Minimum image sampling weight.")
-    parser.add_argument("--small-object-sampling-max-weight", default=3.0, type=float, help="Maximum image sampling weight.")
-    parser.add_argument("--small-object-loss-gain", default=0.25, type=float, help="Conservative gain for small-object loss weighting.")
+    parser.add_argument("--small-object-sampling-max-weight", default=4.0, type=float, help="Maximum image sampling weight.")
+    parser.add_argument("--small-object-loss-gain", default=0.35, type=float, help="Gain for small-object loss weighting.")
     parser.add_argument("--small-object-loss-on", default="box,cls,dfl,angle", type=str, help="Comma-separated loss components to scale.")
 
     parser.add_argument("--use-temporal", dest="use_temporal", action="store_true")
@@ -96,6 +107,15 @@ def main() -> None:
         "close_mosaic": args.close_mosaic,
         "plots": args.plots,
         "val": args.val,
+        "optimizer": args.optimizer,
+        "lr0": args.lr0,
+        "lrf": args.lrf,
+        "warmup_epochs": args.warmup_epochs,
+        "patience": args.patience,
+        "weight_decay": args.weight_decay,
+        "cos_lr": args.cos_lr,
+        "mosaic": args.mosaic,
+        "mixup": args.mixup,
         "use_rgbir_train_assist": args.use_rgbir_train_assist,
         "fusion_type": args.fusion_type,
         "ir_feature_stages": parse_stage_list(args.ir_feature_stages),
