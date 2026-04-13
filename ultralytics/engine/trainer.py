@@ -194,6 +194,7 @@ class BaseTrainer:
         # Epoch level metrics
         self.best_fitness = None
         self.fitness = None
+        self.is_best = False
         self.loss = None
         self.tloss = None
         self.loss_names = ["Loss"]
@@ -513,6 +514,7 @@ class BaseTrainer:
             # Validation
             final_epoch = epoch + 1 >= self.epochs
             validated = False
+            self.is_best = False
             if self.args.val or final_epoch or self.stopper.possible_stop or self.stop:
                 self._clear_memory(threshold=0.5)  # prevent VRAM spike
                 self.metrics, self.fitness = self.validate()
@@ -661,7 +663,7 @@ class BaseTrainer:
         # Save checkpoints
         self.wdir.mkdir(parents=True, exist_ok=True)  # ensure weights directory exists
         self.last.write_bytes(serialized_ckpt)  # save last.pt
-        if self.best_fitness == self.fitness:
+        if self.is_best:
             self.best.write_bytes(serialized_ckpt)  # save best.pt
         if (self.save_period > 0) and (self.epoch % self.save_period == 0):
             (self.wdir / f"epoch{self.epoch}.pt").write_bytes(serialized_ckpt)  # save epoch, i.e. 'epoch3.pt'
@@ -748,12 +750,14 @@ class BaseTrainer:
             # Sync EMA buffers from rank 0 to all ranks
             for buffer in self.ema.ema.buffers():
                 dist.broadcast(buffer, src=0)
+        self.is_best = False
         metrics = self.validator(self)
         if metrics is None:
             return None, None
         fitness = metrics.pop("fitness", -self.loss.detach().cpu().numpy())  # use loss as fitness measure if not found
-        if not self.best_fitness or self.best_fitness < fitness:
+        if self.best_fitness is None or fitness > self.best_fitness:
             self.best_fitness = fitness
+            self.is_best = True
         return metrics, fitness
 
     def get_model(self, cfg=None, weights=None, verbose=True):
@@ -972,7 +976,7 @@ class BaseTrainer:
             if RANK in {-1, 0}:
                 ckpt = strip_optimizer(self.last) if self.last.exists() else {}
                 if model:
-                    # update best.pt train_metrics from last.pt
+                    # update best.pt train_results from last.pt
                     strip_optimizer(self.best, updates={"train_results": ckpt.get("train_results")})
         if model:
             LOGGER.info(f"\nValidating {model}...")
@@ -1043,7 +1047,7 @@ class BaseTrainer:
             self.ema = ModelEMA(self.model)  # validation with EMA creates inference tensors that can't be updated
             self.ema.ema.load_state_dict(ckpt["ema"].float().state_dict())
             self.ema.updates = ckpt["updates"]
-        self.best_fitness = ckpt.get("best_fitness", 0.0)
+        self.best_fitness = ckpt.get("best_fitness")
 
     def _handle_nan_recovery(self, epoch):
         """Detect and recover from NaN/Inf loss and fitness collapse by loading last checkpoint."""

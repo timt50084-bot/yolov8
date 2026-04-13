@@ -1,0 +1,25 @@
+{
+  "source": "D:\\DataSet\\DroneVehicle_Processed\\images\\rgb\\train\\00001.jpg",
+  "model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-small-temporal-obb.yaml",
+  "weights": "C:\\Users\\20379\\Desktop\\best.pt",
+  "imgsz": 1024,
+  "device": "0",
+  "conf": 0.25,
+  "iou": 0.5,
+  "max_det": 300,
+  "sequence": false,
+  "use_temporal": true,
+  "frames": [
+    {
+      "frame_id": 0,
+      "frame_name": "00001.jpg",
+      "temporal_valid_input": false,
+      "temporal_used": false,
+      "temporal_stages": [],
+      "num_detections": 0,
+      "detections": [],
+      "visualization_path": "D:\\project\\ultralytics-main\\outputs\\final_demo\\image\\00001_20260411_162509\\visualizations\\00001.jpg",
+      "txt_path": null
+    }
+  ]
+}

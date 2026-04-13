@@ -1,0 +1,37 @@
+{
+  "subtask": "predict",
+  "mode": "rgbir",
+  "mode_spec": {
+    "name": "rgbir",
+    "description": "Stage 3 training-time RGB-IR assist with RGB-only validation and deployment.",
+    "default_model": "D:\\project\\ultralytics-main\\ultralytics\\cfg\\models\\v8\\yolov8-rgbir-obb.yaml",
+    "train_script": "D:\\project\\ultralytics-main\\tools\\train_uav_rgbir_obb.py",
+    "supports_temporal_predict": false,
+    "supports_stage6_track": false,
+    "use_rgbir": true,
+    "use_small": false,
+    "use_temporal": false,
+    "use_tracking": false,
+    "default_tracker": null
+  },
+  "route_type": "ultralytics_api",
+  "project_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\predict",
+  "run_name": "predict_20260412_091856",
+  "run_dir": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\predict\\predict_20260412_091856",
+  "payload": {
+    "action": "predict",
+    "model_source": "C:\\Users\\20379\\Desktop\\final\\weights\\best.pt",
+    "kwargs": {
+      "source": "D:\\DataSet\\DroneVehicle_Processed\\images\\rgb\\train\\00348.jpg",
+      "imgsz": 1024,
+      "device": "0",
+      "conf": 0.1,
+      "iou": 0.45,
+      "max_det": 300,
+      "save": true,
+      "project": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\rgbir\\predict",
+      "name": "predict_20260412_091856",
+      "exist_ok": true
+    }
+  }
+}
