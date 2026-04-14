@@ -1,0 +1,79 @@
+# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
+
+# Stage 5 single-modal small-object + temporal OBB configuration.
+# This keeps the Stage 4 P2 branch and Stage 5 temporal refine, without RGB-IR train assist.
+
+nc: 80
+use_rgbir_train_assist: false
+fusion_type: "none"
+ir_branch_width: 0.0
+ir_feature_stages: []
+rgbir_aux_loss_weight: 0.0
+rgbir_residual_scale: 0.0
+small_object_mode: "p2"
+ir_train_only: true
+train_assist_eval_bypass: true
+
+use_small_object_sampling: true
+use_small_object_loss_weighting: true
+enable_small_object_metrics: true
+small_object_area_thr_norm: 0.005
+small_object_sampling_power: 1.25
+small_object_sampling_min_weight: 1.0
+small_object_sampling_max_weight: 4.0
+small_object_loss_gain: 0.35
+small_object_loss_on: [box, cls, dfl, angle]
+
+use_temporal: true
+temporal_mode: "two_frame"
+temporal_fusion_type: "diff_gate"
+temporal_feature_stages: [6, 9]
+temporal_branch_width: 0.25
+temporal_loss_weight: 0.02
+temporal_residual_scale: 0.10
+
+scales:
+  n: [0.33, 0.25, 1024]
+  s: [0.33, 0.50, 1024]
+  m: [0.67, 0.75, 768]
+  l: [1.00, 1.00, 512]
+  x: [1.00, 1.25, 512]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [-1, 3, C2f, [128, true]]
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [-1, 6, C2f, [256, true]]
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [-1, 6, C2f, [512, true]]
+  - [-1, 1, Conv, [1024, 3, 2]]
+  - [-1, 3, C2f, [1024, true]]
+  - [-1, 1, SPPF, [1024, 5]]
+
+head:
+  - [-1, 1, nn.Upsample, [null, 2, "nearest"]]
+  - [[-1, 6], 1, Concat, [1]]
+  - [-1, 3, C2f, [512]]
+
+  - [-1, 1, nn.Upsample, [null, 2, "nearest"]]
+  - [[-1, 4], 1, Concat, [1]]
+  - [-1, 3, C2f, [256]]
+
+  - [-1, 1, nn.Upsample, [null, 2, "nearest"]]
+  - [[-1, 2], 1, Concat, [1]]
+  - [-1, 3, C2f, [128]]
+
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [[-1, 15], 1, Concat, [1]]
+  - [-1, 3, C2f, [256]]
+
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 12], 1, Concat, [1]]
+  - [-1, 3, C2f, [512]]
+
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 9], 1, Concat, [1]]
+  - [-1, 3, C2f, [1024]]
+
+  - [[18, 21, 24, 27], 1, OBB, [nc, 1]]

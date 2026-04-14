@@ -9,6 +9,7 @@ REPO_ROOT = THIS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from tools.train_uav_augment_args import add_train_augment_args, augment_overrides_from_args
 from ultralytics.models.yolo.obb.rgbir_small_train import RGBIRSmallObjectOBBTrainer
 
 
@@ -64,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--small-object-sampling-max-weight", default=3.0, type=float, help="Maximum image sampling weight.")
     parser.add_argument("--small-object-loss-gain", default=0.25, type=float, help="Conservative gain for Stage 4 small-object loss weighting.")
     parser.add_argument("--small-object-loss-on", default="box,cls,dfl,angle", type=str, help="Comma-separated loss components to scale.")
+    add_train_augment_args(parser)
     return parser.parse_args()
 
 
@@ -100,6 +102,7 @@ def main() -> None:
         "small_object_loss_on": parse_loss_on(args.small_object_loss_on),
         "enable_small_object_metrics": args.enable_small_object_metrics,
     }
+    overrides.update(augment_overrides_from_args(args))
     trainer = RGBIRSmallObjectOBBTrainer(overrides=overrides)
     trainer.train()
 

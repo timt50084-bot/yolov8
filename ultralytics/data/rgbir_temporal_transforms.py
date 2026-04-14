@@ -7,6 +7,7 @@ import cv2
 import numpy as np
 import torch
 
+from .uav_train_augment import UAVTrainAugmentConfig, apply_uav_train_augments
 from ultralytics.utils.instance import Instances
 from ultralytics.utils.ops import xyxyxyxy2xywhr
 
@@ -41,8 +42,8 @@ class RGBIRTemporalTransform:
     """Apply conservative synchronized geometry to RGB, IR, previous RGB, and OBB labels.
 
     Current-frame RGB and IR share exact letterbox parameters so their spatial alignment is preserved. The previous RGB
-    frame is resized to the same output shape and receives the same flip decisions. This keeps batch shapes stable
-    while remaining conservative for one-step temporal consumption.
+    frame is resized to the same output shape and receives the same flip decisions. Optional CMCP, MRRE, and PC-MWA
+    run only during training before letterbox so the existing OBB/temporal data structure stays unchanged.
     """
 
     def __init__(
@@ -59,6 +60,7 @@ class RGBIRTemporalTransform:
         self.fliplr = float(getattr(hyp, "fliplr", fliplr) if hyp is not None else fliplr)
         self.flipud = float(getattr(hyp, "flipud", flipud) if hyp is not None else flipud)
         self.pad_value = int(pad_value)
+        self.train_augment_config = UAVTrainAugmentConfig.from_hyp(hyp)
 
     def _letterbox(
         self,
@@ -117,6 +119,18 @@ class RGBIRTemporalTransform:
 
         h, w = img.shape[:2]
         instances.denormalize(w, h)
+        if self.augment and self.train_augment_config.enabled:
+            sample["img"] = img
+            sample["img_ir"] = img_ir
+            sample["img_prev"] = img_prev
+            sample["instances"] = instances
+            sample["cls"] = cls
+            sample = apply_uav_train_augments(sample, self.train_augment_config)
+            img = sample["img"]
+            img_ir = sample["img_ir"]
+            img_prev = sample["img_prev"]
+            instances = sample["instances"]
+            cls = sample["cls"]
 
         img, ratio, pad = self._letterbox(img)
         img_ir, _, _ = self._letterbox(img_ir, ratio=ratio, pad=pad)

@@ -9,6 +9,7 @@ REPO_ROOT = THIS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from tools.train_uav_augment_args import add_train_augment_args, augment_overrides_from_args
 from ultralytics.models.yolo.obb.rgbir_temporal_train import RGBIRTemporalOBBTrainer
 
 
@@ -87,6 +88,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--temporal-branch-width", default=0.25, type=float, help="Width multiplier for previous-frame adapters.")
     parser.add_argument("--temporal-loss-weight", default=0.02, type=float, help="Low-weight temporal consistency loss.")
     parser.add_argument("--temporal-residual-scale", default=0.1, type=float, help="Residual scale for temporal refine.")
+    add_train_augment_args(parser)
     return parser.parse_args()
 
 
@@ -139,6 +141,7 @@ def main() -> None:
         "temporal_loss_weight": args.temporal_loss_weight,
         "temporal_residual_scale": args.temporal_residual_scale,
     }
+    overrides.update(augment_overrides_from_args(args))
     trainer = RGBIRTemporalOBBTrainer(overrides=overrides)
     trainer.train()
 

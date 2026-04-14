@@ -14,7 +14,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from ultralytics import YOLO
 
-from tools.utils_uav_pipeline import ModeSpec, resolve_mode, resolve_output_dir, route_manifest
+from tools.utils_uav_pipeline import MODE_REGISTRY, ModeSpec, resolve_mode, resolve_output_dir, route_manifest
 
 
 def extra_args(items: list[str]) -> list[str]:
@@ -100,7 +100,7 @@ def add_common_mode_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--mode",
         required=True,
-        choices=["baseline", "rgbir", "rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"],
+        choices=list(MODE_REGISTRY),
         help="Stage mode to route.",
     )
     parser.add_argument("--model", default=None, type=str, help="Optional model yaml override.")
@@ -161,7 +161,11 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument("--disable-small-object", action="store_true")
     train.add_argument("--enable-temporal", action="store_true")
     train.add_argument("--disable-temporal", action="store_true")
-    train.add_argument("extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the staged train script.")
+    train.add_argument(
+        "extra_args",
+        nargs=argparse.REMAINDER,
+        help="Additional arguments forwarded to the staged train script, e.g. '-- --enable-cmcp --enable-pc-mwa'.",
+    )
 
     val = subparsers.add_parser("val", help="Run RGB-only validation for the selected mode.")
     add_common_mode_args(val)
@@ -344,6 +348,11 @@ def train_route(args: argparse.Namespace) -> Any:
     use_rgbir = bool_override(spec.use_rgbir, args.enable_rgbir, args.disable_rgbir)
     use_small = bool_override(spec.use_small, args.enable_small_object, args.disable_small_object)
     use_temporal = bool_override(spec.use_temporal, args.enable_temporal, args.disable_temporal)
+    supports_small_toggles = spec.train_script is not None and spec.train_script.name in {
+        "train_uav_rgbir_obb_small.py",
+        "train_uav_rgbir_temporal_obb.py",
+    }
+    supports_temporal_toggles = spec.train_script is not None and spec.train_script.name == "train_uav_rgbir_temporal_obb.py"
 
     if spec.name == "baseline":
         model_source = str(Path(args.weights).resolve()) if args.weights else model_path
@@ -422,9 +431,9 @@ def train_route(args: argparse.Namespace) -> Any:
         cmd.append("--val")
 
     cmd.append("--use-rgbir-train-assist" if use_rgbir else "--disable-rgbir-train-assist")
-    if spec.name in {"rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"}:
+    if supports_small_toggles:
         cmd.append("--use-small-object-sampling" if use_small else "--disable-small-object-sampling")
-        if spec.name == "rgbir-small" and use_small:
+        if spec.name in {"rgbir-small", "small"} and use_small:
             cmd.append("--disable-small-object-loss-weighting")
         else:
             cmd.append("--use-small-object-loss-weighting" if use_small else "--disable-small-object-loss-weighting")
@@ -432,7 +441,7 @@ def train_route(args: argparse.Namespace) -> Any:
     elif use_small:
         raise ValueError(f"Mode '{spec.name}' does not support small-object toggles.")
 
-    if spec.name in {"rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"}:
+    if supports_temporal_toggles:
         cmd.append("--use-temporal" if use_temporal else "--disable-temporal")
     elif use_temporal:
         raise ValueError(f"Mode '{spec.name}' does not support temporal training.")
@@ -621,10 +630,7 @@ def predict_route(args: argparse.Namespace) -> Any:
 def temporal_predict_route(args: argparse.Namespace) -> int:
     spec = resolve_mode(args.mode)
     if not spec.supports_temporal_predict:
-        raise ValueError(
-            f"Mode '{spec.name}' does not support temporal-predict. "
-            "Use 'rgbir-small-temporal', 'rgbir-temporal', or 'rgbir-temporal-track'."
-        )
+        raise ValueError(f"Mode '{spec.name}' does not support temporal-predict. Use a temporal-enabled mode.")
     project_dir, run_name, run_dir = resolve_output_dir(
         mode=spec.name,
         subtask="temporal_predict",

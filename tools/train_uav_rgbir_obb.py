@@ -9,6 +9,7 @@ REPO_ROOT = THIS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from tools.train_uav_augment_args import add_train_augment_args, augment_overrides_from_args
 from ultralytics.models.yolo.obb.rgbir_train import RGBIROBBTrainer
 
 
@@ -45,6 +46,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ir-branch-width", default=0.25, type=float, help="Width multiplier for the lightweight IR adapters.")
     parser.add_argument("--rgbir-aux-loss-weight", default=0.05, type=float, help="Weight for the RGB-IR auxiliary alignment loss.")
     parser.add_argument("--rgbir-residual-scale", default=0.1, type=float, help="Residual fusion scale for IR assistance.")
+    add_train_augment_args(parser)
     return parser.parse_args()
 
 
@@ -72,6 +74,7 @@ def main() -> None:
         "rgbir_aux_loss_weight": args.rgbir_aux_loss_weight,
         "rgbir_residual_scale": args.rgbir_residual_scale,
     }
+    overrides.update(augment_overrides_from_args(args))
     trainer = RGBIROBBTrainer(overrides=overrides)
     trainer.train()
 

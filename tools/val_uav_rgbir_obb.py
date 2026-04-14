@@ -25,7 +25,10 @@ from ultralytics.nn.tasks import torch_safe_load, yaml_model_load
 MODE_DEFAULT_MODELS = {
     "rgbir": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb.yaml",
     "rgbir-small": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
+    "small": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-obb-small.yaml",
     "rgbir-small-temporal": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
+    "temporal_small": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-small-temporal-obb.yaml",
+    "temporal": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-temporal-obb.yaml",
     "rgbir-temporal": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml",
     "rgbir-temporal-track": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml",
 }
@@ -36,7 +39,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--mode",
         required=True,
-        choices=["rgbir", "rgbir-small", "rgbir-small-temporal", "rgbir-temporal", "rgbir-temporal-track"],
+        choices=list(MODE_DEFAULT_MODELS),
         help="Stage mode whose explicit validation semantics should be used.",
     )
     parser.add_argument("--data", required=True, type=str, help="Prepared dataset yaml.")
@@ -87,7 +90,7 @@ def default_model_for_mode(mode: str) -> str:
 
 def build_model(args: argparse.Namespace, data_cfg: dict[str, Any]):
     model_cfg = yaml_model_load(args.model or default_model_for_mode(args.mode))
-    if args.mode == "rgbir-small-temporal":
+    if args.mode in {"rgbir-small-temporal", "temporal_small"}:
         model_cfg["use_temporal"] = True
         model_cfg["temporal_mode"] = str(model_cfg.get("temporal_mode", "two_frame") or "two_frame")
     names = normalize_names(data_cfg.get("names"))
@@ -95,7 +98,7 @@ def build_model(args: argparse.Namespace, data_cfg: dict[str, Any]):
 
     if args.mode == "rgbir":
         model = RGBIRTrainAssistOBBModel(model_cfg, nc=nc, ch=3, verbose=False)
-    elif args.mode == "rgbir-small":
+    elif args.mode in {"rgbir-small", "small"}:
         model = RGBIRSmallObjectOBBModel(model_cfg, nc=nc, ch=3, verbose=False)
     else:
         model = RGBIRTemporalOBBModel(model_cfg, nc=nc, ch=3, verbose=False)
@@ -133,11 +136,11 @@ def build_validator(args: argparse.Namespace, save_dir: Path):
     }
     enable_small_metrics = args.enable_small_object_metrics
     if enable_small_metrics is None:
-        enable_small_metrics = args.mode in {"rgbir-small", "rgbir-small-temporal"}
+        enable_small_metrics = args.mode in {"rgbir-small", "small", "rgbir-small-temporal", "temporal_small"}
 
     if args.mode == "rgbir":
         return OBBValidator(save_dir=save_dir, args=validator_args)
-    if args.mode == "rgbir-small":
+    if args.mode in {"rgbir-small", "small"}:
         return SmallObjectOBBValidator(
             save_dir=save_dir,
             args=validator_args,
