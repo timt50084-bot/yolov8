@@ -13,6 +13,8 @@ from typing import IO, Any
 def is_noninteractive_console() -> bool:
     """Check for known non-interactive console environments."""
     return "GITHUB_ACTIONS" in os.environ or "RUNPOD_POD_ID" in os.environ
+
+
 WINDOWS = os.name == "nt"
 
 
@@ -28,6 +30,7 @@ def stream_supports_unicode(stream: IO[str] | None) -> bool:
     """Return True when the output encoding is suitable for Unicode progress characters."""
     encoding = (getattr(stream, "encoding", "") or "").lower()
     return "utf" in encoding or encoding == "cp65001"
+
 
 class TQDM:
     """Lightweight zero-dependency progress bar for Ultralytics.
@@ -218,7 +221,7 @@ class TQDM:
         filled = int(frac * width)
         bar = full * filled + empty * (width - filled)
         if filled < width and frac * width - filled > 0.5:
-            bar = f"{bar[:filled]}{partial}{bar[filled + 1:]}"
+            bar = f"{bar[:filled]}{partial}{bar[filled + 1 :]}"
         return bar
 
     def _should_update(self, dt: float, dn: int) -> bool:
@@ -226,6 +229,7 @@ class TQDM:
         if self.noninteractive:
             return False
         return (self.total is not None and self.n >= self.total) or (dt >= self.mininterval)
+
     def _write_line(self, text: str) -> None:
         """Write one progress line, updating in-place without ANSI dependencies."""
         if self.noninteractive:
@@ -243,6 +247,7 @@ class TQDM:
         self.file.write("\r" + (" " * self._last_display_len) + "\r")
         self.file.flush()
         self._last_display_len = 0
+
     def _display(self, final: bool = False) -> None:
         """Display progress bar."""
         if self.disable or (self.closed and not final):

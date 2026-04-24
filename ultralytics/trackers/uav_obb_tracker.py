@@ -11,14 +11,15 @@ Stage 6 focuses on a lightweight RGB-only deployment path:
 from __future__ import annotations
 
 from collections import deque
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Iterable, Sequence
+from typing import Any
 
 import numpy as np
 import torch
 
-from ultralytics.utils import IterableSimpleNamespace, YAML
+from ultralytics.utils import YAML, IterableSimpleNamespace
 from ultralytics.utils.checks import check_yaml
 from ultralytics.utils.ops import xywhr2xyxyxyxy
 
@@ -98,7 +99,9 @@ class UAVTrack:
             smooth = (float(momentum) * self.smooth_embedding) + ((1.0 - float(momentum)) * embedding)
             self.smooth_embedding = _normalize_embedding(smooth)
 
-    def update(self, detection: UAVDetection, frame_id: int, *, appearance_momentum: float, min_confirm_frames: int) -> None:
+    def update(
+        self, detection: UAVDetection, frame_id: int, *, appearance_momentum: float, min_confirm_frames: int
+    ) -> None:
         """Update an existing track with a matched detection."""
         prev_center = self.obb[:2].copy()
         self.obb = np.asarray(detection.obb, dtype=np.float32).reshape(5)
@@ -115,7 +118,9 @@ class UAVTrack:
         self._update_embedding(detection.embedding, momentum=appearance_momentum)
         self.state = UAVTrackState.TRACKED if self.hits >= int(min_confirm_frames) else UAVTrackState.TENTATIVE
 
-    def reactivate(self, detection: UAVDetection, frame_id: int, *, appearance_momentum: float, min_confirm_frames: int) -> None:
+    def reactivate(
+        self, detection: UAVDetection, frame_id: int, *, appearance_momentum: float, min_confirm_frames: int
+    ) -> None:
         """Reactivate a lost track with a newly matched detection without changing its ID."""
         self.update(
             detection,
@@ -135,7 +140,9 @@ class UAVTrack:
 
     def to_array(self) -> np.ndarray:
         """Return the track in Ultralytics OBB tracking tensor layout `[xywhr, track_id, score, cls]`."""
-        return np.asarray([*self.obb.tolist(), float(self.track_id), float(self.score), float(self.cls)], dtype=np.float32)
+        return np.asarray(
+            [*self.obb.tolist(), float(self.track_id), float(self.score), float(self.cls)], dtype=np.float32
+        )
 
     def to_dict(self, frame_id: int) -> dict[str, Any]:
         """Return a JSON-serializable snapshot for the explicit Stage 6 script."""
@@ -343,7 +350,9 @@ class UAVOBBTracker:
 
     def get_active_tracks(self) -> list[dict[str, Any]]:
         """Return the last emitted visible tracks as JSON-friendly dictionaries."""
-        return [track.to_dict(frame_id=self.frame_id) for track in self.tracked_tracks if track.frame_id == self.frame_id]
+        return [
+            track.to_dict(frame_id=self.frame_id) for track in self.tracked_tracks if track.frame_id == self.frame_id
+        ]
 
     def update(
         self,
@@ -380,7 +389,7 @@ class UAVOBBTracker:
             association_pool += list(self.lost_tracks)
 
         if self.use_obb_matching:
-            matches, unmatched_track_idx, unmatched_det_idx, diagnostics = match_obb_tracks(
+            matches, _unmatched_track_idx, unmatched_det_idx, diagnostics = match_obb_tracks(
                 association_pool,
                 prepared,
                 match_thresh=self.match_thresh,
@@ -394,7 +403,7 @@ class UAVOBBTracker:
             )
         else:
             matches = np.empty((0, 2), dtype=np.int64)
-            unmatched_track_idx = np.arange(len(association_pool), dtype=np.int64)
+            np.arange(len(association_pool), dtype=np.int64)
             unmatched_det_idx = np.arange(len(prepared), dtype=np.int64)
             diagnostics = {"matches": matches}
         self.last_matches = matches
@@ -461,13 +470,13 @@ class UAVOBBTracker:
         current_visible.extend(new_tracks)
 
         self.tracked_tracks = self._deduplicate_tracks(
-            track
-            for track in current_visible
-            if track.state in {UAVTrackState.TENTATIVE, UAVTrackState.TRACKED}
+            track for track in current_visible if track.state in {UAVTrackState.TENTATIVE, UAVTrackState.TRACKED}
         )
         tracked_ids = {track.track_id for track in self.tracked_tracks}
         self.lost_tracks = self._deduplicate_tracks(
-            track for track in [*retained_lost, *new_lost] if track.track_id not in tracked_ids and track.state == UAVTrackState.LOST
+            track
+            for track in [*retained_lost, *new_lost]
+            if track.track_id not in tracked_ids and track.state == UAVTrackState.LOST
         )
         self.removed_tracks.extend(removed_now)
         self.last_output = self.get_active_tracks()
