@@ -8,11 +8,10 @@ from typing import Any
 import torch
 
 from ultralytics.data.build import InfiniteDataLoader, build_dataloader, seed_worker
-from ultralytics.utils.torch_utils import torch_distributed_zero_first
 from ultralytics.nn.tasks import yaml_model_load
 from ultralytics.utils import DEFAULT_CFG, LOGGER, RANK
-
 from ultralytics.utils.small_object_sampler import build_weighted_small_object_sampler
+from ultralytics.utils.torch_utils import torch_distributed_zero_first
 
 from .rgbir_small_obb_train import RGBIRSmallObjectOBBModel
 from .rgbir_small_val import SmallObjectOBBValidator
@@ -116,7 +115,9 @@ class RGBIRSmallObjectOBBTrainer(RGBIROBBTrainer):
             )
 
         if rank != -1:
-            LOGGER.warning("Stage 4 small-object weighted sampling is currently single-process only; falling back to standard sampling.")
+            LOGGER.warning(
+                "Stage 4 small-object weighted sampling is currently single-process only; falling back to standard sampling."
+            )
             return build_dataloader(
                 dataset,
                 batch=batch_size,

@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+import re
+from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
-import re
 from typing import Any
-
 
 TOOLS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = TOOLS_DIR.parent

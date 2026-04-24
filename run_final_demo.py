@@ -13,7 +13,6 @@ if str(REPO_ROOT) not in sys.path:
 from tools.predict_uav_temporal_obb import IMAGE_EXTS, run_prediction
 from tools.track_uav_obb import VIDEO_EXTS, run_tracking
 
-
 # Centralized defaults for the final demo/test route.
 DEFAULT_FINAL_MODEL = REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-small-temporal-obb.yaml"
 DEFAULT_FINAL_WEIGHTS: Path | None = None
@@ -33,26 +32,44 @@ AUTO_FINAL_TRAIN_ROOT = REPO_ROOT / "outputs" / "uav_pipeline" / "final" / "trai
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Unified final demo/test entry for image, folder, and video sources.")
     parser.add_argument("--source", default=None, type=str, help="Image file, image folder, or video file.")
-    parser.add_argument("--weights", default=None, type=str, help="Optional checkpoint override for the final detector.")
-    parser.add_argument("--model", default=None, type=str, help="Optional model yaml override. Defaults to final small-temporal yaml.")
+    parser.add_argument(
+        "--weights", default=None, type=str, help="Optional checkpoint override for the final detector."
+    )
+    parser.add_argument(
+        "--model", default=None, type=str, help="Optional model yaml override. Defaults to final small-temporal yaml."
+    )
     parser.add_argument("--tracker", default=None, type=str, help="Optional tracker yaml override for video mode.")
     parser.add_argument("--device", default=DEFAULT_DEVICE, type=str, help="Inference device, for example 0 or cpu.")
     parser.add_argument("--imgsz", default=DEFAULT_IMGSZ, type=int, help="Inference image size.")
     parser.add_argument("--conf", default=DEFAULT_CONF, type=float, help="Confidence threshold.")
     parser.add_argument("--iou", default=DEFAULT_IOU, type=float, help="IoU threshold.")
-    parser.add_argument("--max-det", dest="max_det", default=DEFAULT_MAX_DET, type=int, help="Maximum detections per frame.")
-    parser.add_argument("--output-root", default=str(DEFAULT_OUTPUT_ROOT), type=str, help="Root directory for final demo outputs.")
+    parser.add_argument(
+        "--max-det", dest="max_det", default=DEFAULT_MAX_DET, type=int, help="Maximum detections per frame."
+    )
+    parser.add_argument(
+        "--output-root", default=str(DEFAULT_OUTPUT_ROOT), type=str, help="Root directory for final demo outputs."
+    )
     parser.add_argument("--name", default=None, type=str, help="Optional run name prefix.")
-    parser.add_argument("--line-width", default=DEFAULT_LINE_WIDTH, type=int, help="Optional visualization line width override.")
-    parser.add_argument("--mode", default="auto", choices=["auto", "image", "folder", "video"], help="Input mode override.")
+    parser.add_argument(
+        "--line-width", default=DEFAULT_LINE_WIDTH, type=int, help="Optional visualization line width override."
+    )
+    parser.add_argument(
+        "--mode", default="auto", choices=["auto", "image", "folder", "video"], help="Input mode override."
+    )
 
     save_json_group = parser.add_mutually_exclusive_group()
-    save_json_group.add_argument("--save-json", dest="save_json", action="store_true", help="Save structured JSON results.")
-    save_json_group.add_argument("--no-save-json", dest="save_json", action="store_false", help="Disable structured JSON results.")
+    save_json_group.add_argument(
+        "--save-json", dest="save_json", action="store_true", help="Save structured JSON results."
+    )
+    save_json_group.add_argument(
+        "--no-save-json", dest="save_json", action="store_false", help="Disable structured JSON results."
+    )
 
     save_txt_group = parser.add_mutually_exclusive_group()
     save_txt_group.add_argument("--save-txt", dest="save_txt", action="store_true", help="Save per-image txt labels.")
-    save_txt_group.add_argument("--no-save-txt", dest="save_txt", action="store_false", help="Disable per-image txt labels.")
+    save_txt_group.add_argument(
+        "--no-save-txt", dest="save_txt", action="store_false", help="Disable per-image txt labels."
+    )
 
     parser.set_defaults(save_json=DEFAULT_SAVE_JSON, save_txt=DEFAULT_SAVE_TXT)
     return parser
