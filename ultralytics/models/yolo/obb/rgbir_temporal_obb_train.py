@@ -5,10 +5,10 @@ from typing import Any
 
 import torch
 
-from ultralytics.nn.modules.temporal_refine import TemporalGatedRefine, TemporalStageAdapter, temporal_alignment_loss
 from ultralytics.nn.modules.rgbir_fusion import rgbir_alignment_loss
-from ultralytics.utils.loss_small_object import apply_small_object_loss_weighting
+from ultralytics.nn.modules.temporal_refine import TemporalGatedRefine, TemporalStageAdapter, temporal_alignment_loss
 from ultralytics.utils import LOGGER
+from ultralytics.utils.loss_small_object import apply_small_object_loss_weighting
 from ultralytics.utils.plotting import feature_visualization
 
 from .rgbir_obb_train import _parse_stage_list
@@ -26,7 +26,9 @@ class RGBIRTemporalOBBModel(RGBIRSmallObjectOBBModel):
     - avoid long-sequence memory or tracking semantics, which remain reserved for later stages.
     """
 
-    def __init__(self, cfg="yolov8-rgbir-temporal-obb.yaml", ch: int = 3, nc: int | None = None, verbose: bool = True) -> None:
+    def __init__(
+        self, cfg="yolov8-rgbir-temporal-obb.yaml", ch: int = 3, nc: int | None = None, verbose: bool = True
+    ) -> None:
         cfg = deepcopy(cfg) if isinstance(cfg, dict) else cfg
         self.use_temporal = bool(cfg.get("use_temporal", False))
         self.temporal_mode = str(cfg.get("temporal_mode", "off"))
@@ -41,7 +43,9 @@ class RGBIRTemporalOBBModel(RGBIRSmallObjectOBBModel):
         self._temporal_prev_cache: torch.Tensor | None = None
         super().__init__(cfg=cfg, ch=ch, nc=nc, verbose=verbose)
 
-        self._temporal_stage_channels = self._infer_stage_channels(self.temporal_feature_stages) if self.temporal_feature_stages else {}
+        self._temporal_stage_channels = (
+            self._infer_stage_channels(self.temporal_feature_stages) if self.temporal_feature_stages else {}
+        )
         self.temporal_stage_adapters = torch.nn.ModuleDict(
             {
                 str(stage): TemporalStageAdapter(out_channels=channels, width_mult=self.temporal_branch_width)
@@ -188,7 +192,9 @@ class RGBIRTemporalOBBModel(RGBIRSmallObjectOBBModel):
                 if prev_stage is None:
                     raise RuntimeError(f"Temporal refine stage {m.i} could not build a previous-frame feature.")
                 if self.temporal_loss_weight > 0.0:
-                    temporal_aux_terms.append(temporal_alignment_loss(x, prev_stage, temporal_valid=temporal_valid_tensor))
+                    temporal_aux_terms.append(
+                        temporal_alignment_loss(x, prev_stage, temporal_valid=temporal_valid_tensor)
+                    )
                 x = self.temporal_refiners[stage_key](
                     x,
                     prev_stage,

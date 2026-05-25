@@ -11,8 +11,8 @@ from typing import Any
 
 import cv2
 import numpy as np
-from PIL import Image
 import yaml
+from PIL import Image
 
 IMAGE_SUFFIXES = {".bmp", ".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
 LABEL_SUFFIXES = {".txt", ".xml"}
@@ -560,10 +560,10 @@ def apply_target_protection(
             obj_x0, obj_y0, obj_x1, obj_y1 = obj.bbox()
             center_x = (obj_x0 + obj_x1) / 2.0
             center_y = (obj_y0 + obj_y1) / 2.0
-            protect_x0 = int(math.floor(min(obj_x0, center_x - half)))
-            protect_y0 = int(math.floor(min(obj_y0, center_y - half)))
-            protect_x1 = int(math.ceil(max(obj_x1, center_x + half)))
-            protect_y1 = int(math.ceil(max(obj_y1, center_y + half)))
+            protect_x0 = math.floor(min(obj_x0, center_x - half))
+            protect_y0 = math.floor(min(obj_y0, center_y - half))
+            protect_x1 = math.ceil(max(obj_x1, center_x + half))
+            protect_y1 = math.ceil(max(obj_y1, center_y + half))
             new_box = (x0, y0, x1, y1)
             if obj_x0 - x0 < half:
                 new_box = (min(x0, protect_x0), new_box[1], new_box[2], new_box[3])
@@ -768,7 +768,9 @@ def fuse_label_sets(
 def write_label_file(objects: list[OBBObject], path: Path, width: int, height: int) -> None:
     """Write polygon labels in current Ultralytics-compatible OBB format."""
     ensure_dir(path.parent)
-    lines = [obj.to_label_line(width, height) for obj in sorted(objects, key=lambda item: (item.class_id, item.class_name))]
+    lines = [
+        obj.to_label_line(width, height) for obj in sorted(objects, key=lambda item: (item.class_id, item.class_name))
+    ]
     path.write_text(("\n".join(lines) + "\n") if lines else "", encoding="utf-8")
 
 

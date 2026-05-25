@@ -12,8 +12,8 @@ from ultralytics.utils.metrics import OBBMetrics
 def normalized_obb_areas(bboxes: torch.Tensor, imgsz: tuple[int, int] | None = None) -> torch.Tensor:
     """Return normalized OBB areas from xywhr boxes.
 
-    If `imgsz` is provided, the boxes are assumed to be in pixels and will be normalized by image area. Otherwise
-    the input is assumed to already use normalized xywhr.
+    If `imgsz` is provided, the boxes are assumed to be in pixels and will be normalized by image area. Otherwise the
+    input is assumed to already use normalized xywhr.
     """
     if bboxes.numel() == 0:
         return bboxes.new_zeros((0,))

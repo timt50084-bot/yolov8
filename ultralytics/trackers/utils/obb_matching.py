@@ -7,7 +7,8 @@ and an optional lightweight appearance term.
 
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 import numpy as np
 import torch
@@ -169,7 +170,9 @@ def build_obb_cost_matrix(
     )
     class_cost = class_penalty_matrix(atracks, btracks, penalty=class_mismatch_penalty)
 
-    weight_sum = max(float(iou_weight) + float(center_weight) + (float(appearance_weight) if use_appearance else 0.0), 1e-6)
+    weight_sum = max(
+        float(iou_weight) + float(center_weight) + (float(appearance_weight) if use_appearance else 0.0), 1e-6
+    )
     cost = (
         float(iou_weight) * iou_cost
         + float(center_weight) * center_cost
