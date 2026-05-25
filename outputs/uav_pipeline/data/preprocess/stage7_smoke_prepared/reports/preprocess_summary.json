@@ -23,13 +23,7 @@
       "processed_objects": 107
     }
   },
-  "class_names": [
-    "car",
-    "truck",
-    "bus",
-    "van",
-    "Freight Car"
-  ],
+  "class_names": ["car", "truck", "bus", "van", "Freight Car"],
   "anomaly_counts": {},
   "anomaly_total": 0,
   "reports": {

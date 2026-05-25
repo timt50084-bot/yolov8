@@ -36,7 +36,13 @@ def parse_args() -> argparse.Namespace:
 
 
 def build_dataset(args: argparse.Namespace) -> RGBIRTemporalOBBDataset:
-    kwargs = {"data": args.data, "data_root": args.data_root, "mode": args.mode, "imgsz": args.imgsz, "augment": args.augment}
+    kwargs = {
+        "data": args.data,
+        "data_root": args.data_root,
+        "mode": args.mode,
+        "imgsz": args.imgsz,
+        "augment": args.augment,
+    }
     if args.use_builder:
         return build_rgbir_temporal_obb_dataset(**kwargs)
     return RGBIRTemporalOBBDataset(**kwargs)
