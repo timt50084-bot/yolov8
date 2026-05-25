@@ -26,9 +26,9 @@ Stage 3 新增的是一个独立模型子类：
 
 它继承原生 `OBBModel`，保留原始 backbone / neck / head 图结构不变。训练时在选定 RGB stage 上：
 
-1. 从 `img_ir` 通过轻量 stage adapter 提取对应尺寸的 IR feature  
-2. 计算一个很小的 RGB-IR 对齐辅助损失  
-3. 按配置执行轻量 gated residual fusion 或保守旁路  
+1. 从 `img_ir` 通过轻量 stage adapter 提取对应尺寸的 IR feature
+2. 计算一个很小的 RGB-IR 对齐辅助损失
+3. 按配置执行轻量 gated residual fusion 或保守旁路
 
 验证 / 推理时：
 
@@ -42,8 +42,8 @@ IR 分支不是新的部署 backbone，而是训练期辅助支路：
 - 输入：`img_ir`
 - 输出：与指定 RGB stage 对齐的轻量 IR 特征
 - 作用：
-  - 给 RGB feature 提供保守 residual 辅助
-  - 提供小权重对齐损失，约束 RGB 表征吸收 IR 线索
+    - 给 RGB feature 提供保守 residual 辅助
+    - 提供小权重对齐损失，约束 RGB 表征吸收 IR 线索
 
 这条支路在 eval / predict 中自动旁路。
 
@@ -101,12 +101,12 @@ trainer.train()
 
 ```bash
 python tools/train_uav_rgbir_obb.py ^
-  --data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
-  --model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-obb.yaml ^
-  --epochs 1 ^
-  --batch 2 ^
-  --device cpu ^
-  --val
+--data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
+--model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-obb.yaml ^
+--epochs 1 ^
+--batch 2 ^
+--device cpu ^
+--val
 ```
 
 ## 8. baseline 与新路径的关系
@@ -129,13 +129,13 @@ python tools/train_uav_rgbir_obb.py ^
 后续扩展建议：
 
 - 阶段4小目标优化：
-  - 在当前 RGB 主干和 OBB loss 主线基础上做更小范围改进
+    - 在当前 RGB 主干和 OBB loss 主线基础上做更小范围改进
 - 阶段5轻量时序：
-  - 开始实际消费 `img_prev`
-  - 在当前 dataset batch 契约上增加 temporal refine
+    - 开始实际消费 `img_prev`
+    - 在当前 dataset batch 契约上增加 temporal refine
 - 阶段6 tracking：
-  - 继续复用 RGB-only 推理主线输出
-  - 再做时序/轨迹级工程扩展
+    - 继续复用 RGB-only 推理主线输出
+    - 再做时序/轨迹级工程扩展
 
 这样可以保持：
 

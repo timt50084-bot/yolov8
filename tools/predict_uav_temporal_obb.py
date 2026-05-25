@@ -60,7 +60,9 @@ def normalize_device_arg(device: str) -> str:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Explicit Stage 5 temporal OBB predict/demo entry.")
-    parser.add_argument("--source", required=True, type=str, help="Single image path or a directory of sequential images.")
+    parser.add_argument(
+        "--source", required=True, type=str, help="Single image path or a directory of sequential images."
+    )
     parser.add_argument(
         "--model",
         default=str(REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-temporal-obb.yaml"),
@@ -76,24 +78,45 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-det", default=300, type=int, help="Maximum detections per frame.")
     parser.add_argument("--sequence", action="store_true", help="Enable one-step previous-frame cache across frames.")
     parser.add_argument("--max-frames", default=0, type=int, help="Optional max frames to process from a directory.")
-    parser.add_argument("--save-dir", default=None, type=str, help="Optional output directory for rendered images and txt labels.")
+    parser.add_argument(
+        "--save-dir", default=None, type=str, help="Optional output directory for rendered images and txt labels."
+    )
     parser.add_argument("--save-json", default=None, type=str, help="Optional JSON path for structured predictions.")
     parser.add_argument("--save-vis", dest="save_vis", action="store_true", help="Save rendered OBB visualizations.")
-    parser.add_argument("--no-save-vis", dest="save_vis", action="store_false", help="Disable rendered visualization saving.")
+    parser.add_argument(
+        "--no-save-vis", dest="save_vis", action="store_false", help="Disable rendered visualization saving."
+    )
     parser.set_defaults(save_vis=False)
-    parser.add_argument("--save-txt", dest="save_txt", action="store_true", help="Save per-frame YOLO-format txt labels.")
-    parser.add_argument("--no-save-txt", dest="save_txt", action="store_false", help="Disable per-frame txt label saving.")
+    parser.add_argument(
+        "--save-txt", dest="save_txt", action="store_true", help="Save per-frame YOLO-format txt labels."
+    )
+    parser.add_argument(
+        "--no-save-txt", dest="save_txt", action="store_false", help="Disable per-frame txt label saving."
+    )
     parser.set_defaults(save_txt=False)
     parser.add_argument("--line-width", default=None, type=int, help="Optional visualization line width override.")
     parser.add_argument("--use-temporal", dest="use_temporal", action="store_true")
     parser.add_argument("--disable-temporal", dest="use_temporal", action="store_false")
     parser.set_defaults(use_temporal=True)
-    parser.add_argument("--temporal-mode", default="two_frame", type=str, help="Temporal mode. Stage 5 supports two_frame.")
+    parser.add_argument(
+        "--temporal-mode", default="two_frame", type=str, help="Temporal mode. Stage 5 supports two_frame."
+    )
     parser.add_argument("--temporal-fusion-type", default="diff_gate", type=str, help="Temporal refine mode.")
-    parser.add_argument("--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal stage ids.")
-    parser.add_argument("--temporal-branch-width", default=0.25, type=float, help="Width multiplier for previous-frame adapters.")
-    parser.add_argument("--temporal-loss-weight", default=0.02, type=float, help="Temporal aux loss weight. Only matters during training.")
-    parser.add_argument("--temporal-residual-scale", default=0.1, type=float, help="Residual scale for temporal refine.")
+    parser.add_argument(
+        "--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal stage ids."
+    )
+    parser.add_argument(
+        "--temporal-branch-width", default=0.25, type=float, help="Width multiplier for previous-frame adapters."
+    )
+    parser.add_argument(
+        "--temporal-loss-weight",
+        default=0.02,
+        type=float,
+        help="Temporal aux loss weight. Only matters during training.",
+    )
+    parser.add_argument(
+        "--temporal-residual-scale", default=0.1, type=float, help="Residual scale for temporal refine."
+    )
     return parser.parse_args()
 
 
@@ -278,7 +301,7 @@ def run_prediction(args: argparse.Namespace) -> dict[str, Any]:
                 "temporal_valid_input": bool(temporal_valid),
                 "temporal_used": bool(model.last_temporal_used),
                 "temporal_stages": [int(x) for x in model.last_temporal_stage_ids],
-                "num_detections": int(len(result)),
+                "num_detections": len(result),
                 "detections": result.summary(normalize=False, decimals=5),
                 "visualization_path": str(vis_path) if vis_path else None,
                 "txt_path": str(txt_path) if txt_path else None,

@@ -117,7 +117,7 @@ def build_small_object_sampling_weights(
         "power": float(power),
         "min_weight": float(min_weight),
         "max_weight": float(max_weight),
-        "num_images": int(len(per_image)),
+        "num_images": len(per_image),
         "num_images_with_small_objects": int(sum(item["small_objects"] > 0 for item in per_image)),
         "weight_min": float(weight_array.min()) if len(weight_array) else 0.0,
         "weight_mean": float(weight_array.mean()) if len(weight_array) else 0.0,

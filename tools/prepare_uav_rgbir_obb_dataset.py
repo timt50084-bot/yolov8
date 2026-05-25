@@ -15,11 +15,11 @@ if str(THIS_DIR) not in sys.path:
     sys.path.insert(0, str(THIS_DIR))
 
 from utils_preprocess_uav import (
-    ClassMapper,
     DEFAULT_INVALID_CLASS_TOKENS,
     DEFAULT_UAV_CLASS_NAMES,
     IMAGE_SUFFIXES,
     LABEL_SUFFIXES,
+    ClassMapper,
     OBBObject,
     RawPair,
     apply_target_protection,
@@ -189,9 +189,7 @@ def resolve_class_config(args: argparse.Namespace) -> tuple[list[str], dict[str,
         canonical_key = normalize_class_key(canonical)
         resolved_canonical = canonical_by_key.get(canonical_key)
         if resolved_canonical is None:
-            raise ValueError(
-                f"Class map canonical '{canonical}' is not in the configured names list: {class_names}"
-            )
+            raise ValueError(f"Class map canonical '{canonical}' is not in the configured names list: {class_names}")
         alias_map[normalize_class_key(alias)] = resolved_canonical
     return class_names, alias_map
 
@@ -278,12 +276,8 @@ def resolve_existing_layout(args: argparse.Namespace) -> tuple[str, dict[str, Sp
         "val": args.input_root / args.val_split_name,
     }
     candidates = {
-        "legacy_prepared": {
-            split: build_legacy_split_dirs(split, root, args) for split, root in split_roots.items()
-        },
-        "dronevehicle_raw": {
-            split: build_dronevehicle_split_dirs(split, root) for split, root in split_roots.items()
-        },
+        "legacy_prepared": {split: build_legacy_split_dirs(split, root, args) for split, root in split_roots.items()},
+        "dronevehicle_raw": {split: build_dronevehicle_split_dirs(split, root) for split, root in split_roots.items()},
     }
 
     layout_order = ["legacy_prepared", "dronevehicle_raw"]
@@ -302,14 +296,10 @@ def resolve_existing_layout(args: argparse.Namespace) -> tuple[str, dict[str, Sp
 
     if args.input_layout == "auto":
         detail = " | ".join(format_layout_missing(name, candidates[name]) for name in layout_order)
-        raise FileNotFoundError(
-            f"Could not detect a supported input layout under '{args.input_root}'. {detail}"
-        )
+        raise FileNotFoundError(f"Could not detect a supported input layout under '{args.input_root}'. {detail}")
 
     detail = format_layout_missing(args.input_layout, candidates[args.input_layout])
-    raise FileNotFoundError(
-        f"input-layout={args.input_layout} does not match '{args.input_root}'. {detail}"
-    )
+    raise FileNotFoundError(f"input-layout={args.input_layout} does not match '{args.input_root}'. {detail}")
 
 
 def resolve_unsplit_source_dirs(args: argparse.Namespace) -> SplitSourceDirs:
@@ -323,8 +313,7 @@ def resolve_unsplit_source_dirs(args: argparse.Namespace) -> SplitSourceDirs:
     missing = validate_split_source_dirs(source_dirs)
     if missing:
         raise FileNotFoundError(
-            f"Could not resolve unsplit input directories under '{args.input_root}'. "
-            + "; ".join(missing)
+            f"Could not resolve unsplit input directories under '{args.input_root}'. " + "; ".join(missing)
         )
     return source_dirs
 
@@ -349,22 +338,32 @@ def collect_pairs_for_root(
         else {}
     )
     rgb_label_index = (
-        scan_files_by_key(rgb_label_dir, LABEL_SUFFIXES, args.label_key_remove)
-        if rgb_label_dir is not None
-        else {}
+        scan_files_by_key(rgb_label_dir, LABEL_SUFFIXES, args.label_key_remove) if rgb_label_dir is not None else {}
     )
     ir_label_index = (
-        scan_files_by_key(ir_label_dir, LABEL_SUFFIXES, args.label_key_remove)
-        if ir_label_dir is not None
-        else {}
+        scan_files_by_key(ir_label_dir, LABEL_SUFFIXES, args.label_key_remove) if ir_label_dir is not None else {}
     )
 
     for key, paths in rgb_index.items():
         if len(paths) > 1:
-            add_anomaly(anomalies, split, key, "duplicate_rgb", f"Multiple RGB files resolved to key '{key}'.", paths=[str(p) for p in paths])
+            add_anomaly(
+                anomalies,
+                split,
+                key,
+                "duplicate_rgb",
+                f"Multiple RGB files resolved to key '{key}'.",
+                paths=[str(p) for p in paths],
+            )
     for key, paths in ir_index.items():
         if len(paths) > 1:
-            add_anomaly(anomalies, split, key, "duplicate_ir", f"Multiple IR files resolved to key '{key}'.", paths=[str(p) for p in paths])
+            add_anomaly(
+                anomalies,
+                split,
+                key,
+                "duplicate_ir",
+                f"Multiple IR files resolved to key '{key}'.",
+                paths=[str(p) for p in paths],
+            )
     for key, paths in shared_label_index.items():
         if len(paths) > 1:
             add_anomaly(
@@ -395,18 +394,20 @@ def collect_pairs_for_root(
         shared_label = find_label_path(shared_label_index, key)
         rgb_label = find_label_path(rgb_label_index, key) or shared_label
         ir_label = find_label_path(ir_label_index, key) or shared_label
-        pairs.append(RawPair(split=split, key=key, rgb_image=rgb_image, ir_image=ir_image, rgb_label=rgb_label, ir_label=ir_label))
+        pairs.append(
+            RawPair(
+                split=split, key=key, rgb_image=rgb_image, ir_image=ir_image, rgb_label=rgb_label, ir_label=ir_label
+            )
+        )
     return pairs
 
 
-def split_unsplit_pairs(
-    pairs: list[RawPair], val_ratio: float, seed: int
-) -> dict[str, list[RawPair]]:
+def split_unsplit_pairs(pairs: list[RawPair], val_ratio: float, seed: int) -> dict[str, list[RawPair]]:
     import random
 
     ordered = sorted(pairs, key=lambda pair: natural_sort_key(pair.key))
     random.Random(seed).shuffle(ordered)
-    val_count = int(round(len(ordered) * val_ratio))
+    val_count = round(len(ordered) * val_ratio)
     val_ids = {pair.key for pair in ordered[:val_count]}
     split_pairs = {"train": [], "val": []}
     for pair in sorted(pairs, key=lambda item: natural_sort_key(item.key)):
@@ -423,9 +424,7 @@ def resolve_split_pairs(args: argparse.Namespace, anomalies: list[dict[str, Any]
         split_mode = args.split_mode
     if split_mode == "existing":
         if not train_root.exists() or not val_root.exists():
-            raise FileNotFoundError(
-                f"split-mode=existing requires '{train_root}' and '{val_root}' to exist."
-            )
+            raise FileNotFoundError(f"split-mode=existing requires '{train_root}' and '{val_root}' to exist.")
         _, split_sources = resolve_existing_layout(args)
         return {
             "train": collect_pairs_for_root("train", split_sources["train"], args, anomalies),
@@ -621,7 +620,15 @@ def main() -> None:
                 rgb_image = load_image(pair.rgb_image)
                 ir_image = load_image(pair.ir_image)
             except Exception as error:
-                add_anomaly(anomalies, split, pair.key, "image_read_error", str(error), rgb_image=str(pair.rgb_image), ir_image=str(pair.ir_image))
+                add_anomaly(
+                    anomalies,
+                    split,
+                    pair.key,
+                    "image_read_error",
+                    str(error),
+                    rgb_image=str(pair.rgb_image),
+                    ir_image=str(pair.ir_image),
+                )
                 split_summaries[split]["skipped_pairs"] += 1
                 continue
 
@@ -646,9 +653,23 @@ def main() -> None:
                 pair.ir_label, image_width, image_height, class_mapper, args.angle_unit, "ir"
             )
             for issue in rgb_issues:
-                add_anomaly(anomalies, split, pair.key, "rgb_label_issue", issue, label=str(pair.rgb_label) if pair.rgb_label else None)
+                add_anomaly(
+                    anomalies,
+                    split,
+                    pair.key,
+                    "rgb_label_issue",
+                    issue,
+                    label=str(pair.rgb_label) if pair.rgb_label else None,
+                )
             for issue in ir_issues:
-                add_anomaly(anomalies, split, pair.key, "ir_label_issue", issue, label=str(pair.ir_label) if pair.ir_label else None)
+                add_anomaly(
+                    anomalies,
+                    split,
+                    pair.key,
+                    "ir_label_issue",
+                    issue,
+                    label=str(pair.ir_label) if pair.ir_label else None,
+                )
 
             if pair.rgb_label is None and pair.ir_label is None:
                 add_anomaly(
@@ -686,14 +707,20 @@ def main() -> None:
             observed_input_sizes[(image_width, image_height)] += 1
             observed_output_sizes[(output_width, output_height)] += 1
 
-            rgb_objects, rgb_crop_events = crop_objects(rgb_objects, crop_box, output_width, output_height, args.min_area)
+            rgb_objects, rgb_crop_events = crop_objects(
+                rgb_objects, crop_box, output_width, output_height, args.min_area
+            )
             ir_objects, ir_crop_events = crop_objects(ir_objects, crop_box, output_width, output_height, args.min_area)
             for event in rgb_crop_events:
                 add_anomaly(anomalies, split, pair.key, "rgb_crop_event", event)
             for event in ir_crop_events:
                 add_anomaly(anomalies, split, pair.key, "ir_crop_event", event)
 
-            if pair.rgb_label is not None and pair.ir_label is not None and pair.rgb_label.resolve() == pair.ir_label.resolve():
+            if (
+                pair.rgb_label is not None
+                and pair.ir_label is not None
+                and pair.rgb_label.resolve() == pair.ir_label.resolve()
+            ):
                 fused_objects = rgb_objects
                 fusion_stats = {"matched": 0, "rgb_only": len(rgb_objects), "ir_only": 0, "class_conflict": 0}
                 fusion_events: list[str] = []
@@ -779,7 +806,10 @@ def main() -> None:
     class_mapping_path = output_dirs["reports"] / "class_mapping.json"
     write_json(class_mapping_path, class_mapper.export())
     for split in ("train", "val"):
-        write_json(output_dirs["index"] / f"{split}_pairs.json", sorted(pair_indexes.get(split, []), key=lambda item: natural_sort_key(item["id"])))
+        write_json(
+            output_dirs["index"] / f"{split}_pairs.json",
+            sorted(pair_indexes.get(split, []), key=lambda item: natural_sort_key(item["id"])),
+        )
         write_json(output_dirs["index"] / f"{split}_temporal.json", temporal_indexes.get(split, []))
 
     anomaly_counter = Counter(item["type"] for item in anomalies)

@@ -25,13 +25,7 @@
       "empty_labels": 1
     }
   },
-  "class_names": [
-    "car",
-    "truck",
-    "bus",
-    "van",
-    "Freight Car"
-  ],
+  "class_names": ["car", "truck", "bus", "van", "Freight Car"],
   "anomaly_counts": {
     "rgb_crop_event": 11,
     "ir_crop_event": 11
