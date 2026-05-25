@@ -46,8 +46,8 @@ The Stage 6 matcher lives in [obb_matching.py](D:/project/ultralytics-main/ultra
 The association cost is a conservative weighted combination of:
 
 - OBB overlap:
-  - implemented with Ultralytics `batch_probiou` on `xywhr`
-  - this is used instead of a heavier polygon-intersection dependency
+    - implemented with Ultralytics `batch_probiou` on `xywhr`
+    - this is used instead of a heavier polygon-intersection dependency
 - normalized center distance
 - optional lightweight appearance cosine distance
 - additive class mismatch penalty
@@ -150,24 +150,24 @@ Single-frame detector + tracking:
 
 ```bash
 D:\Anaconda\envs\yolo\python.exe D:\project\ultralytics-main\tools\track_uav_obb.py ^
-  --source D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\images\rgb\train ^
-  --model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-temporal-obb.yaml ^
-  --weights D:\project\ultralytics-main\runs\stage5_smoke\stage5_temporal_small_compare\weights\best.pt ^
-  --data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
-  --tracker D:\project\ultralytics-main\ultralytics\cfg\trackers\uav_obb_tracker.yaml ^
-  --disable-temporal-detector
+--source D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\images\rgb\train ^
+--model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-temporal-obb.yaml ^
+--weights D:\project\ultralytics-main\runs\stage5_smoke\stage5_temporal_small_compare\weights\best.pt ^
+--data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
+--tracker D:\project\ultralytics-main\ultralytics\cfg\trackers\uav_obb_tracker.yaml ^
+--disable-temporal-detector
 ```
 
 Temporal detector + tracking:
 
 ```bash
 D:\Anaconda\envs\yolo\python.exe D:\project\ultralytics-main\tools\track_uav_obb.py ^
-  --source D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\images\rgb\train ^
-  --model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-temporal-obb.yaml ^
-  --weights D:\project\ultralytics-main\runs\stage5_smoke\stage5_temporal_small_compare\weights\best.pt ^
-  --data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
-  --tracker D:\project\ultralytics-main\ultralytics\cfg\trackers\uav_obb_tracker.yaml ^
-  --use-temporal-detector
+--source D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\images\rgb\train ^
+--model D:\project\ultralytics-main\ultralytics\cfg\models\v8\yolov8-rgbir-temporal-obb.yaml ^
+--weights D:\project\ultralytics-main\runs\stage5_smoke\stage5_temporal_small_compare\weights\best.pt ^
+--data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
+--tracker D:\project\ultralytics-main\ultralytics\cfg\trackers\uav_obb_tracker.yaml ^
+--use-temporal-detector
 ```
 
 Optional outputs:

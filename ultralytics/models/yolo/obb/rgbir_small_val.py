@@ -20,8 +20,8 @@ from ultralytics.utils.metrics_small_object import (
 class SmallObjectOBBValidator(OBBValidator):
     """Explicit Stage 4 OBB validator with additional small-object-only metrics.
 
-    Overall metrics continue to use the native OBB evaluation path. When enabled, a second dedicated OBBMetrics
-    instance is updated on the subset of ground-truth objects whose normalized area is below the configured threshold.
+    Overall metrics continue to use the native OBB evaluation path. When enabled, a second dedicated OBBMetrics instance
+    is updated on the subset of ground-truth objects whose normalized area is below the configured threshold.
     """
 
     def __init__(
@@ -125,7 +125,9 @@ class SmallObjectOBBValidator(OBBValidator):
             self.small_metrics.stats = merged_small
 
             gathered_counts = [None] * dist.get_world_size()
-            dist.gather_object({"small_seen": self.small_seen, "small_instances": self.small_instances}, gathered_counts, dst=0)
+            dist.gather_object(
+                {"small_seen": self.small_seen, "small_instances": self.small_instances}, gathered_counts, dst=0
+            )
             self.small_seen = sum(item["small_seen"] for item in gathered_counts)
             self.small_instances = sum(item["small_instances"] for item in gathered_counts)
             self.seen = len(self.dataloader.dataset)

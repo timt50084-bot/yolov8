@@ -65,7 +65,9 @@ def parse_args() -> argparse.Namespace:
         type=str,
         help="Stage 5 detector yaml. Can also point to the Stage 4 small yaml when temporal overrides are supplied.",
     )
-    parser.add_argument("--weights", default=None, type=str, help="Optional checkpoint to load into the Stage 5 detector.")
+    parser.add_argument(
+        "--weights", default=None, type=str, help="Optional checkpoint to load into the Stage 5 detector."
+    )
     parser.add_argument("--data", default=None, type=str, help="Optional dataset yaml for nc/names override.")
     parser.add_argument(
         "--tracker",
@@ -82,21 +84,43 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--save-json", default=None, type=str, help="Optional JSON path for tracked results.")
     parser.add_argument("--save-video", default=None, type=str, help="Optional rendered output video path.")
     parser.add_argument("--line-width", default=None, type=int, help="Optional visualization line width override.")
-    parser.add_argument("--track-low-thresh", default=-1.0, type=float, help="Optional override for tracker low threshold.")
-    parser.add_argument("--new-track-thresh", default=-1.0, type=float, help="Optional override for tracker initialization threshold.")
-    parser.add_argument("--match-thresh", default=-1.0, type=float, help="Optional override for tracker assignment cost threshold.")
-    parser.add_argument("--match-iou-thresh", default=-1.0, type=float, help="Optional override for OBB IoU gating threshold.")
+    parser.add_argument(
+        "--track-low-thresh", default=-1.0, type=float, help="Optional override for tracker low threshold."
+    )
+    parser.add_argument(
+        "--new-track-thresh", default=-1.0, type=float, help="Optional override for tracker initialization threshold."
+    )
+    parser.add_argument(
+        "--match-thresh", default=-1.0, type=float, help="Optional override for tracker assignment cost threshold."
+    )
+    parser.add_argument(
+        "--match-iou-thresh", default=-1.0, type=float, help="Optional override for OBB IoU gating threshold."
+    )
     parser.add_argument("--use-appearance", dest="use_appearance", action="store_true")
     parser.add_argument("--disable-appearance", dest="use_appearance", action="store_false")
     parser.set_defaults(use_appearance=None)
     parser.add_argument("--use-temporal-detector", dest="use_temporal_detector", action="store_true")
     parser.add_argument("--disable-temporal-detector", dest="use_temporal_detector", action="store_false")
     parser.set_defaults(use_temporal_detector=False)
-    parser.add_argument("--temporal-mode", default="two_frame", type=str, help="Temporal mode. Stage 6 only uses Stage 5's one-step temporal detector.")
+    parser.add_argument(
+        "--temporal-mode",
+        default="two_frame",
+        type=str,
+        help="Temporal mode. Stage 6 only uses Stage 5's one-step temporal detector.",
+    )
     parser.add_argument("--temporal-fusion-type", default="diff_gate", type=str, help="Temporal fusion type override.")
-    parser.add_argument("--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal stage ids.")
-    parser.add_argument("--temporal-branch-width", default=0.25, type=float, help="Previous-frame adapter width multiplier.")
-    parser.add_argument("--temporal-loss-weight", default=0.02, type=float, help="Temporal auxiliary loss weight. Only matters during training.")
+    parser.add_argument(
+        "--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal stage ids."
+    )
+    parser.add_argument(
+        "--temporal-branch-width", default=0.25, type=float, help="Previous-frame adapter width multiplier."
+    )
+    parser.add_argument(
+        "--temporal-loss-weight",
+        default=0.02,
+        type=float,
+        help="Temporal auxiliary loss weight. Only matters during training.",
+    )
     parser.add_argument("--temporal-residual-scale", default=0.10, type=float, help="Temporal residual scale.")
     return parser.parse_args()
 
@@ -347,7 +371,7 @@ def run_tracking(args: argparse.Namespace) -> dict[str, Any]:
                         "frame_id": int(frame_idx),
                         "frame_name": frame_name,
                         "num_detections": int(detections.shape[0]),
-                        "num_tracks": int(len(active_tracks)),
+                        "num_tracks": len(active_tracks),
                         "temporal_detector": bool(args.use_temporal_detector),
                         "temporal_used": bool(detector.last_temporal_used),
                         "tracks": active_tracks,
