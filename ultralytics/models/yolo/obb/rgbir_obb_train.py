@@ -73,7 +73,9 @@ class RGBIRTrainAssistOBBModel(OBBModel):
         def _make_hook(stage_id: int):
             def _hook(_module: nn.Module, _inputs: tuple[Any, ...], output: Any) -> None:
                 if not isinstance(output, torch.Tensor):
-                    raise TypeError(f"RGB-IR assist stage {stage_id} must output a tensor, but got {type(output).__name__}.")
+                    raise TypeError(
+                        f"RGB-IR assist stage {stage_id} must output a tensor, but got {type(output).__name__}."
+                    )
                 captured[stage_id] = int(output.shape[1])
 
             return _hook
@@ -81,7 +83,9 @@ class RGBIRTrainAssistOBBModel(OBBModel):
         try:
             for stage_id in stage_ids:
                 if stage_id < 0 or stage_id >= len(self.model):
-                    raise ValueError(f"RGB-IR assist stage index {stage_id} is out of range for model length {len(self.model)}.")
+                    raise ValueError(
+                        f"RGB-IR assist stage index {stage_id} is out of range for model length {len(self.model)}."
+                    )
                 hooks.append(self.model[stage_id].register_forward_hook(_make_hook(stage_id)))
             self.eval()
             dummy = torch.zeros(1, self.yaml.get("channels", 3), 256, 256)
@@ -178,7 +182,9 @@ class RGBIRTrainAssistOBBModel(OBBModel):
                     )
                     return torch.unbind(torch.cat(embeddings, 1), dim=0)
 
-        self._set_aux_state(torch.stack(aux_terms).mean() if aux_terms else x.new_zeros(()), bool(used_stages), tuple(used_stages))
+        self._set_aux_state(
+            torch.stack(aux_terms).mean() if aux_terms else x.new_zeros(()), bool(used_stages), tuple(used_stages)
+        )
         return x
 
     def loss(self, batch: dict[str, torch.Tensor], preds: Any = None) -> tuple[torch.Tensor, torch.Tensor]:
@@ -192,7 +198,12 @@ class RGBIRTrainAssistOBBModel(OBBModel):
             self._set_aux_state(batch["img"].new_zeros(()), False, ())
 
         base_loss, base_items = self.criterion(preds, batch)
-        if self.training and self.use_rgbir_train_assist and batch.get("img_ir") is not None and self._last_rgbir_aux_loss is not None:
+        if (
+            self.training
+            and self.use_rgbir_train_assist
+            and batch.get("img_ir") is not None
+            and self._last_rgbir_aux_loss is not None
+        ):
             weighted_aux = self._last_rgbir_aux_loss * self.rgbir_aux_loss_weight
         else:
             weighted_aux = base_loss[:1] * 0.0

@@ -1,11 +1,5 @@
 {
-  "names": [
-    "car",
-    "truck",
-    "bus",
-    "van",
-    "Freight Car"
-  ],
+  "names": ["car", "truck", "bus", "van", "Freight Car"],
   "canonical_to_id": {
     "car": 0,
     "truck": 1,

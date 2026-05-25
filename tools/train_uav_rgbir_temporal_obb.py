@@ -22,7 +22,9 @@ def parse_loss_on(raw: str) -> list[str]:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Explicit Stage 5 RGB-IR + small-object + temporal OBB training entry.")
+    parser = argparse.ArgumentParser(
+        description="Explicit Stage 5 RGB-IR + small-object + temporal OBB training entry."
+    )
     parser.add_argument("--data", required=True, type=str, help="Stage 1 prepared dataset yaml.")
     parser.add_argument(
         "--model",
@@ -36,7 +38,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--imgsz", default=960, type=int, help="Image size.")
     parser.add_argument("--device", default="cpu", type=str, help="Training device, e.g. cpu or 0.")
     parser.add_argument("--workers", default=0, type=int, help="Dataloader workers.")
-    parser.add_argument("--project", default=str(REPO_ROOT / "runs" / "stage5_temporal"), type=str, help="Output project directory.")
+    parser.add_argument(
+        "--project", default=str(REPO_ROOT / "runs" / "stage5_temporal"), type=str, help="Output project directory."
+    )
     parser.add_argument("--name", default="train", type=str, help="Run name.")
     parser.add_argument("--exist-ok", action="store_true", help="Allow existing save dir.")
     parser.add_argument("--close-mosaic", default=15, type=int, help="Disable mosaic in the final training phase.")
@@ -57,37 +61,85 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--use-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_true")
     parser.add_argument("--disable-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_false")
     parser.set_defaults(use_rgbir_train_assist=True)
-    parser.add_argument("--fusion-type", default="gated_add", type=str, help="IR fusion mode: gated_add|weighted_sum|align_only|none.")
+    parser.add_argument(
+        "--fusion-type", default="gated_add", type=str, help="IR fusion mode: gated_add|weighted_sum|align_only|none."
+    )
     parser.add_argument("--ir-feature-stages", default="6,9", type=str, help="Comma-separated IR-assisted stage ids.")
-    parser.add_argument("--ir-branch-width", default=0.25, type=float, help="Width multiplier for lightweight IR adapters.")
-    parser.add_argument("--rgbir-aux-loss-weight", default=0.05, type=float, help="Weight for the RGB-IR auxiliary alignment loss.")
-    parser.add_argument("--rgbir-residual-scale", default=0.1, type=float, help="Residual fusion scale for IR assistance.")
+    parser.add_argument(
+        "--ir-branch-width", default=0.25, type=float, help="Width multiplier for lightweight IR adapters."
+    )
+    parser.add_argument(
+        "--rgbir-aux-loss-weight", default=0.05, type=float, help="Weight for the RGB-IR auxiliary alignment loss."
+    )
+    parser.add_argument(
+        "--rgbir-residual-scale", default=0.1, type=float, help="Residual fusion scale for IR assistance."
+    )
 
     parser.add_argument("--use-small-object-sampling", dest="use_small_object_sampling", action="store_true")
     parser.add_argument("--disable-small-object-sampling", dest="use_small_object_sampling", action="store_false")
     parser.set_defaults(use_small_object_sampling=True)
-    parser.add_argument("--use-small-object-loss-weighting", dest="use_small_object_loss_weighting", action="store_true")
-    parser.add_argument("--disable-small-object-loss-weighting", dest="use_small_object_loss_weighting", action="store_false")
+    parser.add_argument(
+        "--use-small-object-loss-weighting", dest="use_small_object_loss_weighting", action="store_true"
+    )
+    parser.add_argument(
+        "--disable-small-object-loss-weighting", dest="use_small_object_loss_weighting", action="store_false"
+    )
     parser.set_defaults(use_small_object_loss_weighting=True)
     parser.add_argument("--enable-small-object-metrics", dest="enable_small_object_metrics", action="store_true")
     parser.add_argument("--disable-small-object-metrics", dest="enable_small_object_metrics", action="store_false")
     parser.set_defaults(enable_small_object_metrics=True)
-    parser.add_argument("--small-object-area-thr-norm", default=0.005, type=float, help="Shared normalized OBB area threshold for Stage 4/5.")
-    parser.add_argument("--small-object-sampling-power", default=1.25, type=float, help="Weight emphasis power for small-object sampling.")
-    parser.add_argument("--small-object-sampling-min-weight", default=1.0, type=float, help="Minimum image sampling weight.")
-    parser.add_argument("--small-object-sampling-max-weight", default=4.0, type=float, help="Maximum image sampling weight.")
-    parser.add_argument("--small-object-loss-gain", default=0.35, type=float, help="Gain for small-object loss weighting.")
-    parser.add_argument("--small-object-loss-on", default="box,cls,dfl,angle", type=str, help="Comma-separated loss components to scale.")
+    parser.add_argument(
+        "--small-object-area-thr-norm",
+        default=0.005,
+        type=float,
+        help="Shared normalized OBB area threshold for Stage 4/5.",
+    )
+    parser.add_argument(
+        "--small-object-sampling-power",
+        default=1.25,
+        type=float,
+        help="Weight emphasis power for small-object sampling.",
+    )
+    parser.add_argument(
+        "--small-object-sampling-min-weight", default=1.0, type=float, help="Minimum image sampling weight."
+    )
+    parser.add_argument(
+        "--small-object-sampling-max-weight", default=4.0, type=float, help="Maximum image sampling weight."
+    )
+    parser.add_argument(
+        "--small-object-loss-gain", default=0.35, type=float, help="Gain for small-object loss weighting."
+    )
+    parser.add_argument(
+        "--small-object-loss-on",
+        default="box,cls,dfl,angle",
+        type=str,
+        help="Comma-separated loss components to scale.",
+    )
 
     parser.add_argument("--use-temporal", dest="use_temporal", action="store_true")
     parser.add_argument("--disable-temporal", dest="use_temporal", action="store_false")
     parser.set_defaults(use_temporal=True)
-    parser.add_argument("--temporal-mode", default="two_frame", type=str, help="Temporal mode. Stage 5 supports two_frame.")
-    parser.add_argument("--temporal-fusion-type", default="diff_gate", type=str, help="Temporal refine mode: diff_gate|gated_add|align_only|none.")
-    parser.add_argument("--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal refine stage ids.")
-    parser.add_argument("--temporal-branch-width", default=0.25, type=float, help="Width multiplier for previous-frame adapters.")
-    parser.add_argument("--temporal-loss-weight", default=0.02, type=float, help="Low-weight temporal consistency loss.")
-    parser.add_argument("--temporal-residual-scale", default=0.1, type=float, help="Residual scale for temporal refine.")
+    parser.add_argument(
+        "--temporal-mode", default="two_frame", type=str, help="Temporal mode. Stage 5 supports two_frame."
+    )
+    parser.add_argument(
+        "--temporal-fusion-type",
+        default="diff_gate",
+        type=str,
+        help="Temporal refine mode: diff_gate|gated_add|align_only|none.",
+    )
+    parser.add_argument(
+        "--temporal-feature-stages", default="6,9", type=str, help="Comma-separated temporal refine stage ids."
+    )
+    parser.add_argument(
+        "--temporal-branch-width", default=0.25, type=float, help="Width multiplier for previous-frame adapters."
+    )
+    parser.add_argument(
+        "--temporal-loss-weight", default=0.02, type=float, help="Low-weight temporal consistency loss."
+    )
+    parser.add_argument(
+        "--temporal-residual-scale", default=0.1, type=float, help="Residual scale for temporal refine."
+    )
     add_train_augment_args(parser)
     return parser.parse_args()
 
