@@ -23,16 +23,24 @@ def add_train_augment_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--cmcp-small-area-thr", default=1024.0, type=float, help="Maximum object area in pixels.")
     parser.add_argument("--cmcp-num-trials", default=15, type=int, help="Placement retries per pasted instance.")
 
-    parser.add_argument("--enable-mrre", dest="enable_mrre", action="store_true", help="Enable MRRE local perturbation.")
-    parser.add_argument("--disable-mrre", dest="enable_mrre", action="store_false", help="Disable MRRE local perturbation.")
+    parser.add_argument(
+        "--enable-mrre", dest="enable_mrre", action="store_true", help="Enable MRRE local perturbation."
+    )
+    parser.add_argument(
+        "--disable-mrre", dest="enable_mrre", action="store_false", help="Disable MRRE local perturbation."
+    )
     parser.set_defaults(enable_mrre=False)
     parser.add_argument("--mrre-prob", default=0.20, type=float, help="MRRE application probability.")
     parser.add_argument("--mrre-radius-ratio", default=1.5, type=float, help="MRRE neighborhood radius ratio.")
     parser.add_argument("--mrre-num-regions", default=2, type=int, help="Maximum perturbed regions per image.")
     parser.add_argument("--mrre-strength", default=0.35, type=float, help="MRRE perturbation strength.")
 
-    parser.add_argument("--enable-pc-mwa", dest="enable_pc_mwa", action="store_true", help="Enable PC-MWA weather augmentation.")
-    parser.add_argument("--disable-pc-mwa", dest="enable_pc_mwa", action="store_false", help="Disable PC-MWA weather augmentation.")
+    parser.add_argument(
+        "--enable-pc-mwa", dest="enable_pc_mwa", action="store_true", help="Enable PC-MWA weather augmentation."
+    )
+    parser.add_argument(
+        "--disable-pc-mwa", dest="enable_pc_mwa", action="store_false", help="Disable PC-MWA weather augmentation."
+    )
     parser.set_defaults(enable_pc_mwa=False)
     parser.add_argument("--pc-mwa-prob", default=0.20, type=float, help="PC-MWA application probability.")
     parser.add_argument("--pc-mwa-types", default="fog,rain,low_light", type=str, help="Comma-separated weather types.")

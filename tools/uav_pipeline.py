@@ -12,9 +12,8 @@ REPO_ROOT = THIS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from ultralytics import YOLO
-
 from tools.utils_uav_pipeline import MODE_REGISTRY, ModeSpec, resolve_mode, resolve_output_dir, route_manifest
+from ultralytics import YOLO
 
 
 def extra_args(items: list[str]) -> list[str]:
@@ -122,7 +121,9 @@ def build_parser() -> argparse.ArgumentParser:
     preprocess.add_argument("--seed", default=0, type=int)
     preprocess.add_argument("--overwrite", action="store_true")
     add_common_output_args(preprocess)
-    preprocess.add_argument("extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 1 script.")
+    preprocess.add_argument(
+        "extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 1 script."
+    )
 
     check_data = subparsers.add_parser("check-data", help="Run the Stage 1 dataset checker.")
     check_data.add_argument("--dataset-root", required=True, type=str, help="Prepared dataset root.")
@@ -130,7 +131,9 @@ def build_parser() -> argparse.ArgumentParser:
     check_data.add_argument("--report-path", default=None, type=str, help="Optional report path override.")
     check_data.add_argument("--skip-dataset-scan", action="store_true")
     add_common_output_args(check_data)
-    check_data.add_argument("extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 1 checker.")
+    check_data.add_argument(
+        "extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 1 checker."
+    )
 
     train = subparsers.add_parser("train", help="Run training through the baseline or staged training paths.")
     add_common_mode_args(train)
@@ -205,12 +208,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run the explicit Stage 5 temporal sequence predictor for supported modes.",
     )
     add_common_mode_args(temporal_predict)
-    temporal_predict.add_argument("--source", required=True, type=str, help="Sequential image directory or single image.")
+    temporal_predict.add_argument(
+        "--source", required=True, type=str, help="Sequential image directory or single image."
+    )
     temporal_predict.add_argument("--imgsz", default=256, type=int)
     temporal_predict.add_argument("--max-frames", default=0, type=int)
     temporal_predict.add_argument("--enable-temporal", action="store_true")
     temporal_predict.add_argument("--disable-temporal", action="store_true")
-    temporal_predict.add_argument("extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the temporal predict script.")
+    temporal_predict.add_argument(
+        "extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the temporal predict script."
+    )
 
     track = subparsers.add_parser("track", help="Run baseline tracking or the explicit Stage 6 UAV tracker.")
     add_common_mode_args(track)
@@ -225,7 +232,9 @@ def build_parser() -> argparse.ArgumentParser:
     track.add_argument("--enable-temporal-detector", action="store_true")
     track.add_argument("--disable-temporal-detector", action="store_true")
     track.add_argument("--exist-ok", action="store_true")
-    track.add_argument("extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 6 tracking script.")
+    track.add_argument(
+        "extra_args", nargs=argparse.REMAINDER, help="Additional arguments forwarded to the Stage 6 tracking script."
+    )
 
     return parser
 
@@ -328,7 +337,9 @@ def check_data_route(args: argparse.Namespace) -> int:
         route_type="subprocess",
         payload={"command": cmd, "report_path": report_path},
     )
-    return execute_subprocess(cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest)
+    return execute_subprocess(
+        cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest
+    )
 
 
 def train_route(args: argparse.Namespace) -> Any:
@@ -352,7 +363,9 @@ def train_route(args: argparse.Namespace) -> Any:
         "train_uav_rgbir_obb_small.py",
         "train_uav_rgbir_temporal_obb.py",
     }
-    supports_temporal_toggles = spec.train_script is not None and spec.train_script.name == "train_uav_rgbir_temporal_obb.py"
+    supports_temporal_toggles = (
+        spec.train_script is not None and spec.train_script.name == "train_uav_rgbir_temporal_obb.py"
+    )
 
     if spec.name == "baseline":
         model_source = str(Path(args.weights).resolve()) if args.weights else model_path
@@ -463,7 +476,9 @@ def train_route(args: argparse.Namespace) -> Any:
             },
         },
     )
-    return execute_subprocess(cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest)
+    return execute_subprocess(
+        cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest
+    )
 
 
 def validate_model_source_for_inference(spec: ModeSpec, weights: str | None, model: str | None, subtask: str) -> str:
@@ -580,7 +595,9 @@ def val_route(args: argparse.Namespace) -> Any:
             },
         },
     )
-    return execute_subprocess(cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest)
+    return execute_subprocess(
+        cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest
+    )
 
 
 def predict_route(args: argparse.Namespace) -> Any:
@@ -672,7 +689,9 @@ def temporal_predict_route(args: argparse.Namespace) -> int:
         route_type="subprocess",
         payload={"command": cmd, "resolved_features": {"use_temporal": use_temporal}},
     )
-    return execute_subprocess(cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest)
+    return execute_subprocess(
+        cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest
+    )
 
 
 def track_route(args: argparse.Namespace) -> Any:
@@ -726,7 +745,9 @@ def track_route(args: argparse.Namespace) -> Any:
 
     model_path = str(Path(args.model).resolve()) if args.model else str(spec.default_model)
     tracker_path = str(Path(args.tracker).resolve()) if args.tracker else str(spec.default_tracker)
-    use_temporal_detector = bool_override(spec.use_temporal, args.enable_temporal_detector, args.disable_temporal_detector)
+    use_temporal_detector = bool_override(
+        spec.use_temporal, args.enable_temporal_detector, args.disable_temporal_detector
+    )
     save_json = args.save_json or str(run_dir / "tracks.json")
     cmd = [
         sys.executable,
@@ -765,9 +786,15 @@ def track_route(args: argparse.Namespace) -> Any:
         run_name=run_name,
         run_dir=run_dir,
         route_type="subprocess",
-        payload={"command": cmd, "save_json": save_json, "resolved_features": {"use_temporal_detector": use_temporal_detector}},
+        payload={
+            "command": cmd,
+            "save_json": save_json,
+            "resolved_features": {"use_temporal_detector": use_temporal_detector},
+        },
     )
-    return execute_subprocess(cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest)
+    return execute_subprocess(
+        cmd, run_dir=run_dir, dry_run=args.dry_run, print_route=args.print_route, manifest=manifest
+    )
 
 
 def main() -> None:

@@ -4,7 +4,6 @@ from typing import Any
 
 import torch
 
-
 LOSS_INDEX = {"box": 0, "cls": 1, "dfl": 2, "angle": 3}
 
 
@@ -32,8 +31,8 @@ def compute_small_object_batch_scale(
 ) -> tuple[torch.Tensor, dict[str, float]]:
     """Compute a conservative batch-level scale factor from normalized OBB areas.
 
-    This intentionally does not rewrite the native v8 OBB criterion. Instead it derives one small-object emphasis
-    factor from the current batch and scales selected aggregated loss components.
+    This intentionally does not rewrite the native v8 OBB criterion. Instead it derives one small-object emphasis factor
+    from the current batch and scales selected aggregated loss components.
     """
     bboxes = batch.get("bboxes")
     if bboxes is None or not isinstance(bboxes, torch.Tensor) or bboxes.numel() == 0:
@@ -65,7 +64,13 @@ def apply_small_object_loss_weighting(
 ) -> tuple[torch.Tensor, dict[str, float]]:
     """Scale selected aggregated OBB loss components for small-object-heavy batches."""
     if not enabled:
-        return loss_items, {"small_count": 0.0, "target_count": 0.0, "small_ratio": 0.0, "severity_mean": 0.0, "scale": 1.0}
+        return loss_items, {
+            "small_count": 0.0,
+            "target_count": 0.0,
+            "small_ratio": 0.0,
+            "severity_mean": 0.0,
+            "scale": 1.0,
+        }
 
     scale, stats = compute_small_object_batch_scale(batch, area_thr_norm=area_thr_norm, gain=gain)
     if float(scale.item()) == 1.0:

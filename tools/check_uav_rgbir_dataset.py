@@ -50,7 +50,9 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def add_issue(issues: list[dict[str, Any]], split: str, item_id: str, issue_type: str, detail: str, **extra: Any) -> None:
+def add_issue(
+    issues: list[dict[str, Any]], split: str, item_id: str, issue_type: str, detail: str, **extra: Any
+) -> None:
     issues.append({"split": split, "id": item_id, "type": issue_type, "detail": detail, **extra})
 
 
@@ -134,7 +136,9 @@ def main() -> None:
     ]
     for directory in required_dirs:
         if not directory.exists():
-            add_issue(issues, "global", directory.name, "missing_directory", f"Required directory '{directory}' is missing.")
+            add_issue(
+                issues, "global", directory.name, "missing_directory", f"Required directory '{directory}' is missing."
+            )
 
     pair_indexes = {
         split: load_json(dataset_root / "index" / f"{split}_pairs.json") or [] for split in ("train", "val")
@@ -179,12 +183,16 @@ def main() -> None:
                 try:
                     load_image(image_path)
                 except Exception as error:
-                    add_issue(issues, split, key, "image_read_error", str(error), image_type=image_type, image=str(image_path))
+                    add_issue(
+                        issues, split, key, "image_read_error", str(error), image_type=image_type, image=str(image_path)
+                    )
             if obb_label is None:
                 add_issue(issues, split, key, "missing_obb_label", "Canonical OBB label is missing.")
             if rgb_label is None:
                 add_issue(issues, split, key, "missing_rgb_label", "Current-training-compatible RGB label is missing.")
-            elif obb_label is not None and rgb_label.read_text(encoding="utf-8") != obb_label.read_text(encoding="utf-8"):
+            elif obb_label is not None and rgb_label.read_text(encoding="utf-8") != obb_label.read_text(
+                encoding="utf-8"
+            ):
                 add_issue(issues, split, key, "label_mirror_mismatch", "labels/obb and labels/rgb contents differ.")
 
             if rgb_label is not None:
@@ -200,7 +208,9 @@ def main() -> None:
                     coords = [float(value) for value in line.split()[1:]]
                     polygon = np.asarray(coords, dtype=float).reshape(4, 2)
                     if polygon_area(polygon) <= 1e-6:
-                        add_issue(issues, split, key, "degenerate_polygon", f"line {line_number}: polygon area is zero.")
+                        add_issue(
+                            issues, split, key, "degenerate_polygon", f"line {line_number}: polygon area is zero."
+                        )
 
         pair_index_ids = [entry.get("id") for entry in pair_indexes[split]]
         if pair_index_ids != sorted(pair_index_ids, key=natural_sort_key):
@@ -208,7 +218,13 @@ def main() -> None:
         for entry in pair_indexes[split]:
             entry_id = entry.get("id")
             if entry_id not in rgb_map or entry_id not in ir_map:
-                add_issue(issues, split, entry_id or "unknown", "pair_index_missing_file", "Pair index references a missing RGB/IR file.")
+                add_issue(
+                    issues,
+                    split,
+                    entry_id or "unknown",
+                    "pair_index_missing_file",
+                    "Pair index references a missing RGB/IR file.",
+                )
 
         seen_temporal_ids: set[str] = set()
         for position, entry in enumerate(temporal_indexes[split]):
@@ -218,11 +234,29 @@ def main() -> None:
                 add_issue(issues, split, current_id, "temporal_duplicate", "Temporal index contains duplicate IDs.")
             seen_temporal_ids.add(current_id)
             if current_id not in rgb_map:
-                add_issue(issues, split, current_id or "unknown", "temporal_missing_current", "Temporal index current pair is missing.")
+                add_issue(
+                    issues,
+                    split,
+                    current_id or "unknown",
+                    "temporal_missing_current",
+                    "Temporal index current pair is missing.",
+                )
             if previous_id is not None and previous_id not in rgb_map:
-                add_issue(issues, split, current_id or "unknown", "temporal_missing_previous", "Temporal index previous pair is missing.")
+                add_issue(
+                    issues,
+                    split,
+                    current_id or "unknown",
+                    "temporal_missing_previous",
+                    "Temporal index previous pair is missing.",
+                )
             if position == 0 and previous_id is not None:
-                add_issue(issues, split, current_id or "unknown", "temporal_first_previous", "First temporal entry should not have previous_pair.")
+                add_issue(
+                    issues,
+                    split,
+                    current_id or "unknown",
+                    "temporal_first_previous",
+                    "First temporal entry should not have previous_pair.",
+                )
 
         if not args.skip_dataset_scan:
             compatible, detail = dataset_scan(dataset_root, split, class_names)

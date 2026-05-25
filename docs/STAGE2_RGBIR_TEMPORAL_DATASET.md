@@ -85,14 +85,14 @@
 `RGBIRTemporalOBBDataset.collate_fn` 会：
 
 - `stack`:
-  - `img`
-  - `img_ir`
-  - `img_prev`
-  - `temporal_valid`
+    - `img`
+    - `img_ir`
+    - `img_prev`
+    - `temporal_valid`
 - `cat`:
-  - `cls`
-  - `bboxes`
-  - `segments`
+    - `cls`
+    - `bboxes`
+    - `segments`
 - 重新生成全 batch 的 `batch_idx`
 - 保留路径和 frame metadata 为 Python 列表
 
@@ -131,9 +131,9 @@ dataset = build_rgbir_temporal_obb_dataset(
 
 ```bash
 python tools/inspect_rgbir_temporal_dataset.py ^
-  --data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
-  --mode train ^
-  --use-builder
+--data D:\project\ultralytics-main\runs\stage1_preprocess_smoke\prepared_sample\data\uav_rgb_obb.yaml ^
+--mode train ^
+--use-builder
 ```
 
 ## 9. 为什么本阶段仍然不改训练主线
@@ -155,12 +155,12 @@ python tools/inspect_rgbir_temporal_dataset.py ^
 阶段3及后续阶段可以直接复用本阶段 dataset 输出：
 
 - 阶段3训练期 RGB-IR 协同模型：
-  - 消费 `img` + `img_ir`
+    - 消费 `img` + `img_ir`
 - 阶段5轻量时序：
-  - 消费 `img` + `img_prev` + `temporal_valid`
+    - 消费 `img` + `img_prev` + `temporal_valid`
 - 阶段4小目标优化：
-  - 继续复用 canonical `labels/obb`
+    - 继续复用 canonical `labels/obb`
 - 阶段6多目标追踪前置时序输入：
-  - 复用 `frame_id`、`seq_id`、`img_prev`
+    - 复用 `frame_id`、`seq_id`、`img_prev`
 
 如果后续需要多帧历史，优先在当前 temporal index 和 dataset 样本结构上扩展，不建议回退到猜目录或猜相邻文件名的方式。
