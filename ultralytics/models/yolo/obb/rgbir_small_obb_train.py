@@ -17,12 +17,16 @@ class RGBIRSmallObjectOBBModel(RGBIRTrainAssistOBBModel):
     for the later temporal stage.
     """
 
-    def __init__(self, cfg="yolov8-rgbir-obb-small.yaml", ch: int = 3, nc: int | None = None, verbose: bool = True) -> None:
+    def __init__(
+        self, cfg="yolov8-rgbir-obb-small.yaml", ch: int = 3, nc: int | None = None, verbose: bool = True
+    ) -> None:
         cfg = deepcopy(cfg) if isinstance(cfg, dict) else cfg
         self.use_small_object_loss_weighting = bool(cfg.get("use_small_object_loss_weighting", False))
         self.small_object_area_thr_norm = float(cfg.get("small_object_area_thr_norm", 0.005))
         self.small_object_loss_gain = float(cfg.get("small_object_loss_gain", 0.25))
-        self.small_object_loss_on = parse_small_object_loss_on(cfg.get("small_object_loss_on", ("box", "cls", "dfl", "angle")))
+        self.small_object_loss_on = parse_small_object_loss_on(
+            cfg.get("small_object_loss_on", ("box", "cls", "dfl", "angle"))
+        )
         self.last_small_object_scale = 1.0
         self.last_small_object_stats = {
             "small_count": 0.0,

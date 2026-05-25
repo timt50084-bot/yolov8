@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from copy import copy
-
 import torch
 from torch import distributed as dist
 
