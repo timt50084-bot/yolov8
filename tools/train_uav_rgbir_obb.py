@@ -32,20 +32,32 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--imgsz", default=640, type=int, help="Image size.")
     parser.add_argument("--device", default="cpu", type=str, help="Training device, e.g. cpu or 0.")
     parser.add_argument("--workers", default=0, type=int, help="Dataloader workers.")
-    parser.add_argument("--project", default=str(REPO_ROOT / "runs" / "stage3_rgbir"), type=str, help="Output project directory.")
+    parser.add_argument(
+        "--project", default=str(REPO_ROOT / "runs" / "stage3_rgbir"), type=str, help="Output project directory."
+    )
     parser.add_argument("--name", default="train", type=str, help="Run name.")
     parser.add_argument("--exist-ok", action="store_true", help="Allow existing save dir.")
-    parser.add_argument("--close-mosaic", default=0, type=int, help="Disable mosaic from the beginning for small smoke tests.")
+    parser.add_argument(
+        "--close-mosaic", default=0, type=int, help="Disable mosaic from the beginning for small smoke tests."
+    )
     parser.add_argument("--plots", action="store_true", help="Enable training/validation plots.")
     parser.add_argument("--val", action="store_true", help="Run validation during training.")
     parser.add_argument("--use-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_true")
     parser.add_argument("--disable-rgbir-train-assist", dest="use_rgbir_train_assist", action="store_false")
     parser.set_defaults(use_rgbir_train_assist=True)
-    parser.add_argument("--fusion-type", default="gated_add", type=str, help="Fusion mode: gated_add|weighted_sum|align_only|none.")
+    parser.add_argument(
+        "--fusion-type", default="gated_add", type=str, help="Fusion mode: gated_add|weighted_sum|align_only|none."
+    )
     parser.add_argument("--ir-feature-stages", default="6,9", type=str, help="Comma-separated assisted stage ids.")
-    parser.add_argument("--ir-branch-width", default=0.25, type=float, help="Width multiplier for the lightweight IR adapters.")
-    parser.add_argument("--rgbir-aux-loss-weight", default=0.05, type=float, help="Weight for the RGB-IR auxiliary alignment loss.")
-    parser.add_argument("--rgbir-residual-scale", default=0.1, type=float, help="Residual fusion scale for IR assistance.")
+    parser.add_argument(
+        "--ir-branch-width", default=0.25, type=float, help="Width multiplier for the lightweight IR adapters."
+    )
+    parser.add_argument(
+        "--rgbir-aux-loss-weight", default=0.05, type=float, help="Weight for the RGB-IR auxiliary alignment loss."
+    )
+    parser.add_argument(
+        "--rgbir-residual-scale", default=0.1, type=float, help="Residual fusion scale for IR assistance."
+    )
     add_train_augment_args(parser)
     return parser.parse_args()
 

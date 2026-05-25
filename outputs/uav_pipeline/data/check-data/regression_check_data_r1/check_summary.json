@@ -11,13 +11,7 @@
         "dataset_scan_ok": 1
       }
     },
-    "class_names": [
-      "car",
-      "truck",
-      "bus",
-      "van",
-      "Freight Car"
-    ],
+    "class_names": ["car", "truck", "bus", "van", "Freight Car"],
     "issue_counts": {},
     "issue_total": 0,
     "data_yaml": "D:\\project\\ultralytics-main\\outputs\\uav_pipeline\\data\\preprocess\\stage7_smoke_prepared\\data\\uav_rgb_obb.yaml",

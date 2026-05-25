@@ -10,20 +10,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00001.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00001.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00001.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 9,
     "fusion_strategy": "shared_label"
   },
@@ -38,20 +27,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00002.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00002.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00002.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 11,
     "fusion_strategy": "shared_label"
   },
@@ -66,20 +44,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00003.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00003.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00003.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 11,
     "fusion_strategy": "shared_label"
   },
@@ -94,20 +61,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00004.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00004.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00004.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 12,
     "fusion_strategy": "shared_label"
   },
@@ -122,20 +78,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00005.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00005.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00005.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 8,
     "fusion_strategy": "shared_label"
   },
@@ -150,20 +95,9 @@
     "source_ir_image": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\images\\imgr\\00006.jpg",
     "source_rgb_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00006.txt",
     "source_ir_label": "D:\\project\\ultralytics-main\\runs\\stage1_preprocess_smoke\\raw_sample\\train\\labels\\merged\\00006.txt",
-    "original_size": [
-      640,
-      512
-    ],
-    "processed_size": [
-      640,
-      512
-    ],
-    "crop_box_xyxy": [
-      0,
-      0,
-      640,
-      512
-    ],
+    "original_size": [640, 512],
+    "processed_size": [640, 512],
+    "crop_box_xyxy": [0, 0, 640, 512],
     "objects": 6,
     "fusion_strategy": "shared_label"
   }

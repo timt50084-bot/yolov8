@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import random
+from dataclasses import dataclass
 from typing import Any
 
 import cv2
@@ -50,7 +50,7 @@ def _box_iou(box: np.ndarray, boxes: np.ndarray) -> np.ndarray:
 
 
 def _odd_kernel(size: float, minimum: int = 3) -> int:
-    kernel = max(minimum, int(round(size)))
+    kernel = max(minimum, round(size))
     return kernel if kernel % 2 == 1 else kernel + 1
 
 
@@ -106,7 +106,7 @@ class UAVTrainAugmentConfig:
         return bool(self.enable_cmcp or self.enable_mrre or self.enable_pc_mwa)
 
     @classmethod
-    def from_hyp(cls, hyp: Any | None) -> "UAVTrainAugmentConfig":
+    def from_hyp(cls, hyp: Any | None) -> UAVTrainAugmentConfig:
         if hyp is None:
             return cls()
         severity_min = float(getattr(hyp, "pc_mwa_severity_min", 0.20))
@@ -132,7 +132,9 @@ class UAVTrainAugmentConfig:
         )
 
 
-def _extract_masked_patch(img: np.ndarray, segment: np.ndarray) -> tuple[np.ndarray, np.ndarray, tuple[int, int, int, int]] | None:
+def _extract_masked_patch(
+    img: np.ndarray, segment: np.ndarray
+) -> tuple[np.ndarray, np.ndarray, tuple[int, int, int, int]] | None:
     x1 = max(0, int(np.floor(segment[:, 0].min())))
     y1 = max(0, int(np.floor(segment[:, 1].min())))
     x2 = min(img.shape[1], int(np.ceil(segment[:, 0].max())))
@@ -267,7 +269,7 @@ def _apply_mrre(
     for idx in candidate_indices[: cfg.mrre_num_regions]:
         segment = segments[idx]
         box = _segments_to_xyxy(segment[None])[0]
-        radius = int(round(max(box[2] - box[0], box[3] - box[1]) * cfg.mrre_radius_ratio))
+        radius = round(max(box[2] - box[0], box[3] - box[1]) * cfg.mrre_radius_ratio)
         radius = max(radius, 4)
         x1 = max(0, int(np.floor(box[0] - radius)))
         y1 = max(0, int(np.floor(box[1] - radius)))
@@ -316,7 +318,9 @@ def _build_weather_event(weather_type: str, severity: float) -> dict[str, Any]:
             y = random.randint(0, rain.shape[0] - 1)
             dx = random.randint(-4, 4)
             dy = length
-            cv2.line(rain, (x, y), (max(0, min(rain.shape[1] - 1, x + dx)), max(0, min(rain.shape[0] - 1, y + dy))), 1.0, 1)
+            cv2.line(
+                rain, (x, y), (max(0, min(rain.shape[1] - 1, x + dx)), max(0, min(rain.shape[0] - 1, y + dy))), 1.0, 1
+            )
         rain = cv2.GaussianBlur(rain, (_odd_kernel(3 + severity * 2), _odd_kernel(9 + severity * 6)), 0)
         rain = cv2.normalize(rain, None, 0.0, 1.0, cv2.NORM_MINMAX)
         return {"type": weather_type, "severity": severity, "map": rain}
@@ -349,7 +353,9 @@ def _apply_rain(img: np.ndarray, severity: float, modal: str, streak_map: np.nda
         out = cv2.GaussianBlur(out, (_odd_kernel(3 + severity * 2), _odd_kernel(3 + severity * 2)), 0)
     else:
         out = img_f * (1.0 - 0.12 * severity) + 255.0 * streaks * (0.18 + 0.22 * severity)
-        out = cv2.addWeighted(out, 1.0, cv2.GaussianBlur(out, (_odd_kernel(3), _odd_kernel(3)), 0), 0.10 + 0.15 * severity, 0.0)
+        out = cv2.addWeighted(
+            out, 1.0, cv2.GaussianBlur(out, (_odd_kernel(3), _odd_kernel(3)), 0), 0.10 + 0.15 * severity, 0.0
+        )
     return _as_uint8(out)
 
 
