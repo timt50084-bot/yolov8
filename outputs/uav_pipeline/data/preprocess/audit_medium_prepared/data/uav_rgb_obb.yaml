@@ -2,11 +2,11 @@ path: D:\project\ultralytics-main\outputs\uav_pipeline\data\preprocess\audit_med
 train: images/rgb/train
 val: images/rgb/val
 names:
-- car
-- truck
-- bus
-- van
-- Freight Car
+  - car
+  - truck
+  - bus
+  - van
+  - Freight Car
 nc: 5
 channels: 3
 ir_train: images/ir/train

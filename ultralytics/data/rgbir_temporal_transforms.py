@@ -7,9 +7,10 @@ import cv2
 import numpy as np
 import torch
 
-from .uav_train_augment import UAVTrainAugmentConfig, apply_uav_train_augments
 from ultralytics.utils.instance import Instances
 from ultralytics.utils.ops import xyxyxyxy2xywhr
+
+from .uav_train_augment import UAVTrainAugmentConfig, apply_uav_train_augments
 
 
 def _ensure_hw(imgsz: int | tuple[int, int]) -> tuple[int, int]:
@@ -42,8 +43,8 @@ class RGBIRTemporalTransform:
     """Apply conservative synchronized geometry to RGB, IR, previous RGB, and OBB labels.
 
     Current-frame RGB and IR share exact letterbox parameters so their spatial alignment is preserved. The previous RGB
-    frame is resized to the same output shape and receives the same flip decisions. Optional CMCP, MRRE, and PC-MWA
-    run only during training before letterbox so the existing OBB/temporal data structure stays unchanged.
+    frame is resized to the same output shape and receives the same flip decisions. Optional CMCP, MRRE, and PC-MWA run
+    only during training before letterbox so the existing OBB/temporal data structure stays unchanged.
     """
 
     def __init__(
@@ -74,15 +75,15 @@ class RGBIRTemporalTransform:
         new_h, new_w = self.new_shape
         if ratio is None or pad is None:
             gain = min(new_h / shape[0], new_w / shape[1])
-            resize_h = int(round(shape[0] * gain))
-            resize_w = int(round(shape[1] * gain))
-            top = int(round((new_h - resize_h) / 2 - 0.1))
-            left = int(round((new_w - resize_w) / 2 - 0.1))
+            resize_h = round(shape[0] * gain)
+            resize_w = round(shape[1] * gain)
+            top = round((new_h - resize_h) / 2 - 0.1)
+            left = round((new_w - resize_w) / 2 - 0.1)
             ratio = (resize_w / shape[1], resize_h / shape[0])
             pad = (left, top)
         else:
-            resize_w = int(round(shape[1] * ratio[0]))
-            resize_h = int(round(shape[0] * ratio[1]))
+            resize_w = round(shape[1] * ratio[0])
+            resize_h = round(shape[0] * ratio[1])
             left, top = pad
 
         if (resize_h, resize_w) != shape:
