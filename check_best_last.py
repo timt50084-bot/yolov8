@@ -1,11 +1,13 @@
 import hashlib
-import torch
 from pathlib import Path
+
+import torch
 
 paths = [
     Path(r"D:\project\ultralytics-main\outputs\uav_pipeline\rgbir\train\train_20260409_1452352\weights\best.pt"),
     Path(r"D:\project\ultralytics-main\outputs\uav_pipeline\rgbir\train\train_20260409_1452352\weights\last.pt"),
 ]
+
 
 def model_sha(ckpt):
     model = ckpt.get("model", None)
@@ -20,6 +22,7 @@ def model_sha(ckpt):
         h.update(k.encode("utf-8"))
         h.update(t.tobytes())
     return h.hexdigest()
+
 
 for p in paths:
     ckpt = torch.load(p, map_location="cpu")

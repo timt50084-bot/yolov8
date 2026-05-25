@@ -9,9 +9,9 @@ from typing import Any
 import torch
 import torch.nn as nn
 
+from ultralytics.data.build import build_yolo_dataset
 from ultralytics.models import yolo
 from ultralytics.models.yolo.obb.train import OBBTrainer
-from ultralytics.data.build import build_yolo_dataset
 from ultralytics.nn.tasks import yaml_model_load
 from ultralytics.utils import DEFAULT_CFG, LOGGER, RANK
 from ultralytics.utils.torch_utils import unwrap_model
@@ -109,7 +109,9 @@ class RGBIROBBTrainer(OBBTrainer):
             if isinstance(v, torch.Tensor):
                 batch[k] = v.to(self.device, non_blocking=self.device.type == "cuda")
 
-        image_keys = [key for key in ("img", "img_ir", "img_prev") if key in batch and isinstance(batch[key], torch.Tensor)]
+        image_keys = [
+            key for key in ("img", "img_ir", "img_prev") if key in batch and isinstance(batch[key], torch.Tensor)
+        ]
         for key in image_keys:
             batch[key] = batch[key].float() / 255
 
@@ -144,4 +146,6 @@ class RGBIROBBTrainer(OBBTrainer):
         """Skip label-cache plotting when the explicit Stage 3 train dataset does not expose YOLODataset.labels."""
         if hasattr(self.train_loader.dataset, "labels"):
             return super().plot_training_labels()
-        LOGGER.info("Skipping plot_training_labels for RGBIRTemporalOBBDataset because it does not expose YOLODataset.labels.")
+        LOGGER.info(
+            "Skipping plot_training_labels for RGBIRTemporalOBBDataset because it does not expose YOLODataset.labels."
+        )

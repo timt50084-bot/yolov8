@@ -41,6 +41,7 @@ def _resolve_path(root: Path, rel_or_abs: str | Path) -> Path:
 
 def _coerce_names(names: Any) -> list[str]:
     if isinstance(names, dict):
+
         def _sort_key(key: Any) -> tuple[int, Any]:
             key_str = str(key)
             return (0, int(key_str)) if key_str.isdigit() else (1, key_str)
@@ -51,7 +52,9 @@ def _coerce_names(names: Any) -> list[str]:
     return []
 
 
-def _load_data_config(data_root: str | Path | None, data: str | Path | dict[str, Any] | None) -> tuple[dict[str, Any], Path]:
+def _load_data_config(
+    data_root: str | Path | None, data: str | Path | dict[str, Any] | None
+) -> tuple[dict[str, Any], Path]:
     yaml_path = None
     if isinstance(data, dict):
         config = dict(data)
@@ -94,9 +97,9 @@ def _segments_to_xyxy(segments: np.ndarray) -> np.ndarray:
 class RGBIRTemporalOBBDataset(Dataset):
     """Opt-in RGB + IR + one-step temporal OBB dataset built from Stage 1 outputs.
 
-    The dataset consumes Stage 1 pair and temporal index files rather than guessing paths from directory structure.
-    It returns current RGB, current IR, previous RGB, and OBB labels in the tensor layout expected by later phases,
-    while remaining fully disconnected from the default baseline dataset builder path.
+    The dataset consumes Stage 1 pair and temporal index files rather than guessing paths from directory structure. It
+    returns current RGB, current IR, previous RGB, and OBB labels in the tensor layout expected by later phases, while
+    remaining fully disconnected from the default baseline dataset builder path.
     """
 
     def __init__(
@@ -202,7 +205,9 @@ class RGBIRTemporalOBBDataset(Dataset):
                 classes.append([cls])
                 segments.append(points)
 
-        cls_arr = np.asarray(classes, dtype=np.float32).reshape(-1, 1) if classes else np.zeros((0, 1), dtype=np.float32)
+        cls_arr = (
+            np.asarray(classes, dtype=np.float32).reshape(-1, 1) if classes else np.zeros((0, 1), dtype=np.float32)
+        )
         seg_arr = (
             np.asarray(segments, dtype=np.float32).reshape(-1, 4, 2)
             if segments
@@ -219,7 +224,9 @@ class RGBIRTemporalOBBDataset(Dataset):
         img_ir = self._load_image(sample["im_file_ir"])
         img_prev = self._load_image(sample["im_file_prev"])
         cls, segments = self._load_label(sample["label_file"])
-        instances = Instances(bboxes=_segments_to_xyxy(segments), segments=segments, bbox_format="xyxy", normalized=True)
+        instances = Instances(
+            bboxes=_segments_to_xyxy(segments), segments=segments, bbox_format="xyxy", normalized=True
+        )
         payload = {
             "img": img,
             "img_ir": img_ir,
