@@ -21,7 +21,6 @@ from ultralytics.models.yolo.obb.rgbir_temporal_val import TemporalOBBValidator
 from ultralytics.models.yolo.obb.val import OBBValidator
 from ultralytics.nn.tasks import torch_safe_load, yaml_model_load
 
-
 MODE_DEFAULT_MODELS = {
     "rgbir": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb.yaml",
     "rgbir-small": REPO_ROOT / "ultralytics" / "cfg" / "models" / "v8" / "yolov8-rgbir-obb-small.yaml",
