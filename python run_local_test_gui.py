@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-项目根目录直接运行的本地可视化测试脚本
+r"""
+项目根目录直接运行的本地可视化测试脚本.
 
 功能：
 1. 固定加载权重：C:\\Users\\20379\\Desktop\\rgbir_temporal\\weights\\best.pt
@@ -24,11 +23,11 @@
 import os
 import sys
 import threading
-import traceback
-from pathlib import Path
-from datetime import datetime
 import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
+import traceback
+from datetime import datetime
+from pathlib import Path
+from tkinter import filedialog, messagebox, ttk
 
 # =========================
 # 基础配置（按你的要求固定）
@@ -95,11 +94,7 @@ class YOLOLocalTestGUI:
         main = ttk.Frame(self.master, padding=16)
         main.pack(fill=tk.BOTH, expand=True)
 
-        title = ttk.Label(
-            main,
-            text="YOLO 本地测试工具",
-            font=("Microsoft YaHei", 16, "bold")
-        )
+        title = ttk.Label(main, text="YOLO 本地测试工具", font=("Microsoft YaHei", 16, "bold"))
         title.pack(anchor="w", pady=(0, 10))
 
         info_frame = ttk.LabelFrame(main, text="当前配置", padding=12)
@@ -118,40 +113,25 @@ class YOLOLocalTestGUI:
         btn_frame = ttk.Frame(select_frame)
         btn_frame.pack(fill=tk.X)
 
-        self.btn_image = ttk.Button(
-            btn_frame, text="选择单张图片", command=self.select_image
-        )
+        self.btn_image = ttk.Button(btn_frame, text="选择单张图片", command=self.select_image)
         self.btn_image.pack(side=tk.LEFT, padx=(0, 10), pady=4)
 
-        self.btn_folder = ttk.Button(
-            btn_frame, text="选择图片文件夹", command=self.select_folder
-        )
+        self.btn_folder = ttk.Button(btn_frame, text="选择图片文件夹", command=self.select_folder)
         self.btn_folder.pack(side=tk.LEFT, padx=(0, 10), pady=4)
 
-        self.btn_video = ttk.Button(
-            btn_frame, text="选择视频文件", command=self.select_video
-        )
+        self.btn_video = ttk.Button(btn_frame, text="选择视频文件", command=self.select_video)
         self.btn_video.pack(side=tk.LEFT, padx=(0, 10), pady=4)
 
-        self.btn_open_output = ttk.Button(
-            btn_frame, text="打开输出目录", command=self.open_output_dir
-        )
+        self.btn_open_output = ttk.Button(btn_frame, text="打开输出目录", command=self.open_output_dir)
         self.btn_open_output.pack(side=tk.LEFT, padx=(0, 10), pady=4)
 
-        self.btn_exit = ttk.Button(
-            btn_frame, text="退出", command=self.master.destroy
-        )
+        self.btn_exit = ttk.Button(btn_frame, text="退出", command=self.master.destroy)
         self.btn_exit.pack(side=tk.RIGHT, pady=4)
 
         status_frame = ttk.LabelFrame(main, text="运行日志", padding=12)
         status_frame.pack(fill=tk.BOTH, expand=True)
 
-        self.log_text = tk.Text(
-            status_frame,
-            wrap=tk.WORD,
-            font=("Consolas", 10),
-            state=tk.DISABLED
-        )
+        self.log_text = tk.Text(status_frame, wrap=tk.WORD, font=("Consolas", 10), state=tk.DISABLED)
         self.log_text.pack(fill=tk.BOTH, expand=True)
 
         bottom_frame = ttk.Frame(main)
@@ -175,6 +155,7 @@ class YOLOLocalTestGUI:
             self.log_text.insert(tk.END, f"[{now}] {message}\n")
             self.log_text.see(tk.END)
             self.log_text.config(state=tk.DISABLED)
+
         self.master.after(0, _append)
 
     def _set_status(self, message: str):
@@ -193,10 +174,7 @@ class YOLOLocalTestGUI:
             return
         path = filedialog.askopenfilename(
             title="选择单张图片",
-            filetypes=[
-                ("图片文件", "*.jpg *.jpeg *.png *.bmp *.tif *.tiff *.webp"),
-                ("所有文件", "*.*")
-            ]
+            filetypes=[("图片文件", "*.jpg *.jpeg *.png *.bmp *.tif *.tiff *.webp"), ("所有文件", "*.*")],
         )
         if path:
             self.start_predict(path, "image")
@@ -213,10 +191,7 @@ class YOLOLocalTestGUI:
             return
         path = filedialog.askopenfilename(
             title="选择视频文件",
-            filetypes=[
-                ("视频文件", "*.mp4 *.avi *.mov *.mkv *.wmv *.flv *.mpeg *.mpg"),
-                ("所有文件", "*.*")
-            ]
+            filetypes=[("视频文件", "*.mp4 *.avi *.mov *.mkv *.wmv *.flv *.mpeg *.mpg"), ("所有文件", "*.*")],
         )
         if path:
             self.start_predict(path, "video")
@@ -229,11 +204,7 @@ class YOLOLocalTestGUI:
         self._log(f"开始测试，输入类型：{source_type}")
         self._log(f"输入路径：{source_path}")
 
-        thread = threading.Thread(
-            target=self._predict_worker,
-            args=(source_path, source_type),
-            daemon=True
-        )
+        thread = threading.Thread(target=self._predict_worker, args=(source_path, source_type), daemon=True)
         thread.start()
 
     def _predict_worker(self, source_path: str, source_type: str):
@@ -256,9 +227,7 @@ class YOLOLocalTestGUI:
             self._log("开始推理...")
             self._log(f"本次输出目录：{save_dir}")
             self._log(f"本次置信度：{current_conf}")
-            self._log(
-                f"显示设置：show_boxes=True, show_labels={show_labels}, show_conf={show_conf}"
-            )
+            self._log(f"显示设置：show_boxes=True, show_labels={show_labels}, show_conf={show_conf}")
 
             # 使用 stream=True，避免视频长时一次性占满内存
             results = self.model.predict(
@@ -274,7 +243,7 @@ class YOLOLocalTestGUI:
                 verbose=True,
                 show_boxes=True,
                 show_labels=show_labels,
-                show_conf=show_conf
+                show_conf=show_conf,
             )
 
             result_count = 0
@@ -312,8 +281,8 @@ class YOLOLocalTestGUI:
                     f"输入类型：{source_type}\n"
                     f"处理数量：{result_count}\n"
                     f"本次置信度：{current_conf}\n"
-                    f"输出目录：\n{actual_save_dir}"
-                )
+                    f"输出目录：\n{actual_save_dir}",
+                ),
             )
 
         except Exception as e:
@@ -324,13 +293,7 @@ class YOLOLocalTestGUI:
             self._log(detail)
             self._set_status("运行失败")
 
-            self.master.after(
-                0,
-                lambda: messagebox.showerror(
-                    "错误",
-                    f"运行失败：\n{err_msg}"
-                )
-            )
+            self.master.after(0, lambda: messagebox.showerror("错误", f"运行失败：\n{err_msg}"))
 
         finally:
             self.is_running = False
@@ -360,7 +323,7 @@ def main():
     except Exception:
         pass
 
-    app = YOLOLocalTestGUI(root)
+    YOLOLocalTestGUI(root)
     root.mainloop()
 
 
